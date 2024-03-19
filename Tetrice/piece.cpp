@@ -16,6 +16,15 @@ piece::piece(shape s, shape_color c) {
     _color = c;
 
 }
+piece::piece(int shapes_count, int colors_count) {
+    int s = (rand() % shapes_count) + 1,c = (rand() % colors_count) + 1;
+
+
+    _shape = (shape)(s);
+    _color = (shape_color)(c);
+
+}
+
 
 void piece::set_shape(shape s) {
     _shape = s;

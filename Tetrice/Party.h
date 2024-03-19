@@ -5,6 +5,7 @@
 #include<Windows.h>
 #include "Menu.h"
 #include <chrono>
+#include "Plateau.h"
 typedef enum {
 	ni,
 	tetriste,
@@ -19,14 +20,18 @@ typedef enum {
 class Party
 {
 private:
-	shape_node* first_element = NULL;
-	shape_node* next_elements = NULL;
+	Plateau game_pieces ;
+	Plateau next_pieces ;
+	Plateau colors_heads[4];
+	Plateau shapes_heads[4];
+
 	int score = 0;
 	std::chrono::seconds party_time = std::chrono::seconds(120);
 	int i = 0;
 	bool paused = false;
 	bool exited = false;
 	std::string player;
+	bool using_cursor = false;
 	party_type Type = ni;
 public:
 	Party(int choice) {
@@ -104,25 +109,66 @@ public:
 	}
 	int Tetriste() {
 		this->Type = tetriste;
-		std::cout << "\nDEBUGGING: start";
+		//std::cout << "\nDEBUGGING: start";
 		/*
 			***tag : Wonderful Code .SOF.
 			usual std::thread(func_name); didn't work 
 		*/
-		_getch();
 		init_scene(1);
 		std::thread thread_object(&Party::handle_input,this);
+		int lig = 2;
 		
 		while (!exited)
 		{
 			while (!paused) {
-				// generate a random node with random colors and shapes
-				//update_next_elemnts(1);
+				//player input 
+				switch (_getch())
+				{
+				case 'g':
+					//add right next_piece to game pieces 
+					this->game_pieces.inserer_left(next_pieces.get_tail()->get_piece());
+					// add it to the left of color and shape plates
+					break;
+				case 'd':
+					//add right next_piece to game pieces 
+					this->game_pieces.inserer_right(next_pieces.get_tail()->get_piece());
+					// add it to the right of color and shape plates
+					break;
+				}
+				this->next_pieces.supprimer_right();
+				/*Menu::gotoxy(lig, ++lig, ' ');
+				this->next_pieces.afficher(false);
+				cout << " .. ";
+				this->game_pieces.afficher(false);*/
+
+
+				
+				//update list and score delete triplets and all 
+				 
+				
 				// and show it on the screen
+				// wait for cursor 
+				while (using_cursor){}
+				using_cursor = true;
+				// erase old game pieces from console and show new state
+				Menu::gotoxy(2, 2, "                                    ");
+				Menu::gotoxy(2, 2, ' ');
+				//Menu::gotoxy(5, 5, "DEBUGGING: after afficher goto");
+				game_pieces.afficher(false);
+				//Menu::gotoxy(5, 6, "DEBUGGING: after afficher fasle");
+				using_cursor = false;
+				
 				 
-				//wait for players input
-				 
-				//update list and score
+				
+				// generatea  random node with random colors and shapes
+				/*piece* next_piece = new piece(4, 4);*/
+				this->next_pieces.inserer_left(piece(4, 4));
+				while (using_cursor){}
+				using_cursor = true;
+				Menu::gotoxy(0, 0, "                  ");
+				Menu::gotoxy(0, 0, " ");
+				next_pieces.afficher(true);
+				using_cursor = false;
 			}
 
 		}
@@ -136,24 +182,15 @@ public:
 	void init_scene(int size,bool ai = false) {
 		system("cls");
 		//generated the waiting quee
-		this->next_elements = new shape_node[i];
-		_getch();
-		show_next_et_time(1);
-		// next 
-
-		
-		
-	}
-	void show_next_et_time(int size) {
-		Menu::gotoxy(0, 0, "next :");
-		_getch();
-		for (int i = 0; i < size; i++)
+		for (int i = 0; i <size; i++)
 		{
-			std::cout << "*";
+			this->next_pieces.inserer_left(piece(4, 4));
 		}
-
-		std::cout << std::endl;
+		//this->next_elements = new shape_node[i];
+		Menu::gotoxy(0, 0, ' ');
+		this->next_pieces.afficher(true);
 	}
+	
 	void handle_input() {
 		//start game & timer
 		//std::chrono::seconds time_elapsed = std::chrono::seconds(0);
@@ -176,7 +213,7 @@ public:
 			//std::cout << "\nDEBUGGING: time elapsed since pause or start  : " << std::chrono::duration_cast<std::chrono::seconds>(time_elapsed).count();
 			//std::cout << "\nDEBUGGING: time left calculated  out of 2mins  : " << std::chrono::duration_cast<std::chrono::seconds>(time_rest).count();
 			//std::cout << "\nDEBUGGING: time left affected  out of 2mins  : " << std::chrono::duration_cast<std::chrono::seconds>(time_rest).count();
-			_getch();
+			//_getch();
 			pause_menu();
 
 
