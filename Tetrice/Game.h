@@ -20,9 +20,13 @@ class Game
 			while (playing)
 			{
 			show_start_menu();
-			// gui 
-			// function
+			//gui 
+			//fonction
 			}
+		}
+		void grapghic_u_i() {
+			
+
 		}
 		void show_start_menu() {
 			

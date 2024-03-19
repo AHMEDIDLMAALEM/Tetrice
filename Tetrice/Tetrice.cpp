@@ -1,7 +1,6 @@
-
-
-#include<conio.h>
-#include "Game.h"
+//#include<conio.h>
+//#include "Game.h"
+#include "raylib.h"
 static bool s_finished = false;
 // Function to be executed in a separate thread
 //void threadFunction() {
@@ -18,24 +17,34 @@ static bool s_finished = false;
 //    }
 //    std::cout << "hi from thread ";
 //}
-
+const int screenWidth = 1200;
+const int screenHeight = 600;
 int main() {
 
-    Game g;
-    _getch();
-    // Create a new thread and pass the function to be executed
-    //std::thread t(threadFunction);
-    //char choice = _getch();
-    //if (choice == 'p')
-    //{
-    //    s_finished = true;
-    //}
+    //Game g;
+    //_getch();
 
-    //// Wait for the thread to finish execution
-    //t.join();
+    
+    InitWindow(screenWidth, screenHeight, "Dessiner des formes");
+    SetTargetFPS(60);
+    Color colors[] = { BLUE, YELLOW, RED, GREEN };
+    while (!WindowShouldClose())
+    {
+        BeginDrawing();
+        ClearBackground(RAYWHITE);
 
-    //std::cout << "Hello from main!\n";
+        for (int i = 0; i <= 3; i++)
+        {
+            DrawCircle(20 + i * 60, 20, 20, colors[i]);
+            DrawRectangleRec(Rectangle{ float(20 + i * 60),60, 40,40 }, colors[i]);
+            DrawRectanglePro(Rectangle{ float(40 + i * 60),120, 40,40 }, { 0,0 }, 45.0f, colors[i]);
+            DrawTriangle({ float(20 + i * 60), 220 }, { float(60 + i * 60), 220 }, { float(40 + i * 60), 185 }, colors[i]);
 
+        }
+        EndDrawing();
+    }
+
+    CloseWindow();
     return 0;
 }
 

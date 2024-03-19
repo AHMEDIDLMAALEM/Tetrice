@@ -23,11 +23,12 @@ class piece
 {
 private:
     shape _shape;
-    shape_color _color;
+    shape_color _color ;
 
 public:
     piece();
     piece(shape s, shape_color c);
+    piece(int shapes_count, int colors_count);
     void set_shape(shape s);
     void set_color(shape_color c);
     shape get_shape();

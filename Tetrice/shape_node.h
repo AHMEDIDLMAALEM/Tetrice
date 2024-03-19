@@ -6,7 +6,7 @@ class shape_node
 {
 private:
     piece P;
-    shape_node* next;
+    shape_node* next;//zr9a
     shape_node* next_shape;
     shape_node* next_color;
     shape_node* prev_color;

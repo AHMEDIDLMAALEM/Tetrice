@@ -46,6 +46,7 @@ void Plateau::inserer_right(piece P)
 	if (size == 0) {
 		head = NEW;
 		tail = NEW;
+		NEW->set_next(NEW);
 	}
 	else {
 		NEW->set_next(head);
@@ -62,6 +63,7 @@ void Plateau::inserer_left(piece P)
 	if (size == 0) {
 		head = NEW;
 		tail = NEW;
+		NEW->set_next(NEW);
 	}
 	else {
 		NEW->set_next(head);
@@ -132,10 +134,14 @@ void Plateau::supprimer_right()
 
 }
 
-void Plateau::afficher()
+void Plateau::afficher(bool dis_last = false)
 {
 	shape_node *temp=head;
 	for (int i = 0; i < size; i++) {
+		if (dis_last && tail == temp)
+		{
+			cout << " -> ";
+		}
 		temp->get_piece().afficher();
 		temp = temp->get_next();
 	}

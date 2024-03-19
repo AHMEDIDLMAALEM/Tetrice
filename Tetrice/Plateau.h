@@ -24,7 +24,7 @@ public:
 	void supprimer3_right();
 	void supprimer_left();
 	void supprimer_right();
-	void afficher();
+	void afficher(bool dis_last);
 
 	//piece supprimer();
 
