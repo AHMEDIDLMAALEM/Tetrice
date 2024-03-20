@@ -122,17 +122,30 @@ public:
 		{
 			while (!paused) {
 				//player input 
+				int index_c = (int)(next_pieces.get_tail()->get_piece().get_color() - 1);
+				int index_sh = (int)(next_pieces.get_tail()->get_piece().get_shape() - 1);
+				
+				// add while to enter either g or d and ignore the other inputs 
+				char choice;
+				do {
+					choice = _getch();
+				} while (choice != 'd' && choice != 'd');
 				switch (_getch())
 				{
 				case 'g':
 					//add right next_piece to game pieces 
 					this->game_pieces.inserer_left(next_pieces.get_tail()->get_piece());
 					// add it to the left of color and shape plates
+					this->colors_heads[index_c].inserer_left_colors(&this->game_pieces, next_pieces.get_tail()->get_piece());
+					this->shapes_heads[index_sh].inserer_left_shapes(&this->game_pieces, next_pieces.get_tail()->get_piece());
 					break;
 				case 'd':
 					//add right next_piece to game pieces 
 					this->game_pieces.inserer_right(next_pieces.get_tail()->get_piece());
 					// add it to the right of color and shape plates
+					this ->colors_heads[index_c].inserer_right_colors(&this->game_pieces,next_pieces.get_tail()->get_piece());
+					this->shapes_heads[index_sh].inserer_right_shapes(&this->game_pieces,next_pieces.get_tail()->get_piece());
+
 					break;
 				}
 				this->next_pieces.supprimer_right();

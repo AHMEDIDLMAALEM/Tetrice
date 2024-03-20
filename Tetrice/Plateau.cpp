@@ -55,6 +55,108 @@ void Plateau::inserer_right(piece P)
 	}
 	size++;
 }
+void Plateau::inserer_right_shapes(Plateau * p,piece P)
+{
+	shape_node* new_ptr = p->get_tail();
+	// link the main plate tail (new piece)
+	// to tail by prev_col
+	// to head by next_col
+	if (this->size == 0)
+	{
+		this->head = new_ptr;
+		this->tail = new_ptr;
+		new_ptr->set_next_shape(this->get_head());
+		new_ptr->set_prev_shape(this->get_tail());
+
+
+	}
+	else
+	{
+		new_ptr->set_next_shape(this->get_head());
+		new_ptr->set_prev_shape(this->get_tail());
+		this->head->set_prev_shape(new_ptr);
+		this->tail->set_next_shape(new_ptr);
+		this->tail = new_ptr;
+	}
+	size++;
+	
+}
+void Plateau::inserer_right_colors(Plateau* p, piece P) 
+{
+	shape_node* new_ptr = p->get_tail();
+	// link the main plate tail (new piece)
+	// to tail by prev_col
+	// to head by next_col
+	if (this->size == 0)
+	{
+		this->head = new_ptr;
+		this->tail = new_ptr;
+		new_ptr->set_next_color(this->get_head());
+		new_ptr->set_prev_color(this->get_tail());
+
+		
+	}
+	else
+	{
+		new_ptr->set_next_color(this->get_head());
+		new_ptr->set_prev_color(this->get_tail());
+		this->head->set_prev_color(new_ptr);
+		this->tail->set_next_color(new_ptr);
+		this->tail = new_ptr;
+	}
+	size++;
+
+}
+void Plateau::inserer_left_shapes(Plateau* p, piece P)
+{
+	shape_node* new_ptr = p->get_tail();
+	// link the main plate tail (new piece)
+	// to tail by prev_col
+	// to head by next_col
+	if (this->size == 0)
+	{
+		this->head = new_ptr;
+		this->tail = new_ptr;
+		new_ptr->set_next_shape(this->get_head());
+		new_ptr->set_prev_shape(this->get_tail());
+
+
+	}
+	else
+	{
+		new_ptr->set_next_shape(this->get_head());
+		new_ptr->set_prev_shape(this->get_tail());
+		this->head->set_prev_shape(new_ptr);
+		this->tail->set_next_shape(new_ptr);
+		this->head = new_ptr;
+	}
+	size++;
+}
+void Plateau::inserer_left_colors(Plateau* p, piece P)
+{
+	shape_node* new_ptr = p->get_tail();
+	// link the main plate tail (new piece)
+	// to tail by prev_col
+	// to head by next_col
+	if (this->size == 0)
+	{
+		this->head = new_ptr;
+		this->tail = new_ptr;
+		new_ptr->set_next_color(this->get_head());
+		new_ptr->set_prev_color(this->get_tail());
+
+
+	}
+	else
+	{
+		new_ptr->set_next_color(this->get_head());
+		new_ptr->set_prev_color(this->get_tail());
+		this->head->set_prev_color(new_ptr);
+		this->tail->set_next_color(new_ptr);
+		this->head = new_ptr;
+	}
+	size++;
+}
 
 void Plateau::inserer_left(piece P)
 {

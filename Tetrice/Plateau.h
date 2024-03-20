@@ -20,6 +20,11 @@ public:
 	//manipulation du liste
 	void inserer_right(piece P);
 	void inserer_left(piece P);
+	void inserer_right_shapes(Plateau* p, piece P);
+	void inserer_left_shapes(Plateau* p, piece P);
+	void inserer_left_colors(Plateau* p, piece P);
+	void inserer_right_colors(Plateau* p, piece P);
+
 	void supprimer3_left();
 	void supprimer3_right();
 	void supprimer_left();
