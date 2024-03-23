@@ -1,4 +1,5 @@
 #pragma once
+#pragma once
 
 #include <iostream>
 using namespace std;
@@ -23,22 +24,28 @@ class piece
 {
 private:
     shape _shape;
-    shape_color _color ;
+    shape_color _color;
+    float x, y;
 
 public:
     piece();
-    piece(shape s, shape_color c);
+    piece(shape s, shape_color c, float x, float y);
     piece(int shapes_count, int colors_count);
     void set_shape(shape s);
     void set_color(shape_color c);
+    void set_X(float x);
+    void set_Y(float y);
+    float get_X();
+    float get_Y();
     shape get_shape();
     shape_color get_color();
     piece& operator=(const piece& other);
     void afficher() const;
-    
-    ~piece();
-    
+    void draw() const;
 
-	
+    ~piece();
+
+
+
 };
 
