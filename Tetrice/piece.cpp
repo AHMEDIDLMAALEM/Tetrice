@@ -88,13 +88,13 @@ void piece::afficher() const {
     }
     switch (_shape) {
     case Cercle:
-        cout << "R";
+        cout << "C";
         break;
     case Rhombus:
-        cout << "L";
+        cout << "R";
         break;
     case Square:
-        cout << "C";
+        cout << "S";
         break;
     case Triangle:
         cout << "T";
@@ -104,42 +104,3 @@ void piece::afficher() const {
     }
     cout << "\033[0m  ";
 }
-
-void piece::draw() const {
-    Color raylibColor;
-    switch (_color) {
-    case Red:
-        raylibColor = RED;
-        break;
-    case Green:
-        raylibColor = GREEN;
-        break;
-    case Yellow:
-        raylibColor = YELLOW;
-        break;
-    case Blue:
-        raylibColor = BLUE;
-        break;
-    default:
-        raylibColor = WHITE;
-        break;
-    }
-
-    switch (_shape) {
-    case Cercle:
-        DrawCircle(static_cast<float>(x), static_cast<float>(y), 20.0f, raylibColor);
-        break;
-    case Rhombus:
-        DrawRectanglePro(Rectangle{ static_cast<float>(x), static_cast<float>(y), 40.0f, 40.0f }, { 20.0f, 20.0f }, 45.0f, raylibColor);
-        break;
-    case Square:
-        DrawRectangleRec(Rectangle{ static_cast<float>(x), static_cast<float>(y), 40.0f, 40.0f }, raylibColor);
-        break;
-    case Triangle:
-        DrawTriangle({ static_cast<float>(x), static_cast<float>(y) }, { static_cast<float>(x) + 40.0f, static_cast<float>(y) }, { static_cast<float>(x) + 20.0f, static_cast<float>(y) - 35.0f }, raylibColor);
-        break;
-    default:
-        break;
-    }
-}
-

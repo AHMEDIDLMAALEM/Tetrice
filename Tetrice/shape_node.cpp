@@ -1,8 +1,8 @@
 #include "shape_node.h"
 
-shape_node::shape_node(piece PI , shape_node* next = NULL, shape_node* next_shape = NULL, shape_node* next_color = NULL, shape_node* prev_shape = NULL, shape_node* prev_color = NULL)
+shape_node::shape_node(piece Pi , shape_node* next = NULL, shape_node* next_shape = NULL, shape_node* next_color = NULL, shape_node* prev_shape = NULL, shape_node* prev_color = NULL)
 {
-    this->P = PI;
+    this->P = Pi;
     this->next = next;
     this->next_shape = next_shape;
     this->next_color = next_color;

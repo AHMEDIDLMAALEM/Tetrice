@@ -14,7 +14,9 @@ private:
 
 public:
     // constructur
-    shape_node(piece PI, shape_node*  , shape_node*  , shape_node* , shape_node*, shape_node* );
+    shape_node(piece Pi, shape_node* next
+        , shape_node* next_shape, shape_node* next_color
+        , shape_node* prev_color, shape_node* prev_shape);
 
     // getters
    
