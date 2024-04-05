@@ -75,13 +75,13 @@ piece::~piece() {
      switch (_shape)
      {
      case Cercle:
-         cout << "R";
+         cout << "C";
          break;
      case Rhombus:
-         cout << "L";
+         cout << "R";
          break;
      case Square:
-         cout << "C";
+         cout << "S";
          break;
      case Triangle:
          cout << "T";

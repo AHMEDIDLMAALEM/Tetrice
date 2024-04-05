@@ -18,13 +18,14 @@ static bool s_finished = false;
 //    }
 //    std::cout << "hi from thread ";
 //}
+// g++ -o myprogram main.cpp -lpthread
 
 int main() {
 
     Game g;
     _getch();
     // Create a new thread and pass the function to be executed
-    //std::thread t(threadFunction);
+    //std::thread t(threadFunction);%
     //char choice = _getch();
     //if (choice == 'p')
     //{

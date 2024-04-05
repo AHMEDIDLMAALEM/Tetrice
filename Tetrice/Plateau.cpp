@@ -65,8 +65,6 @@ void Plateau::inserer_right_shapes(Plateau * p,piece P)
 	{
 		this->head = new_ptr;
 		this->tail = new_ptr;
-		new_ptr->set_next_shape(this->get_head());
-		new_ptr->set_prev_shape(this->get_tail());
 
 
 	}
@@ -91,8 +89,8 @@ void Plateau::inserer_right_colors(Plateau* p, piece P)
 	{
 		this->head = new_ptr;
 		this->tail = new_ptr;
-		new_ptr->set_next_color(this->get_head());
-		new_ptr->set_prev_color(this->get_tail());
+		/*new_ptr->set_next_color(this->get_head());
+		new_ptr->set_prev_color(this->get_tail());*/
 
 		
 	}
@@ -109,7 +107,7 @@ void Plateau::inserer_right_colors(Plateau* p, piece P)
 }
 void Plateau::inserer_left_shapes(Plateau* p, piece P)
 {
-	shape_node* new_ptr = p->get_tail();
+	shape_node* new_ptr = p->get_head();
 	// link the main plate tail (new piece)
 	// to tail by prev_col
 	// to head by next_col
@@ -134,7 +132,7 @@ void Plateau::inserer_left_shapes(Plateau* p, piece P)
 }
 void Plateau::inserer_left_colors(Plateau* p, piece P)
 {
-	shape_node* new_ptr = p->get_tail();
+	shape_node* new_ptr = p->get_head();
 	// link the main plate tail (new piece)
 	// to tail by prev_col
 	// to head by next_col
@@ -144,7 +142,6 @@ void Plateau::inserer_left_colors(Plateau* p, piece P)
 		this->tail = new_ptr;
 		new_ptr->set_next_color(this->get_head());
 		new_ptr->set_prev_color(this->get_tail());
-
 
 	}
 	else
@@ -181,6 +178,38 @@ void Plateau::supprimer3_left()
 	
 	for (int i = 0; i < 3; i++) {
 		supprimer_left();
+	}
+
+}
+
+void show(int tables) {
+	shape_node* tmp;
+	//switch 
+}
+
+void Plateau::evaluate_plate(Plateau* colors, Plateau* shapes) {
+	shape_node* pos = this->head;
+	while (pos != this->tail)
+	{
+		int max_streak_color = 0 ,max_streak_shape = 0;
+		int streak_color = 0, streak_shape = 0;
+		shape_node* tmp_c = pos;
+		while (tmp_c->get_piece().get_color() == tmp_c->get_next()->get_piece().get_color()) {
+			streak_color++;
+			tmp_c = tmp_c->get_next();
+		}
+		shape_node* tmp_s = pos;
+		while (tmp_s->get_piece().get_color() == tmp_s->get_next()->get_piece().get_color()) {
+			streak_shape++;
+			tmp_s = tmp_s->get_next();
+		}
+		if (streak_color >= this->min_supp || streak_shape >= this->min_supp)
+		{
+			//(streak_color >= streak_shape) ? delete() : ;
+		}
+
+
+		
 	}
 
 }

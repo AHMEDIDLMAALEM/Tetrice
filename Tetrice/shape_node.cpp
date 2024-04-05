@@ -3,11 +3,45 @@
 shape_node::shape_node(piece PI , shape_node* next = NULL, shape_node* next_shape = NULL, shape_node* next_color = NULL, shape_node* prev_shape = NULL, shape_node* prev_color = NULL)
 {
     this->P = PI;
-    this->next = next;
-    this->next_shape = next_shape;
-    this->next_color = next_color;
-    this->prev_shape = prev_shape;
-    this->prev_color = prev_color;
+    if (next == NULL)
+    {
+        this->next = this;
+    }
+
+    else {
+        this->next = next;
+    }
+    if (prev_shape == NULL)
+    {
+        this->prev_shape = this;
+    }
+    else {
+        this->prev_shape = prev_shape;
+    }
+
+    if (next_shape == NULL)
+    {
+        this->next_shape = this;
+    }
+    else {
+        this->next_shape = next_shape;
+    }
+
+    if (next_color == NULL)
+    {
+        this->next_color = this;
+    }
+    else {
+        this->next_color = next_color;
+    }
+
+    if (prev_color == NULL)
+    {
+        this->prev_color = this;
+    }
+    else {
+        this->prev_color = prev_color;  
+    }
 }
 
 // getters
