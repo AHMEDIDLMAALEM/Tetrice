@@ -42,13 +42,13 @@ public:
 			Tetriste();
 			break;
 		case 2:
-			std::cout << "T�patrice";
+			std::cout << "Tepatrice";
 			break;
 		case 3:
-			std::cout << "T�content";
+			Tecontent();
 			break;
 		case 4:
-			std::cout << "Tavalid�";
+			std::cout << "Tavalide";
 			break;
 		case 5:
 			std::cout << "Bonus";
@@ -66,13 +66,13 @@ public:
 			Tetriste();
 			break;
 		case 2:
-			std::cout << "T�patrice";
+			std::cout << "Tepatrice";
 			break;
 		case 3:
-			std::cout << "T�content";
+			std::cout << "Tecontent";
 			break;
 		case 4:
-			std::cout << "Tavalid�";
+			std::cout << "Tavalide";
 			break;
 		case 5:
 			std::cout << "Bonus";
@@ -82,7 +82,7 @@ public:
 		_getch();
 	}
 	
-	void pause_menu() {
+	void pause_menu(bool ai =false,bool score = false) {
 		std::string options[] = {"Continue","Save Game","Exit"};
 		Menu m(options, 3);
 		int choice = m.get_choice();
@@ -90,11 +90,17 @@ public:
 		{
 		case 1:
 			paused = false;
+			system("cls");
+			init_scene(0, ai, score);
+			Menu::gotoxy(2, 2, ' ');
+			//Menu::gotoxy(5, 5, "DEBUGGING: after afficher goto");
+			game_pieces.afficher(false);
 			break;
 		case 2:
 			save_game();
 			break;
 		case 3:
+			paused = true;
 			exited = true;
 		default:
 			break;
@@ -107,6 +113,113 @@ public:
 		
 		_getch();
 	}
+	int Tecontent() {
+		this->Type = tecontent;
+		//std::cout << "\nDEBUGGING: start";
+		/*
+			***tag : Wonderful Code .SOF.
+			usual std::thread(func_name); didn't work
+		*/
+		init_scene(1,false,true);
+		std::thread thread_object(&Party::handle_time, this);
+
+		while (!exited)
+		{
+			while (!paused) {
+				////////////////////////////////////////////////
+				///    handle player input and upadates      ///
+				///////////////////////////////////////////////
+				player_action(false,true,true);
+
+				//evaluate plate and delete triplets
+
+				//update list and score delete triplets and all 
+
+
+				// and show it on the screen
+
+
+
+				////////////////////////////////////////////
+				///    Render game pieces in scene      ///
+				///////////////////////////////////////////
+				while (using_cursor) {}
+				using_cursor = true;
+				// erase old game pieces from console and show new state
+				Menu::gotoxy(2, 2, "                                          ");
+				Menu::gotoxy(2, 2, ' ');
+				//Menu::gotoxy(5, 5, "DEBUGGING: after afficher goto");
+				game_pieces.afficher(false);
+				//Menu::gotoxy(5, 6, "DEBUGGING: after afficher fasle");
+				using_cursor = false;
+
+
+
+
+
+
+				/////////////////////////////////////////////////////
+				///    Render and update  next pieces in scene    ///
+				/////////////////////////////////////////////////////
+				this->next_pieces.inserer_left(piece(4, 4));
+				while (using_cursor) {}
+				using_cursor = true;
+				Menu::gotoxy(0, 0, "                  ");
+				Menu::gotoxy(0, 0, " ");
+				next_pieces.afficher(true);
+				using_cursor = false;
+
+
+
+
+				
+			}
+
+		}
+
+		thread_object.join();
+		std::cout << "\nDEBUGGING: tetris exit";
+		_getch();
+		return -1;
+	}
+	void chose_decallage() {
+		Menu::gotoxy(0, 4, "Chose a color or a shape :\n");
+		// print options 
+		Menu::gotoxy(0, 5, ' ');
+		cout << "\033[31m"<<"RED   "<< "\033[0m"<< "\033[32m"<<" GREEN "<< "\033[0m"<< "\033[33m"<<" YELLOW" << "\033[0m" << "\033[34m"<<" BLUE  " << "\033[0m"<<" CERCLE"<<" RHOMBU"<<" SQUARE"<<" TRIANGLE";
+
+		char in = 'a';
+		int choice = 0;
+		Menu::gotoxy(0, 5, '>');
+		do
+		{
+			in = _getch();
+			if (in == 77 && choice < 7) {
+				Menu::gotoxy(choice*7, 5, ' ');
+				Menu::gotoxy(++choice * 7, 5, '>');
+			}
+			else if(in == 75 && choice > 0)
+			{
+				Menu::gotoxy(choice * 7, 5, ' ');
+				Menu::gotoxy(--choice * 7, 5, '>');
+			}
+
+		} while (in != 'e');
+		Menu::gotoxy(0, 4, "                                            \n                                                                           ");
+		/*
+		note to saad :
+		switch based on choice :
+		0 => decallage rouge;
+		1 => decallage vert;
+		2 => decallage jaune;
+		3 => decallage blue;
+		4 => decallage cercle;
+		5 => decallage losange;
+		6 => decallage carre ;
+		7 => decallage triangle;
+		
+		*/
+	}
 	int Tetriste() {
 		this->Type = tetriste;
 		//std::cout << "\nDEBUGGING: start";
@@ -114,9 +227,8 @@ public:
 			***tag : Wonderful Code .SOF.
 			usual std::thread(func_name); didn't work 
 		*/
-		init_scene(1);
+		init_scene(1, false, false);
 		std::thread thread_object(&Party::handle_time,this);
-		int lig = 2;
 		
 		while (!exited)
 		{
@@ -124,7 +236,7 @@ public:
 				////////////////////////////////////////////////
 				///    handle player input and upadates      ///
 				///////////////////////////////////////////////
-				player_action();
+				player_action(false,false,false);
 
 				//evaluate plate and delete triplets
 		
@@ -170,16 +282,16 @@ public:
 				/////////////////////////////////////////////////////
 				///      render the colors and shapes lists       ///
 				/////////////////////////////////////////////////////
-		
-				/*Menu::gotoxy(3, 3, "                                    ");
-				Menu::gotoxy(3, 4, "                                    ");
-				Menu::gotoxy(3, 5, "                                    ");
-				Menu::gotoxy(3, 6, "                                    ");
-				Menu::gotoxy(3, 7, "                                    ");
-				Menu::gotoxy(3, 8, "                                    ");
-				Menu::gotoxy(3, 9, "                                    ");
-				Menu::gotoxy(3, 10, "                                    ");
-				Menu::gotoxy(3, 3, "____________colors___________\n");
+		/*
+				Menu::gotoxy(3, 3+3, "                                    ");
+				Menu::gotoxy(3, 4+3, "                                    ");
+				Menu::gotoxy(3, 5+3, "                                    ");
+				Menu::gotoxy(3, 6+3, "                                    ");
+				Menu::gotoxy(3, 7+3, "                                    ");
+				Menu::gotoxy(3, 8+3, "                                    ");
+				Menu::gotoxy(3, 9+3, "                                    ");
+				Menu::gotoxy(3, 13, "                                    ");
+				Menu::gotoxy(3, 6, "____________colors___________\n");
 				for (int i = 0; i < 4; i++)
 				{
 					
@@ -210,7 +322,8 @@ public:
 
 					} while (tmp != shapes_heads[i].get_tail());
 					cout << endl;
-				}*/
+				}
+				*/
 			}
 
 		}
@@ -221,57 +334,73 @@ public:
 		return -1;
 	}
 
-	void player_action() {
+	void player_action(bool ai = false,bool dec = false,bool score = false) {
 		int index_c = (int)(next_pieces.get_tail()->get_piece().get_color() - 1);
 		int index_sh = (int)(next_pieces.get_tail()->get_piece().get_shape() - 1);
 
 		// add while to enter either g or d and ignore the other inputs 
-		char choice;
+		char choice = 'a';
 		do {
-			if (using_cursor)
+			using_cursor = true;
+			choice = _getch();
+			switch (choice)
 			{
-				while(using_cursor){}
-				
+			case 'p': 
+				paused = true;
+				pause_menu(ai,score);
+				break;
+			case 'd':
+				if (dec)
+				{
+					chose_decallage();
+				}
+				break;
+			default:
+				break;
 			}
-			else
-			{
-				using_cursor = true;
-				choice = _getch();
-				using_cursor = false;
-			}
-			
-			
-		} while (choice != 75 && choice != 77 && choice != 'p' && choice != 'd');
+			using_cursor = false;	
+		} while (choice != 75 && choice != 77 );
 		switch (choice)
 		{
-		case 77:
+		case 75:
 			//add right next_piece to game pieces 
 			this->game_pieces.inserer_left(next_pieces.get_tail()->get_piece());
 			// add it to the left of color and shape plates
 			this->colors_heads[index_c].inserer_left_colors(&this->game_pieces, next_pieces.get_tail()->get_piece());
 			this->shapes_heads[index_sh].inserer_left_shapes(&this->game_pieces, next_pieces.get_tail()->get_piece());
+			this->score += this->game_pieces.supprimer3_left(&colors_heads, &shapes_heads);
 			break;
-		case 75:
+		case 77:
 			//add right next_piece to game pieces 
-			piece tmp_p = next_pieces.get_tail()->get_piece();
-			this->game_pieces.inserer_right(tmp_p);
+			this->game_pieces.inserer_right(next_pieces.get_tail()->get_piece());
 			// add it to the right of color and shape plates
 			this->colors_heads[index_c].inserer_right_colors(&this->game_pieces, next_pieces.get_tail()->get_piece());
 			this->shapes_heads[index_sh].inserer_right_shapes(&this->game_pieces, next_pieces.get_tail()->get_piece());
+			this->score += this->game_pieces.supprimer3_right(&(this->colors_heads), &(this->shapes_heads));
 
 			break;
+			
 		}
-		this->next_pieces.supprimer_right();
+		this->next_pieces.set_size(next_pieces.get_size() - 1);
+		shape_node* prv = next_pieces.get_head();
+		while (prv->get_next() != next_pieces.get_tail()) {
+			prv = prv->get_next();
+		}
+		next_pieces.set_tail(prv);
+		delete prv->get_next();
 	}
 	// next : L C
-	void init_scene(int size,bool ai = false) {
+	void init_scene(int size,bool ai ,bool score ) {
 		system("cls");
 		Menu::gotoxy(Menu::timer_x, Menu::timer_y, "                                                    ");
 		
 		Menu::gotoxy(0, Menu::timer_y - 1, ' ');
 		cout << "Time :";
+		if (score)
+		{
 		Menu::gotoxy(14, Menu::timer_y - 1, ' ');
-		cout << "Score : 0000";
+		cout << "Score : " << this->score;
+		}
 		//generated the waiting quee
 		for (int i = 0; i <size; i++)
 		{
@@ -282,45 +411,7 @@ public:
 		this->next_pieces.afficher(true);
 	}
 	
-	void handle_input() {
-		//start game & timer
-		//std::chrono::seconds time_elapsed = std::chrono::seconds(0);
-		std::chrono::system_clock::time_point old;
-		while (!exited) {
-			old = std::chrono::system_clock::now();
-			
-			while (!paused)
-			{
-				char in = 'c';
-				while (using_cursor)
-				{
-
-				}
-				using_cursor = true;
-				in = _getch();
-				using_cursor = false;
-				
-				if (in == 'p' || in == 'P')
-				{
-					this->paused = true;
-				}
-
-			}
-			auto time_elapsed = std::chrono::system_clock::now() - old;
-			auto time_rest = this->party_time - time_elapsed;
-			this->party_time = std::chrono::duration_cast<std::chrono::seconds>(time_rest);
-			//party_time = std::chrono::seconds(std::chrono::duration_cast<std::chrono::seconds > (party_time).count() - std::chrono::duration_cast<std::chrono::seconds>(this->party_time).count());
-			//std::cout << "\nDEBUGGING: time elapsed since pause or start  : " << std::chrono::duration_cast<std::chrono::seconds>(time_elapsed).count();
-			//std::cout << "\nDEBUGGING: time left calculated  out of 2mins  : " << std::chrono::duration_cast<std::chrono::seconds>(time_rest).count();
-			//std::cout << "\nDEBUGGING: time left affected  out of 2mins  : " << std::chrono::duration_cast<std::chrono::seconds>(time_rest).count();
-			//_getch();
-			pause_menu();
-
-
-		}
-		//end game & timer
-	}
-
+	
 	void handle_time() {
 		//start game & timer
 		//std::chrono::seconds time_elapsed = std::chrono::seconds(0);
@@ -336,6 +427,11 @@ public:
 				Menu::gotoxy(Menu::timer_x, Menu::timer_y-1, "     ");
 				Menu::gotoxy(Menu::timer_x, Menu::timer_y-1,' ');
 				cout << --time;
+				if (this->Type != tetriste && this->Type != tepatrice)
+				{
+					Menu::gotoxy(14, Menu::timer_y - 1, ' ');
+					cout << "Score : " << this->score;
+				}
 				
 				
 			}

@@ -1,4 +1,5 @@
 #include "Plateau.h"
+#include <conio.h>
 
 Plateau::Plateau()
 {
@@ -173,12 +174,33 @@ void Plateau::inserer_left(piece P)
 	size++;
 }
 
-void Plateau::supprimer3_left()
+int Plateau::supprimer3_left(Plateau(*color)[4], Plateau(*shape)[4])
 {
 	
-	for (int i = 0; i < 3; i++) {
-		supprimer_left();
+	if (this->get_size() > 2)
+	{
+		// verify delatbility
+		shape_node* tmp = this->get_head();
+
+		if ((tmp->get_next() == tmp->get_next_color() && tmp->get_next()->get_next() == tmp->get_next()->get_next_color()) && (tmp->get_next() == tmp->get_next_shape() && tmp->get_next()->get_next() == tmp->get_next()->get_next_shape()))
+		{
+			for (int i = 0; i < 3; i++) {
+				supprimer_left(&((*color)[static_cast<int>(this->get_head()->get_piece().get_color()) - 1]), &((*shape)[static_cast<int>(this->get_head()->get_piece().get_shape()) - 1]));
+			}
+			return 50;
+		}
+		if ((tmp->get_next() == tmp->get_next_color() && tmp->get_next()->get_next() == tmp->get_next()->get_next_color() ) || (tmp->get_next() == tmp->get_next_shape() && tmp->get_next()->get_next() == tmp->get_next()->get_next_shape()))
+		{
+			for (int i = 0; i < 3; i++) {
+				Plateau* c = &((*color)[static_cast<int>(this->get_head()->get_piece().get_color()) - 1]);
+				Plateau* s = &((*shape)[static_cast<int>(this->get_head()->get_piece().get_shape()) - 1]);
+				supprimer_left(c, s);
+			}
+			return 10;
+		}
+
 	}
+	return 0;
 
 }
 
@@ -214,53 +236,127 @@ void Plateau::evaluate_plate(Plateau* colors, Plateau* shapes) {
 
 }
 
-void Plateau::supprimer3_right()
+int Plateau::supprimer3_right(Plateau(*color)[4], Plateau(*shape)[4])
 {
-	
-	for (int i = 0; i < 3; i++) {
-		supprimer_right();
-	}
-	
-}
-
-void Plateau::supprimer_left()
-{
-	if (size == 0) {
-		std::cout << "la liste est vise" << std::endl;
-
-	}
-	else {
-		shape_node* supp=head;
-		tail->set_next(supp->get_next());
-		head = head->get_next();
-		supp->set_next(nullptr);
-		size--;
-		//delete(supp);
-	}
-}
-
-void Plateau::supprimer_right()
-{
-	if (size == 0) {
-		std::cout << "la liste est vise" << std::endl;
-
-	}
-	else {
-		shape_node* supp = nullptr;
-		shape_node *temp = head;
-		for (int i = 0; i < size - 2; i++) {
-			temp = temp->get_next();
+	if (this->get_size() > 2 )
+	{
+		// verify delatbility
+		shape_node* tmp = this->get_tail();
+		if ((tmp == tmp->get_prev_color()->get_next() && tmp->get_prev_color() == tmp->get_prev_color()->get_prev_color()->get_next()) && (tmp == tmp->get_prev_shape()->get_next() && tmp->get_prev_shape() == tmp->get_prev_shape()->get_prev_shape()->get_next()))
+		{
+			for (int i = 0; i < 3; i++) {
+				supprimer_right(&((*color)[static_cast<int>(this->get_tail()->get_piece().get_color())-1]), &((*shape)[static_cast<int>(this->get_tail()->get_piece().get_shape())-1]));
+			}
+			return 50;
 		}
-			tail = temp;
-			supp = temp->get_next();
-			temp->set_next(head);
-			supp->set_next(nullptr);
-			size--;
-			//delete(supp);
-
+		if ((tmp == tmp->get_prev_color()->get_next() && tmp->get_prev_color() == tmp->get_prev_color()->get_prev_color()->get_next()) || (tmp == tmp->get_prev_shape()->get_next() && tmp->get_prev_shape() == tmp->get_prev_shape()->get_prev_shape()->get_next()))
+		{
+			for (int i = 0; i < 3; i++) {
+				Plateau* c = &((*color)[static_cast<int>(this->get_tail()->get_piece().get_color())-1]);
+				Plateau* s = &((*shape)[static_cast<int>(this->get_tail()->get_piece().get_shape())-1]);
+				supprimer_right(c,s);
+			}
+			return 10;
+		}
 		
-	
 	}
+	return 0;
+	
+}
+
+void Plateau::delete_node()
+{
+	//head
+	////color
+	////shape
+
+	//tail
+	////color
+	////shape
+}
+
+void Plateau::supprimer_left(Plateau* color, Plateau* shape)
+{
+	// delete trace from main plate
+	shape_node* supp=head;
+	if (size == 1) {
+		head = nullptr;
+		tail = nullptr;
+	}
+	else {
+		head = head->get_next();
+		tail->set_next(head);
+	}
+	size--;
+
+	// delete trace from color plate
+	if (color->get_size() == 1) {
+		color->set_head(nullptr);
+		color->set_tail(nullptr);
+	}
+	else {
+		color->get_tail()->set_next_color(color->get_head()->get_next_color());
+		color->set_head(color->get_head()->get_next_color());
+		color->get_head()->set_prev_color(color->get_tail());
+	}
+	color->set_size(color->get_size()-1);
+
+	// delete trace from shape plate
+	if (shape->get_size() == 1) {
+		shape->set_head(nullptr);
+		shape->set_tail(nullptr);
+	}
+	else {
+		shape->get_tail()->set_next_shape(shape->get_head()->get_next_shape());
+		shape->set_head(shape->get_head()->get_next_shape());
+		shape->get_head()->set_prev_shape(shape->get_tail());
+	}
+	shape->set_size(shape->get_size() - 1);
+	delete supp;
+}
+
+void Plateau::supprimer_right(Plateau* color, Plateau* shape)
+{
+	// delete trace from main plate
+	shape_node* supp = tail;
+	if (size == 1) {
+		head = nullptr;
+		tail = nullptr;
+	}
+	else {
+		shape_node* prv = tail->get_prev_color();
+		while (prv->get_next() != tail) {
+			prv = prv->get_next();
+		}
+		tail = prv;
+		tail->set_next(head);
+	}
+	size--;
+
+	// delete trace from color plate
+	if (color->get_size() == 1) {
+		color->set_head(nullptr);
+		color->set_tail(nullptr);
+	}
+	else {
+		color->set_tail(supp->get_prev_color());
+		color->get_tail()->set_next_color(supp->get_next_color());
+		color->get_head()->set_prev_color(color->get_tail());
+	}
+	color->set_size(color->get_size() - 1);
+
+	// delete trace from shape plate
+	if (shape->get_size() == 1) {
+		shape->set_head(nullptr);
+		shape->set_tail(nullptr);
+	}
+	else {
+		shape->set_tail(supp->get_prev_shape());
+		shape->get_tail()->set_next_shape(supp->get_next_shape());
+		shape->get_head()->set_prev_shape(shape->get_tail());
+	}
+	shape->set_size(shape->get_size() - 1);
+	delete supp;
 
 
 }
@@ -276,5 +372,8 @@ void Plateau::afficher(bool dis_last = false)
 		temp->get_piece().afficher();
 		temp = temp->get_next();
 	}
+}
+void Plateau::set_size(int s) {
+	this->size = s;
 }
 

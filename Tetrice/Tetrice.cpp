@@ -22,7 +22,9 @@ static bool s_finished = false;
 
 int main() {
 
-    Game g;
+    Party* p = new Party(3);
+    
+    //Game g;
     _getch();
     // Create a new thread and pass the function to be executed
     //std::thread t(threadFunction);%
