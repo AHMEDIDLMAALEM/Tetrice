@@ -169,8 +169,10 @@ public:
 				next_pieces.afficher(true);
 				using_cursor = false;
 
-
-
+				/////////////////////////////////////////////////////
+				///      render the colors and shapes lists       ///
+				/////////////////////////////////////////////////////
+				render_colorsANDshapes();
 
 				
 			}
@@ -282,49 +284,8 @@ public:
 				/////////////////////////////////////////////////////
 				///      render the colors and shapes lists       ///
 				/////////////////////////////////////////////////////
-		
-				Menu::gotoxy(0, 3+6, "                                    ");
-				Menu::gotoxy(0, 4+6, "                                    ");
-				Menu::gotoxy(0, 5+6, "                                    ");
-				Menu::gotoxy(0, 6+6, "                                    ");
-				Menu::gotoxy(0, 7+6, "                                    ");
-				Menu::gotoxy(0, 8+6, "                                    ");
-				Menu::gotoxy(0, 9+6, "                                    ");
-				Menu::gotoxy(0, 16, "                                    ");
-				Menu::gotoxy(0, 17, "                                    ");
-				Menu::gotoxy(0, 18, "                                    ");
-				Menu::gotoxy(0, 9, "____________colors___________\n");
-				for (int i = 0; i < 4; i++)
-				{
-					
-					shape_node * tmp = colors_heads[i].get_head();
-					shape_node* tail = colors_heads[i].get_tail();
-					do
-					{
-						if (tmp)
-						{
-							tmp->get_piece().afficher();
-							tmp = tmp->get_next_color();
-						}
-						
-					} while (tmp != colors_heads[i].get_head());
-					cout << endl;
-				}
-				cout << "______________sahpes____________\n";
-				for (int i = 0; i < 4; i++)
-				{
-					shape_node* tmp = shapes_heads[i].get_head();
-					do
-					{
-						if (tmp)
-						{
-							tmp->get_piece().afficher();
-							tmp = tmp->get_next_shape();
-						}
-
-					} while (tmp != shapes_heads[i].get_head());
-					cout << endl;
-				}
+				render_colorsANDshapes();
+				
 				
 			}
 
@@ -334,6 +295,50 @@ public:
 		std::cout << "\nDEBUGGING: tetris exit";
 		_getch();
 		return -1;
+	}
+	void render_colorsANDshapes() {
+		Menu::gotoxy(0, 3 + 6, "                                    ");
+		Menu::gotoxy(0, 4 + 6, "                                    ");
+		Menu::gotoxy(0, 5 + 6, "                                    ");
+		Menu::gotoxy(0, 6 + 6, "                                    ");
+		Menu::gotoxy(0, 7 + 6, "                                    ");
+		Menu::gotoxy(0, 8 + 6, "                                    ");
+		Menu::gotoxy(0, 9 + 6, "                                    ");
+		Menu::gotoxy(0, 16, "                                    ");
+		Menu::gotoxy(0, 17, "                                    ");
+		Menu::gotoxy(0, 18, "                                    ");
+		Menu::gotoxy(0, 9, "____________colors___________\n");
+		for (int i = 0; i < 4; i++)
+		{
+
+			shape_node* tmp = colors_heads[i].get_head();
+			shape_node* tail = colors_heads[i].get_tail();
+			do
+			{
+				if (tmp)
+				{
+					tmp->get_piece().afficher();
+					tmp = tmp->get_next_color();
+				}
+
+			} while (tmp != colors_heads[i].get_head());
+			cout << endl;
+		}
+		cout << "______________sahpes____________\n";
+		for (int i = 0; i < 4; i++)
+		{
+			shape_node* tmp = shapes_heads[i].get_head();
+			do
+			{
+				if (tmp)
+				{
+					tmp->get_piece().afficher();
+					tmp = tmp->get_next_shape();
+				}
+
+			} while (tmp != shapes_heads[i].get_head());
+			cout << endl;
+		}
 	}
 
 	void player_action(bool ai = false,bool dec = false,bool score = false) {
