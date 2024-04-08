@@ -23,7 +23,7 @@ static bool s_finished = false;
 int main() {
 
     
-    Game g;
+     Game g;
     _getch();
     // Create a new thread and pass the function to be executed
     //std::thread t(threadFunction);%
@@ -37,6 +37,69 @@ int main() {
     //t.join();
 
     //std::cout << "Hello from main!\n";
+
+
+   // Plateau L, HS[4], HC[4];
+   // piece h(Cercle, Red);
+   // piece a(Triangle, Yellow);
+   // piece b(Rhombus, Red);
+   // piece c(Square, Blue);
+   // piece d(Triangle, Green);
+   // piece e(Cercle, Red);
+   // piece f(Rhombus, Blue);
+   // piece g(Cercle, Red);
+
+   // L.inserer_left(a);
+   // /*HC[(int)a.get_color()-1].inserer_left_colors(&L, a);
+   // HS[(int)a.get_shape()-1].inserer_left_shapes(&L, a);*/
+
+   // L.inserer_left(b);
+   // /*HC[(int)b.get_color() - 1].inserer_left_colors(&L, b);
+   // HS[(int)b.get_shape() - 1].inserer_left_shapes(&L, b);*/
+   // L.inserer_left(c);
+   // /*HC[(int)c.get_color() - 1].inserer_left_colors(&L, c);
+   // HS[(int)c.get_shape() - 1].inserer_left_shapes(&L, c);*/
+   // L.inserer_left(d);
+   // /*HC[(int)d.get_color() - 1].inserer_left_colors(&L, d);
+   // HS[(int)d.get_shape() - 1].inserer_left_shapes(&L, d);*/
+
+   // L.inserer_left(e);
+   ///* HC[(int)e.get_color() - 1].inserer_left_colors(&L, e);
+   // HS[(int)e.get_shape() - 1].inserer_left_shapes(&L, e);*/
+   // L.inserer_left(f);
+   // /*HC[(int)f.get_color() - 1].inserer_left_colors(&L, f);
+   // HS[(int)f.get_shape() - 1].inserer_left_shapes(&L, f);*/
+   // L.inserer_left(g);
+   ///* HC[(int)g.get_color() - 1].inserer_left_colors(&L, g);
+   // HS[(int)g.get_shape() - 1].inserer_left_shapes(&L, g);*/
+   // L.inserer_left(h);
+   // /*HC[(int)h.get_color() - 1].inserer_left_colors(&L, h);
+   // HS[(int)h.get_shape() - 1].inserer_left_shapes(&L, h);*/
+   // shape_node* temp = L.get_head();
+   // for (int i = 0; i < L.get_size(); i++) {
+   //     int k = (int)temp->get_piece().get_color()-1, j = (int)temp->get_piece().get_shape()-1;
+   //     HS[j].inserer_right_shapes(&L, temp->get_piece());
+   //     HC[k].inserer_right_colors(&L, temp->get_piece());
+   //     temp = temp->get_next();
+   // }
+   // L.afficher(false);
+   // std::cout << std::endl;
+   // L.decalage_shapes(Cercle, HS, HC);
+   // L.afficher(false);
+   // std::cout << std::endl;
+   // for (int i = 0; i < 4; i++) {
+   //     HS[i].afficher(false);
+   //     std::cout << std::endl;
+
+   // }
+   // for (int i = 0; i < 4; i++) {
+   //     HC[i].afficher(false);
+   //     std::cout << std::endl;
+
+   // }
+
+
+
 
     return 0;
 }

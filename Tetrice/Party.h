@@ -95,6 +95,7 @@ public:
 			Menu::gotoxy(2, 2, ' ');
 			//Menu::gotoxy(5, 5, "DEBUGGING: after afficher goto");
 			game_pieces.afficher(false);
+			
 			break;
 		case 2:
 			save_game();
@@ -205,6 +206,8 @@ public:
 			}
 
 		} while (in != 'e');
+		Menu::gotoxy(0, 12, "choice=");
+		std::cout << choice;
 		Menu::gotoxy(0, 4, "                                            \n                                                                           ");
 		/*
 		note to saad :
@@ -219,6 +222,38 @@ public:
 		7 => decallage triangle;
 		
 		*/
+
+		switch (choice)
+		{
+		case (int)Red-1:
+			this->game_pieces.decalage_colors(Red, shapes_heads, colors_heads);
+			break;
+		case (int)Green-1:
+			this->game_pieces.decalage_colors(Green, shapes_heads, colors_heads);
+			break;
+		case (int)Yellow-1:
+			this->game_pieces.decalage_colors(Yellow, shapes_heads, colors_heads);
+			break;
+		case (int)Blue-1:
+			this->game_pieces.decalage_colors(Blue, shapes_heads, colors_heads);
+			break;
+		
+		case (int)Cercle+3:
+			this->game_pieces.decalage_shapes(Cercle, shapes_heads, colors_heads);
+			break;
+		case (int)Rhombus+3:
+			this->game_pieces.decalage_shapes(Rhombus, shapes_heads, colors_heads);
+			break;
+		case (int)Square+3:
+			this->game_pieces.decalage_shapes(Square, shapes_heads, colors_heads);
+			break;
+		case (int)Triangle+3:
+			this->game_pieces.decalage_shapes(Triangle, shapes_heads, colors_heads);
+			break;
+		default:
+			break;
+		}
+		
 	}
 	int Tetriste() {
 		this->Type = tetriste;
@@ -257,6 +292,7 @@ public:
 				Menu::gotoxy(2, 2, ' ');
 				//Menu::gotoxy(5, 5, "DEBUGGING: after afficher goto");
 				game_pieces.afficher(false);
+				
 				//Menu::gotoxy(5, 6, "DEBUGGING: after afficher fasle");
 				using_cursor = false;
 
@@ -282,16 +318,16 @@ public:
 				/////////////////////////////////////////////////////
 				///      render the colors and shapes lists       ///
 				/////////////////////////////////////////////////////
-		/*
-				Menu::gotoxy(3, 3+3, "                                    ");
-				Menu::gotoxy(3, 4+3, "                                    ");
-				Menu::gotoxy(3, 5+3, "                                    ");
-				Menu::gotoxy(3, 6+3, "                                    ");
-				Menu::gotoxy(3, 7+3, "                                    ");
-				Menu::gotoxy(3, 8+3, "                                    ");
-				Menu::gotoxy(3, 9+3, "                                    ");
-				Menu::gotoxy(3, 13, "                                    ");
-				Menu::gotoxy(3, 6, "____________colors___________\n");
+		
+				/*Menu::gotoxy(3, 3+6, "                                    ");
+				Menu::gotoxy(3, 4+6, "                                    ");
+				Menu::gotoxy(3, 5+6, "                                    ");
+				Menu::gotoxy(3, 6+6, "                                    ");
+				Menu::gotoxy(3, 7+6, "                                    ");
+				Menu::gotoxy(3, 8+6, "                                    ");
+				Menu::gotoxy(3, 9+6, "                                    ");
+				Menu::gotoxy(3, 16, "                                    ");
+				Menu::gotoxy(3, 9, "____________colors___________\n");
 				for (int i = 0; i < 4; i++)
 				{
 					
@@ -322,8 +358,8 @@ public:
 
 					} while (tmp != shapes_heads[i].get_tail());
 					cout << endl;
-				}
-				*/
+				}*/
+				
 			}
 
 		}
@@ -350,7 +386,7 @@ public:
 				pause_menu(ai,score);
 				break;
 			case 'd':
-				if (dec)
+				if (true)
 				{
 					chose_decallage();
 				}

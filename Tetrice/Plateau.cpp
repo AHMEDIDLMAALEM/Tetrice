@@ -275,6 +275,68 @@ void Plateau::delete_node()
 	////shape
 }
 
+void Plateau::decalage_shapes(shape p, Plateau HS[4], Plateau HC[4])
+{
+	if (size != 0) {
+		int i = (int)(p - 1);
+		shape_node* temp = HS[i].get_head(), * inter = HS[i].get_head();
+
+		piece p = temp->get_piece();
+		do {
+			temp = temp->get_next_shape();
+			inter->set_piece(temp->get_piece());
+			inter = temp;
+
+		} while (temp != HS[i].get_head());
+		HS[i].get_tail()->set_piece(p);
+
+		for (int k = 0; k < 4; k++) {
+			HC[k].set_head(nullptr);
+			HC[k].set_tail(nullptr);
+			HC[k].set_size(0);
+
+		}
+
+		temp = head;
+		for (int k = 0; k < size; k++) {
+			int i = ((int)temp->get_piece().get_color() - 1);
+			HC[i].inserer_right_colors(this ,temp->get_piece());
+			temp = temp->get_next();
+		}
+	}
+}
+
+void Plateau::decalage_colors(shape_color p, Plateau HS[4], Plateau HC[4])
+{
+	if (size != 0) {
+		int i = (int)(p - 1);
+		shape_node* temp = HC[i].get_head(), * inter = HC[i].get_head();
+
+		piece p = temp->get_piece();
+		do {
+			temp = temp->get_next_shape();
+			inter->set_piece(temp->get_piece());
+			inter = temp;
+
+		} while (temp != HS[i].get_head());
+		HC[i].get_tail()->set_piece(p);
+
+		for (int k = 0; k < 4; k++) {
+			HS[k].set_head(nullptr);
+			HS[k].set_tail(nullptr);
+			HS[k].set_size(0);
+
+		}
+
+		temp = head;
+		for (int k = 0; k < size; k++) {
+			int i = ((int)temp->get_piece().get_color() - 1);
+			HS[i].inserer_right_shapes(this, temp->get_piece());
+			temp = temp->get_next();
+		}
+	}
+}
+
 void Plateau::supprimer_left(Plateau* color, Plateau* shape)
 {
 	// delete trace from main plate
