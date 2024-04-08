@@ -282,16 +282,18 @@ public:
 				/////////////////////////////////////////////////////
 				///      render the colors and shapes lists       ///
 				/////////////////////////////////////////////////////
-		/*
-				Menu::gotoxy(3, 3+3, "                                    ");
-				Menu::gotoxy(3, 4+3, "                                    ");
-				Menu::gotoxy(3, 5+3, "                                    ");
-				Menu::gotoxy(3, 6+3, "                                    ");
-				Menu::gotoxy(3, 7+3, "                                    ");
-				Menu::gotoxy(3, 8+3, "                                    ");
-				Menu::gotoxy(3, 9+3, "                                    ");
-				Menu::gotoxy(3, 13, "                                    ");
-				Menu::gotoxy(3, 6, "____________colors___________\n");
+		
+				Menu::gotoxy(0, 3+6, "                                    ");
+				Menu::gotoxy(0, 4+6, "                                    ");
+				Menu::gotoxy(0, 5+6, "                                    ");
+				Menu::gotoxy(0, 6+6, "                                    ");
+				Menu::gotoxy(0, 7+6, "                                    ");
+				Menu::gotoxy(0, 8+6, "                                    ");
+				Menu::gotoxy(0, 9+6, "                                    ");
+				Menu::gotoxy(0, 16, "                                    ");
+				Menu::gotoxy(0, 17, "                                    ");
+				Menu::gotoxy(0, 18, "                                    ");
+				Menu::gotoxy(0, 9, "____________colors___________\n");
 				for (int i = 0; i < 4; i++)
 				{
 					
@@ -305,7 +307,7 @@ public:
 							tmp = tmp->get_next_color();
 						}
 						
-					} while (tmp != tail);
+					} while (tmp != colors_heads[i].get_head());
 					cout << endl;
 				}
 				cout << "______________sahpes____________\n";
@@ -320,10 +322,10 @@ public:
 							tmp = tmp->get_next_shape();
 						}
 
-					} while (tmp != shapes_heads[i].get_tail());
+					} while (tmp != shapes_heads[i].get_head());
 					cout << endl;
 				}
-				*/
+				
 			}
 
 		}
