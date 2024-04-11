@@ -1,6 +1,14 @@
 #include "Plateau.h"
 #include <conio.h>
 
+Plateau::Plateau(int siz)
+{
+	head = NULL;
+	tail = NULL;
+	size = siz;
+}
+
+
 Plateau::Plateau()
 {
 	head = NULL;
@@ -335,6 +343,26 @@ void Plateau::decalage_colors(shape_color p, Plateau HS[4], Plateau HC[4])
 			temp = temp->get_next();
 		}
 	}
+}
+
+string Plateau::PlateauToJson()
+{
+	shape_node* temp = head;
+	string json = "\"Plateau\": {\n\t\t\t\"size\":" + to_string(size) + ",\n\t\t\t\"Pieces\":[\n";
+	
+	
+
+	for (int i = 0; i < size-1; ++i) {
+		json += "\t\t\t\t "+temp->get_piece().PieceToJson()+",\n";
+		temp = temp->get_next();
+	}
+	json += "\t\t\t\t " + temp->get_piece().PieceToJson() + "\n";
+
+
+	json += "\n\t\t\t  ]\n\t\t}\n\t}\n";
+
+	return json;
+
 }
 
 void Plateau::supprimer_left(Plateau* color, Plateau* shape)

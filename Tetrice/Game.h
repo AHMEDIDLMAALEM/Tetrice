@@ -67,9 +67,13 @@ class Game
 		}
 		void load_games() {
 			system("cls");
-			std::cout <<std::endl<< "this is a load games,we should be able to chose a record";
+			
+			std::cout << std::endl << "this is a load games,we should be able to chose a record";
+
 			_getch();
 		}
+
+		
 		void show_scores() {
 			system("cls");
 			std::cout <<std::endl<< "this is a show game scores,we should be able to show best 10 scores";

@@ -6,6 +6,8 @@
 #include "Menu.h"
 #include <chrono>
 #include "Plateau.h"
+#include <string>
+#include <fstream>
 typedef enum {
 	ni,
 	tetriste,
@@ -33,7 +35,16 @@ private:
 	std::string player;
 	bool using_cursor = false;
 	party_type Type = ni;
+	//for saving 
+	int saving_time;
 public:
+	/*Party P(int s, int time , int typ , int siz) {
+		score = s;
+		party_time = std::chrono::seconds(time);
+		Type = (party_type)typ;
+		game_pieces = Plateau(siz);
+
+	}*/
 	Party(int choice) {
 		system("cls");
 		switch (choice)
@@ -108,8 +119,32 @@ public:
 		}
 	}
 	void save_game() {
-		
-		std::cout << "\nDEBUGGING: Game was saved";
+		std::string file_name;
+		system("cls");
+		std::cout << "\nWhat would you like to call your game: ";
+		std::cin >> file_name;
+		file_name += ".json";
+				
+		{
+			// Ouverture du fichier JSON en mode écriture
+			std::ofstream file(file_name);
+
+			// Vérification que le fichier a bien été ouvert
+			if (file.is_open()) {
+				std::string Json;
+				Json = "{\n\t\"Party\":{\n\t\t\"Type\":"+to_string((int)Type) + ",\n\t\t\"Timer\":" + to_string(saving_time) + ",\n\t\t\"score\":" + to_string(score) + ",\n\t\t";
+				Json += game_pieces.PlateauToJson()+'}';
+				file << Json;
+
+				std::cout << "Game Was Saved" << std::endl;
+
+				// Fermeture du fichier
+				file.close(); 
+			}
+			else {
+				std::cerr << "Erreur lors de l'ouverture du fichier." << std::endl;
+			}
+		}
 		exited = true;
 		
 		_getch();
@@ -394,7 +429,7 @@ public:
 				pause_menu(ai,score);
 				break;
 			case 'd':
-				if (true)
+				if (!dec)
 				{
 					chose_decallage();
 				}
@@ -471,6 +506,7 @@ public:
 				Menu::gotoxy(Menu::timer_x, Menu::timer_y-1, "     ");
 				Menu::gotoxy(Menu::timer_x, Menu::timer_y-1,' ');
 				cout << --time;
+				saving_time = time;
 				if (this->Type != tetriste && this->Type != tepatrice)
 				{
 					Menu::gotoxy(14, Menu::timer_y - 1, ' ');
@@ -492,6 +528,67 @@ public:
 
 		}
 		//end game & timer
+	}
+
+
+	static void Upload_Party() {
+	//	Party P(;
+	//	// Ouvrir le fichier JSON
+	//	ifstream file("safae.json");
+
+	//	// Vérifier si le fichier est ouvert correctement
+	//	if (!file.is_open()) {
+	//		cerr << "Erreur: Impossible d'ouvrir le fichier." << endl;
+	//		return;
+	//	}
+
+	//	// Lire le contenu du fichier dans une chaîne
+	//	string json_data;
+	//	string line;
+	//	while (getline(file, line)) {
+	//		json_data += line;
+	//	}
+
+	//	// Fermer le fichier après la lecture
+	//	file.close();
+
+	//	// Parsing des données JSON
+	//	size_t pos = json_data.find("\"Timer\":");
+	//	party_time = stoi(json_data.substr(pos + 8, json_data.find(',', pos) - pos - 8));
+
+	//	pos = json_data.find("\"score\":");
+	//	score = stoi(json_data.substr(pos + 8, json_data.find(',', pos) - pos - 8));
+
+	//	pos = json_data.find("\"size\":");
+	//	party.plateau.size = stoi(json_data.substr(pos + 7, json_data.find(',', pos) - pos - 7));
+
+	//	pos = json_data.find("\"Pieces\":");
+	//	pos = json_data.find('[', pos);
+	//	size_t end_pos = json_data.find(']', pos);
+	//	string pieces_data = json_data.substr(pos, end_pos - pos + 1);
+
+	//	// Parsing des pièces
+	//	pos = pieces_data.find("{");
+	//	int index = 0;
+	//	while (pos != string::npos && index < 6) { // Assurer de ne pas dépasser la taille maximale
+	//		Piece piece;
+	//		size_t end_piece_pos = pieces_data.find('}', pos);
+	//		string piece_data = pieces_data.substr(pos, end_piece_pos - pos + 1);
+
+	//		size_t shape_pos = piece_data.find("\"shape\":");
+	//		piece.shape = stoi(piece_data.substr(shape_pos + 8, piece_data.find(',', shape_pos) - shape_pos - 8));
+
+	//		size_t color_pos = piece_data.find("\"color\":");
+	//		piece.color = stoi(piece_data.substr(color_pos + 8, piece_data.find('}', color_pos) - color_pos - 8));
+
+	//		party.plateau.pieces[index++] = piece;
+
+	//		pos = pieces_data.find("{", end_piece_pos);
+	//	}
+	//}
+
+
+
 	}
 
 };

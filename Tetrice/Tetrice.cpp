@@ -50,29 +50,32 @@ int main() {
    // piece g(Cercle, Red);
 
    // L.inserer_left(a);
-   // /*HC[(int)a.get_color()-1].inserer_left_colors(&L, a);
-   // HS[(int)a.get_shape()-1].inserer_left_shapes(&L, a);*/
+   //// /*HC[(int)a.get_color()-1].inserer_left_colors(&L, a);
+   //// HS[(int)a.get_shape()-1].inserer_left_shapes(&L, a);*/
 
    // L.inserer_left(b);
-   // /*HC[(int)b.get_color() - 1].inserer_left_colors(&L, b);
-   // HS[(int)b.get_shape() - 1].inserer_left_shapes(&L, b);*/
+   //// /*HC[(int)b.get_color() - 1].inserer_left_colors(&L, b);
+   //// HS[(int)b.get_shape() - 1].inserer_left_shapes(&L, b);*/
    // L.inserer_left(c);
-   // /*HC[(int)c.get_color() - 1].inserer_left_colors(&L, c);
-   // HS[(int)c.get_shape() - 1].inserer_left_shapes(&L, c);*/
+   //// /*HC[(int)c.get_color() - 1].inserer_left_colors(&L, c);
+   //// HS[(int)c.get_shape() - 1].inserer_left_shapes(&L, c);*/
    // L.inserer_left(d);
-   // /*HC[(int)d.get_color() - 1].inserer_left_colors(&L, d);
-   // HS[(int)d.get_shape() - 1].inserer_left_shapes(&L, d);*/
+   //// /*HC[(int)d.get_color() - 1].inserer_left_colors(&L, d);
+   //// HS[(int)d.get_shape() - 1].inserer_left_shapes(&L, d);*/
 
    // L.inserer_left(e);
-   ///* HC[(int)e.get_color() - 1].inserer_left_colors(&L, e);
-   // HS[(int)e.get_shape() - 1].inserer_left_shapes(&L, e);*/
+   /////* HC[(int)e.get_color() - 1].inserer_left_colors(&L, e);
+   //// HS[(int)e.get_shape() - 1].inserer_left_shapes(&L, e);*/
    // L.inserer_left(f);
-   // /*HC[(int)f.get_color() - 1].inserer_left_colors(&L, f);
-   // HS[(int)f.get_shape() - 1].inserer_left_shapes(&L, f);*/
+   //// /*HC[(int)f.get_color() - 1].inserer_left_colors(&L, f);
+   //// HS[(int)f.get_shape() - 1].inserer_left_shapes(&L, f);*/
    // L.inserer_left(g);
-   ///* HC[(int)g.get_color() - 1].inserer_left_colors(&L, g);
-   // HS[(int)g.get_shape() - 1].inserer_left_shapes(&L, g);*/
+   /////* HC[(int)g.get_color() - 1].inserer_left_colors(&L, g);
+   //// HS[(int)g.get_shape() - 1].inserer_left_shapes(&L, g);*/
    // L.inserer_left(h);
+   // L.afficher(false);
+   // std::cout << std::endl;
+   // std::cout<<L.PlateauToJson();
    // /*HC[(int)h.get_color() - 1].inserer_left_colors(&L, h);
    // HS[(int)h.get_shape() - 1].inserer_left_shapes(&L, h);*/
    // shape_node* temp = L.get_head();

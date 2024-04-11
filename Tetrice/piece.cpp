@@ -93,6 +93,15 @@ piece::~piece() {
      // Rétablissez la couleur par défaut
      cout << "\033[0m  ";
  }
+
+ string piece::PieceToJson()
+ {
+     string json = "{\n";
+     json += "\t\t\t\t\"shape\": " + to_string((int)_shape) + " ,\n";
+     json += "\t\t\t\t\"color\": " + to_string((int)_color) + "\n";
+     json += "\t\t\t\t}";
+     return json;
+ }
  
 
 
