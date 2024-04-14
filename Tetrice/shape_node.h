@@ -11,10 +11,14 @@ private:
     shape_node* next_color;
     shape_node* prev_color;
     shape_node* prev_shape;
+    
 
 public:
+    int imp = 0;
+    int icp = 0;
+    int isp = 0;
     // constructur
-    shape_node(piece PI, shape_node*  , shape_node*  , shape_node* , shape_node*, shape_node* );
+    shape_node(piece PI , shape_node*  , shape_node*  , shape_node* , shape_node*, shape_node* );
 
     // getters
    

@@ -54,7 +54,7 @@ void Plateau::inserer_right(piece P)
 		tail->set_next(NEW);
 		tail = NEW;
 	}
-	size++;
+	NEW->imp = size++;
 }
 void Plateau::inserer_right_shapes(Plateau * p,piece P)
 {
@@ -77,7 +77,7 @@ void Plateau::inserer_right_shapes(Plateau * p,piece P)
 		this->tail->set_next_shape(new_ptr);
 		this->tail = new_ptr;
 	}
-	size++;
+	new_ptr->isp = size++;
 	
 }
 void Plateau::inserer_right_colors(Plateau* p, piece P) 
@@ -103,7 +103,7 @@ void Plateau::inserer_right_colors(Plateau* p, piece P)
 		this->tail->set_next_color(new_ptr);
 		this->tail = new_ptr;
 	}
-	size++;
+	new_ptr->icp = size++;
 
 }
 void Plateau::inserer_left_shapes(Plateau* p, piece P)
@@ -129,6 +129,12 @@ void Plateau::inserer_left_shapes(Plateau* p, piece P)
 		this->tail->set_next_shape(new_ptr);
 		this->head = new_ptr;
 	}
+	new_ptr->isp = 0;
+	for (int i = 0; i < size + 1; i++)
+	{
+		new_ptr->isp = i;
+		new_ptr = new_ptr->get_next_shape();
+	}
 	size++;
 }
 void Plateau::inserer_left_colors(Plateau* p, piece P)
@@ -153,6 +159,11 @@ void Plateau::inserer_left_colors(Plateau* p, piece P)
 		this->tail->set_next_color(new_ptr);
 		this->head = new_ptr;
 	}
+	for (int i = 0; i < size + 1; i++)
+	{
+		new_ptr->icp = i;
+		new_ptr = new_ptr->get_next_color();
+	}
 	size++;
 }
 
@@ -170,6 +181,11 @@ void Plateau::inserer_left(piece P)
 		tail->set_next(NEW);
 
 		head = NEW;
+	}
+	for (int i = 0; i < size + 1; i++)
+	{
+		NEW->imp = i;
+		NEW = NEW->get_next();
 	}
 	size++;
 }
