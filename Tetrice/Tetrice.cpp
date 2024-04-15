@@ -21,9 +21,11 @@ static bool s_finished = false;
 //    }
 //    std::cout << "hi from thread ";
 //}
+// g++ -o myprogram main.cpp -lpthread
 
 int main() {
 
+//<<<<<<< HEAD
     //Game g;
     //_getch();
     Plateau* myPlateau = new Plateau();
@@ -34,6 +36,24 @@ int main() {
     myPlateau->afficher(false);
     Design design;
     design.render(myPlateau);
+//=======
+    //Party p(3);
+    //Game g;
+    //_getch();
+    // Create a new thread and pass the function to be executed
+    //std::thread t(threadFunction);%
+    //char choice = _getch();
+    //if (choice == 'p')
+    //{
+    //    s_finished = true;
+    //}
+
+    //// Wait for the thread to finish execution
+    //t.join();
+
+    //std::cout << "Hello from main!\n";
+
+>>>>>>> ahmed's-work
     return 0;
 }
 

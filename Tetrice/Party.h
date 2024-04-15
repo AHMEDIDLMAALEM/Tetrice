@@ -14,7 +14,7 @@ typedef enum {
 	tavalide,
 	Bonus
 }party_type;
-
+ 
 
 
 class Party
@@ -24,7 +24,6 @@ private:
 	Plateau next_pieces ;
 	Plateau colors_heads[4];
 	Plateau shapes_heads[4];
-
 	int score = 0;
 	std::chrono::seconds party_time = std::chrono::seconds(120);
 	int i = 0;
@@ -42,13 +41,13 @@ public:
 			Tetriste();
 			break;
 		case 2:
-			std::cout << "Tépatrice";
+			std::cout << "Tepatrice";
 			break;
 		case 3:
-			std::cout << "Técontent";
+			Tecontent();
 			break;
 		case 4:
-			std::cout << "Tavalidé";
+			std::cout << "Tavalide";
 			break;
 		case 5:
 			std::cout << "Bonus";
@@ -66,13 +65,13 @@ public:
 			Tetriste();
 			break;
 		case 2:
-			std::cout << "Tépatrice";
+			std::cout << "Tepatrice";
 			break;
 		case 3:
-			std::cout << "Técontent";
+			std::cout << "Tecontent";
 			break;
 		case 4:
-			std::cout << "Tavalidé";
+			std::cout << "Tavalide";
 			break;
 		case 5:
 			std::cout << "Bonus";
@@ -82,7 +81,7 @@ public:
 		_getch();
 	}
 	
-	void pause_menu() {
+	void pause_menu(bool ai =false,bool score = false) {
 		std::string options[] = {"Continue","Save Game","Exit"};
 		Menu m(options, 3);
 		int choice = m.get_choice();
@@ -90,11 +89,17 @@ public:
 		{
 		case 1:
 			paused = false;
+			system("cls");
+			init_scene(0, ai, score);
+			Menu::gotoxy(2, 2, ' ');
+			//Menu::gotoxy(5, 5, "DEBUGGING: after afficher goto");
+			game_pieces.afficher(false);
 			break;
 		case 2:
 			save_game();
 			break;
 		case 3:
+			paused = true;
 			exited = true;
 		default:
 			break;
@@ -107,61 +112,474 @@ public:
 		
 		_getch();
 	}
-	int Tetriste() {
-		this->Type = tetriste;
+	int Tecontent() {
+		this->Type = tecontent;
 		//std::cout << "\nDEBUGGING: start";
 		/*
 			***tag : Wonderful Code .SOF.
-			usual std::thread(func_name); didn't work 
+			usual std::thread(func_name); didn't work
 		*/
-		init_scene(1);
-		std::thread thread_object(&Party::handle_input,this);
-		int lig = 2;
-		
+		init_scene(1,false,true);
+		std::thread thread_object(&Party::handle_time, this);
+
 		while (!exited)
 		{
 			while (!paused) {
-				//player input 
-				switch (_getch())
-				{
-				case 'g':
-					//add right next_piece to game pieces 
-					this->game_pieces.inserer_left(next_pieces.get_tail()->get_piece());
-					// add it to the left of color and shape plates
-					break;
-				case 'd':
-					//add right next_piece to game pieces 
-					this->game_pieces.inserer_right(next_pieces.get_tail()->get_piece());
-					// add it to the right of color and shape plates
-					break;
-				}
-				this->next_pieces.supprimer_right();
-				/*Menu::gotoxy(lig, ++lig, ' ');
-				this->next_pieces.afficher(false);
-				cout << " .. ";
-				this->game_pieces.afficher(false);*/
+				////////////////////////////////////////////////
+				///    handle player input and upadates      ///
+				///////////////////////////////////////////////
+				player_action(false,true,true);
 
+				//evaluate plate and delete triplets
 
-				
 				//update list and score delete triplets and all 
-				 
-				
+
+
 				// and show it on the screen
-				// wait for cursor 
-				while (using_cursor){}
+
+
+
+				////////////////////////////////////////////
+				///    Render game pieces in scene      ///
+				///////////////////////////////////////////
+				while (using_cursor) {}
 				using_cursor = true;
 				// erase old game pieces from console and show new state
-				Menu::gotoxy(2, 2, "                                    ");
+				Menu::gotoxy(2, 2, "                                          ");
 				Menu::gotoxy(2, 2, ' ');
 				//Menu::gotoxy(5, 5, "DEBUGGING: after afficher goto");
 				game_pieces.afficher(false);
 				//Menu::gotoxy(5, 6, "DEBUGGING: after afficher fasle");
 				using_cursor = false;
+
+
+
+
+
+
+				/////////////////////////////////////////////////////
+				///    Render and update  next pieces in scene    ///
+				/////////////////////////////////////////////////////
+				this->next_pieces.inserer_left(piece(4, 4));
+				while (using_cursor) {}
+				using_cursor = true;
+				Menu::gotoxy(0, 0, "                  ");
+				Menu::gotoxy(0, 0, " ");
+				next_pieces.afficher(true);
+				using_cursor = false;
+
+				/////////////////////////////////////////////////////
+				///      render the colors and shapes lists       ///
+				/////////////////////////////////////////////////////
+				render_colorsANDshapes();
+
+				
+			}
+
+		}
+
+		thread_object.join();
+		std::cout << "\nDEBUGGING: tetris exit";
+		_getch();
+		return -1;
+	}
+	void chose_decallage() {
+		Menu::gotoxy(0, 4, "Chose a color or a shape :\n");
+		// print options 
+		Menu::gotoxy(0, 5, ' ');
+		cout << "\033[31m"<<"RED   "<< "\033[0m"<< "\033[32m"<<" GREEN "<< "\033[0m"<< "\033[33m"<<" YELLOW" << "\033[0m" << "\033[34m"<<" BLUE  " << "\033[0m"<<" CERCLE"<<" RHOMBU"<<" SQUARE"<<" TRIANGLE";
+
+		char in = 'a';
+		int choice = 0;
+		Menu::gotoxy(0, 5, '>');
+		do
+		{
+			in = _getch();
+			if (in == 77 && choice < 7) {
+				Menu::gotoxy(choice*7, 5, ' ');
+				Menu::gotoxy(++choice * 7, 5, '>');
+			}
+			else if(in == 75 && choice > 0)
+			{
+				Menu::gotoxy(choice * 7, 5, ' ');
+				Menu::gotoxy(--choice * 7, 5, '>');
+			}
+
+		} while (in != 'e');
+		Menu::gotoxy(0, 4, "                                            \n                                                                           ");
+		/*
+		note to saad :
+		switch based on choice :
+		0 => decallage rouge;
+		1 => decallage vert;
+		2 => decallage jaune;
+		3 => decallage blue;
+		4 => decallage cercle;
+		5 => decallage losange;
+		6 => decallage carre ;
+		7 => decallage triangle;
+		
+		*/
+		decallage_gauche(choice);
+		////////////////////////////////////////////
+		///    Render game pieces in scene      ///
+		///////////////////////////////////////////
+		
+		
+		// erase old game pieces from console and show new state
+		Menu::gotoxy(2, 2, "                                          ");
+		Menu::gotoxy(2, 2, ' ');
+		//Menu::gotoxy(5, 5, "DEBUGGING: after afficher goto");
+		game_pieces.afficher(false);
+		//Menu::gotoxy(5, 6, "DEBUGGING: after afficher fasle");
+		
+		/////////////////////////////////////////////////////
+		///      render the colors and shapes lists       ///
+		/////////////////////////////////////////////////////
+		render_colorsANDshapes();
+	}
+	void debug_copy(shape_node ** tab, int size,shape_node **res) {
+		for (size_t i = 0; i < size; i++)
+		{
+			res[i] = tab[i];
+		}
+		
+	}
+	void decallage_gauche(int choice) {
+		shape_node** gpi = new shape_node * [game_pieces.get_size()];
+		gpi = create_gpi();
+		if (choice < 4)// color
+		{
+			//////////////////////////////////////
+			//          initialisation          //
+			// ///////////////////////////////////
+			int size_cpi = colors_heads[choice].get_size();
+			
+			// etablit tout les spi
+			shape_node** spis[4];
+			for (int i = 0; i < 4; i++)
+			{
+				spis[i] = create_spi(i);
+			}
+			// eablit le cpi de coleur
+			shape_node** cpi = create_cpi(choice);
+			
+
+			//////////////////////////////////////////////////////////
+			//          sort the color and fix color head & tail          //
+			//////////////////////////////////////////////////////////
+			shape_node* first_copy = cpi[0];
+			int tmp_imp = cpi[size_cpi - 1]->imp;
+			colors_heads[choice].set_tail(first_copy);
+			colors_heads[choice].set_head(first_copy->get_next_color());
+			shape_node* debug_arr_1[16];
+			debug_copy(cpi, size_cpi, debug_arr_1);
+			for (int i = 1; i < size_cpi; i++)
+			{
+				int tmp_i = cpi[i]->imp;
+				cpi[i]->imp = first_copy->imp;
+				first_copy->imp = tmp_i;
+				cpi[i]->icp--;
+				first_copy->icp++;
+				cpi[i - 1] = cpi[i];
+
+			}
+			cpi[size_cpi - 1] = first_copy;
+			shape_node* debug_arr[16];
+			debug_copy(cpi, size_cpi,debug_arr);
+
+
+
+			//////////////////////////////////////////////////////////
+			//        sort the gpi and fix main head & tail        //
+			//////////////////////////////////////////////////////////
+			shape_node* debug_arr_gpi_1[16];
+			debug_copy(gpi, game_pieces.get_size(), debug_arr_gpi_1);
+			shape_node* prev_first_imp;
+			if (cpi[0]->imp == 0)
+			{
+				game_pieces.set_head(cpi[0]);
+				if (game_pieces.get_tail()->get_piece().get_color() == game_pieces.get_head()->get_piece().get_color())
+				{
+					prev_first_imp = gpi[cpi[0]->imp];
+					game_pieces.set_tail(prev_first_imp);
+				}
+				else
+				{
+					prev_first_imp = game_pieces.get_tail();
+				}
+
+			}
+			else
+			{
+				if (game_pieces.get_tail()->get_piece().get_color() == gpi[cpi[0]->imp - 1]->get_piece().get_color())
+				{
+					prev_first_imp = gpi[cpi[0]->imp];
+					game_pieces.set_tail(prev_first_imp);
+				}
+				else
+				{
+					prev_first_imp = gpi[cpi[0]->imp - 1];
+				}
+				
+			}
+			shape_node* first_copy_old_prev = (first_copy->get_next() == first_copy->get_next_color()) ? first_copy->get_next()->get_next_color() : first_copy->get_next();
+			if (cpi[size_cpi - 1] == game_pieces.get_tail()) {
+				cpi[size_cpi - 1]->set_next(game_pieces.get_head());
+			}
+			else
+			{
+				cpi[size_cpi - 1]->set_next(gpi[cpi[size_cpi - 1]->imp + 1]);
+			}
+			if (gpi[cpi[size_cpi - 1]->imp - 1]->get_piece().get_color() != cpi[size_cpi - 1]->get_piece().get_color())
+			{
+				gpi[cpi[size_cpi-1]->imp - 1]->get_next_color()->set_next(cpi[size_cpi - 1]);
+			}
+			else
+			{
+				gpi[cpi[size_cpi -1]->imp - 1]->get_next_color()->set_next(cpi[size_cpi - 1]);
+			}
+			gpi[cpi[size_cpi - 1]->imp] = cpi[size_cpi - 1];
+			for (int j = size_cpi - 2; j > 0; j--)
+			{
+				cpi[j]->set_next(gpi[cpi[j]->imp + 1]);
+				if (gpi[cpi[j]->imp - 1]->get_piece().get_color() != cpi[j]->get_piece().get_color())
+				{
+					gpi[cpi[j]->imp - 1]->set_next(cpi[j]);
+				}
+				else
+				{
+					gpi[cpi[j]->imp - 1]->get_next_color()->set_next(cpi[j]);
+				}
+				gpi[cpi[j]->imp] = cpi[j];
+
+
+			}
+			cpi[0]->set_next(gpi[cpi[0]->imp + 1]);
+			if (cpi[0]->imp == 0)
+			{
+				game_pieces.get_tail()->set_next(cpi[0]);
+			}
+			else
+			{
+				gpi[cpi[0]->imp - 1]->set_next(cpi[0]);
+			}
+			gpi[cpi[0]->imp] = cpi[size_cpi - 1];
+
+			shape_node* debug_arr_gpi[16];
+			debug_copy(gpi, game_pieces.get_size(), debug_arr_gpi);
+			cout << "";
+
+
+			/////////////////////////////////////////////////////////////////
+			//        sort shapes based on imp and fix head an tail        //
+			/////////////////////////////////////////////////////////////////
+			shape_node* debug_arr_shapes[4][3];
+			int size;
+			for (int i = 0; i < 4; i++)
+			{
+				size = shapes_heads[i].get_size();
+				spis[i] = mergeSort(spis[i], 0, size - 1);
+
+				debug_copy(spis[i], size, debug_arr_shapes[i]);
+				// set propper nexts and prev shapes
+				if (size)
+				{
+					spis[i][0]->set_next_shape((size >1)? spis[i][1]: spis[i][0]);
+					spis[i][0]->isp = 0;
+					spis[i][0]->set_prev_shape((size > 1) ? spis[i][size -1] : spis[i][0]);
+					for (int j = 1; j < size -1; j++)
+					{ 
+						spis[i][j]->set_next_shape(spis[i][j+1]);
+						spis[i][j]->set_prev_shape(spis[i][j - 1]);
+						spis[i][j]->isp = j;
+					}
+					spis[i][size - 1]->set_next_shape((size > 1) ? spis[i][0] : spis[i][size - 1]);
+					spis[i][size - 1]->set_prev_shape((size > 1) ? spis[i][size - 2] : spis[i][size - 1]);
+					spis[i][size - 1]->isp = size-1;
+					shapes_heads[i].set_head(spis[i][0]);
+					shapes_heads[i].set_tail(spis[i][size - 1]);
+				}
+
+				debug_copy(spis[i], size, debug_arr_shapes[i]);
+
+			}
+
+
+
+
+
+
+
+		}
+		else//shape
+		{
+			//decallage de forme d'indice choice%4
+			// etablit tout les cpi
+			shape_node** cpis[4];
+			for (int i = 0; i < 4; i++)
+			{
+				cpis[i] = create_cpi(i);
+			}
+			// eablit le spi de forme 
+			shape_node** spi = create_spi(choice % 4);
+			// DEBUGGING:check acces to he last element of each list 
+			shape_node* test = spi[spi[0]->get_prev_shape()->isp];
+			if (spi[0]->imp == 0) {
+				game_pieces.set_head(spi[1]);
+			}
+
+			//////////////////////////////////////
+			//           Traitement            //
+			// ///////////////////////////////////
+
+
+		}
+		return;
+
+	}
+	void merge(shape_node* arr[], int left, int mid, int right) {
+		int n1 = mid - left + 1;
+		int n2 = right - mid;
+
+		// Create temporary arrays
+		shape_node** L = new shape_node*[n1];
+		shape_node** R = new shape_node*[n2];
+
+		// Copy data to temporary arrays L[] and R[]
+		for (int i = 0; i < n1; i++)
+			L[i] = arr[left + i];
+		for (int j = 0; j < n2; j++)
+			R[j] = arr[mid + 1 + j];
+
+		// Merge the temporary arrays back into arr[left..right]
+		int i = 0; // Initial index of first subarray
+		int j = 0; // Initial index of second subarray
+		int k = left; // Initial index of merged subarray
+
+		while (i < n1 && j < n2) {
+			if (L[i]->imp <= R[j]->imp) {
+				arr[k] = L[i];
+				i++;
+			}
+			else {
+				arr[k] = R[j];
+				j++;
+			}
+			k++;
+		}
+
+		// Copy the remaining elements of L[], if any
+		while (i < n1) {
+			arr[k] = L[i];
+			i++;
+			k++;
+		}
+
+		// Copy the remaining elements of R[], if any
+		while (j < n2) {
+			arr[k] = R[j];
+			j++;
+			k++;
+		}
+	}
+
+	shape_node **  mergeSort(shape_node* arr[], int left, int right) {
+		if (left < right) {
+			// Same as (left+right)/2, but avoids overflow
+			int mid = left + (right - left) / 2;
+
+			// Sort first and second halves
+			mergeSort(arr, left, mid);
+			mergeSort(arr, mid + 1, right);
+
+			// Merge the sorted halves
+			merge(arr, left, mid, right);
+		}
+		return arr;
+	}
+	
+	shape_node** create_gpi() {
+		shape_node** gpi = new shape_node * [game_pieces.get_size()];
+		shape_node* tmp = game_pieces.get_head();
+		int size = game_pieces.get_size();
+		for (int i = 0; i < size; i++)
+		{
+			gpi[i] = tmp;
+			tmp = tmp->get_next();
+		}
+		return gpi;
+	}
+	shape_node** create_spi(int index) {
+		int size = shapes_heads[index].get_size();
+		shape_node** spi = new shape_node * [size];
+		shape_node* tmp = shapes_heads[index].get_head();
+		for (int i = 0; i < size; i++)
+		{
+			spi[i] = tmp;
+			tmp = tmp->get_next_shape();
+		}
+		return spi;
+	}
+	shape_node** create_cpi(int index) {
+		int size = colors_heads[index].get_size();
+		shape_node** cpi = new shape_node * [size];
+		shape_node* tmp = colors_heads[index].get_head();
+		for (int i = 0; i < size; i++)
+		{
+			cpi[i] = tmp;
+			tmp = tmp->get_next_color();
+		}
+		return cpi;
+	}
+	int Tetriste() {
+		this->Type = tetriste;
+		//std::cout << "\nDEBUGGING: start";
+		/*
+		tag : Wonderful Code .SOF.
+		usual std::thread(func_name); didn't work 
+		*/
+		init_scene(1, false, false);
+		std::thread thread_object(&Party::handle_time,this);
+		
+		while (!exited)
+		{
+			while (!paused) {
+				////////////////////////////////////////////////
+				///    handle player input and upadates      ///
+				///////////////////////////////////////////////
+				player_action(false,false,false);
+
+				//evaluate plate and delete triplets
+		
+				//update list and score delete triplets and all 
+				 
+				
+				// and show it on the screen
+				
+
+
+				////////////////////////////////////////////
+				///    Render game pieces in scene      ///
+				///////////////////////////////////////////
+				while (using_cursor){}
+				using_cursor = true;
+				// erase old game pieces from console and show new state
+				Menu::gotoxy(2, 2, "                                          ");
+				Menu::gotoxy(2, 2, ' ');
+				//Menu::gotoxy(5, 5, "DEBUGGING: after afficher goto");
+				game_pieces.afficher(false);
+				//Menu::gotoxy(5, 6, "DEBUGGING: after afficher fasle");
+				using_cursor = false;
+
+
+
 				
 				 
 				
-				// generatea  random node with random colors and shapes
-				/*piece* next_piece = new piece(4, 4);*/
+				/////////////////////////////////////////////////////
+				///    Render and update  next pieces in scene    ///
+				/////////////////////////////////////////////////////
 				this->next_pieces.inserer_left(piece(4, 4));
 				while (using_cursor){}
 				using_cursor = true;
@@ -169,6 +587,16 @@ public:
 				Menu::gotoxy(0, 0, " ");
 				next_pieces.afficher(true);
 				using_cursor = false;
+
+
+
+
+				/////////////////////////////////////////////////////
+				///      render the colors and shapes lists       ///
+				/////////////////////////////////////////////////////
+				render_colorsANDshapes();
+				
+				
 			}
 
 		}
@@ -178,9 +606,118 @@ public:
 		_getch();
 		return -1;
 	}
+	void render_colorsANDshapes() {
+		Menu::gotoxy(0, 3 + 6, "                                    ");
+		Menu::gotoxy(0, 4 + 6, "                                    ");
+		Menu::gotoxy(0, 5 + 6, "                                    ");
+		Menu::gotoxy(0, 6 + 6, "                                    ");
+		Menu::gotoxy(0, 7 + 6, "                                    ");
+		Menu::gotoxy(0, 8 + 6, "                                    ");
+		Menu::gotoxy(0, 9 + 6, "                                    ");
+		Menu::gotoxy(0, 16, "                                    ");
+		Menu::gotoxy(0, 17, "                                    ");
+		Menu::gotoxy(0, 18, "                                    ");
+		Menu::gotoxy(0, 9, "____________colors___________\n");
+		for (int i = 0; i < 4; i++)
+		{
+
+			shape_node* tmp = colors_heads[i].get_head();
+			shape_node* tail = colors_heads[i].get_tail();
+			do
+			{
+				if (tmp)
+				{
+					tmp->get_piece().afficher();
+					tmp = tmp->get_next_color();
+				}
+
+			} while (tmp != colors_heads[i].get_head());
+			cout << endl;
+		}
+		cout << "______________sahpes____________\n";
+		for (int i = 0; i < 4; i++)
+		{
+			shape_node* tmp = shapes_heads[i].get_head();
+			do
+			{
+				if (tmp)
+				{
+					tmp->get_piece().afficher();
+					tmp = tmp->get_next_shape();
+				}
+
+			} while (tmp != shapes_heads[i].get_head());
+			cout << endl;
+		}
+	}
+
+	void player_action(bool ai = false,bool dec = false,bool score = false) {
+		int index_c = (int)(next_pieces.get_tail()->get_piece().get_color() - 1);
+		int index_sh = (int)(next_pieces.get_tail()->get_piece().get_shape() - 1);
+
+		// add while to enter either g or d and ignore the other inputs 
+		char choice = 'a';
+		do {
+			using_cursor = true;
+			choice = _getch();
+			switch (choice)
+			{
+			case 'p': 
+				paused = true;
+				pause_menu(ai,score);
+				break;
+			case 'd':
+				if (dec)
+				{
+					chose_decallage();
+				}
+				break;
+			default:
+				break;
+			}
+			using_cursor = false;	
+		} while (choice != 75 && choice != 77 );
+		switch (choice)
+		{
+		case 75:
+			//add right next_piece to game pieces 
+			this->game_pieces.inserer_left(next_pieces.get_tail()->get_piece());
+			// add it to the left of color and shape plates
+			this->colors_heads[index_c].inserer_left_colors(&this->game_pieces, next_pieces.get_tail()->get_piece());
+			this->shapes_heads[index_sh].inserer_left_shapes(&this->game_pieces, next_pieces.get_tail()->get_piece());
+			this->score += this->game_pieces.supprimer3_left(&colors_heads, &shapes_heads);
+			break;
+		case 77:
+			//add right next_piece to game pieces 
+			this->game_pieces.inserer_right(next_pieces.get_tail()->get_piece());
+			// add it to the right of color and shape plates
+			this->colors_heads[index_c].inserer_right_colors(&this->game_pieces, next_pieces.get_tail()->get_piece());
+			this->shapes_heads[index_sh].inserer_right_shapes(&this->game_pieces, next_pieces.get_tail()->get_piece());
+			this->score += this->game_pieces.supprimer3_right(&(this->colors_heads), &(this->shapes_heads));
+
+			break;
+			
+		}
+		this->next_pieces.set_size(next_pieces.get_size() - 1);
+		shape_node* prv = next_pieces.get_head();
+		while (prv->get_next() != next_pieces.get_tail()) {
+			prv = prv->get_next();
+		}
+		next_pieces.set_tail(prv);
+		delete prv->get_next();
+	}
 	// next : L C
-	void init_scene(int size,bool ai = false) {
+	void init_scene(int size,bool ai ,bool score ) {
 		system("cls");
+		Menu::gotoxy(Menu::timer_x, Menu::timer_y, "                                                    ");
+		
+		Menu::gotoxy(0, Menu::timer_y - 1, ' ');
+		cout << "Time :";
+		if (score)
+		{
+		Menu::gotoxy(14, Menu::timer_y - 1, ' ');
+		cout << "Score : " << this->score;
+		}
 		//generated the waiting quee
 		for (int i = 0; i <size; i++)
 		{
@@ -191,20 +728,29 @@ public:
 		this->next_pieces.afficher(true);
 	}
 	
-	void handle_input() {
+	
+	void handle_time() {
 		//start game & timer
 		//std::chrono::seconds time_elapsed = std::chrono::seconds(0);
 		std::chrono::system_clock::time_point old;
+		int time = 120;
 		while (!exited) {
 			old = std::chrono::system_clock::now();
-			
+
 			while (!paused)
 			{
-				char in = _getch();
-				if (in == 'p' || in == 'P')
+				std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+				
+				Menu::gotoxy(Menu::timer_x, Menu::timer_y-1, "     ");
+				Menu::gotoxy(Menu::timer_x, Menu::timer_y-1,' ');
+				cout << --time;
+				if (this->Type != tetriste && this->Type != tepatrice)
 				{
-					this->paused = true;
+					Menu::gotoxy(14, Menu::timer_y - 1, ' ');
+					cout << "Score : " << this->score;
 				}
+				
+				
 			}
 			auto time_elapsed = std::chrono::system_clock::now() - old;
 			auto time_rest = this->party_time - time_elapsed;
@@ -214,7 +760,7 @@ public:
 			//std::cout << "\nDEBUGGING: time left calculated  out of 2mins  : " << std::chrono::duration_cast<std::chrono::seconds>(time_rest).count();
 			//std::cout << "\nDEBUGGING: time left affected  out of 2mins  : " << std::chrono::duration_cast<std::chrono::seconds>(time_rest).count();
 			//_getch();
-			pause_menu();
+			/*pause_menu();*/
 
 
 		}

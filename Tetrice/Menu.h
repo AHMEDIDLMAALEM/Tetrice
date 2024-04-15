@@ -6,8 +6,9 @@
 
 class Menu
 {
-	int size;
 	public:
+	const static int timer_x = 7, timer_y = 7;
+	int size;
 	Menu(std::string options[],int size) {
 		this->size = size;
 		system("cls");

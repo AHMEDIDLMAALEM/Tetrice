@@ -58,7 +58,7 @@ class Game
 		}
 		
 		void show_difficulty_menu() {
-			std::string options[] = { "Tétriste","Tépatrice","Técontent","Tavalidé","Bonus"};
+			std::string options[] = { "Tetriste","Tepatrice","Tecontent","Tavalide","Bonus"};
 
 			Menu m(options, 5);
 			Party party(m.get_choice());

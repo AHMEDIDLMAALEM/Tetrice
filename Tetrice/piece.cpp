@@ -59,6 +59,7 @@ shape_color piece::get_color() {
 piece::~piece() {
 }
 
+<<<<<<< HEAD
 piece& piece::operator=(const piece& other) {
     if (this != &other) {
         _shape = other._shape;
@@ -68,6 +69,53 @@ piece& piece::operator=(const piece& other) {
     }
     return *this;
 }
+=======
+ void piece::afficher() const {
+     switch (_color)
+     {
+     case Red:
+         cout << "\033[31m"; // Code d'échappement ANSI pour le rouge
+         break;
+     case Green:
+         cout << "\033[32m"; // Code d'échappement ANSI pour le vert
+         break;
+     case Yellow:
+         cout << "\033[33m"; // Code d'échappement ANSI pour le jaune
+         break;
+     case Blue:
+         cout << "\033[34m"; // Code d'échappement ANSI pour le bleu
+         break;
+     default:
+         break;
+     }
+
+     // Affichez la forme (ici, nous utilisons un exemple avec un cercle)
+     switch (_shape)
+     {
+     case Cercle:
+         cout << "C";
+         break;
+     case Rhombus:
+         cout << "R";
+         break;
+     case Square:
+         cout << "S";
+         break;
+     case Triangle:
+         cout << "T";
+         break;
+     default:
+         break;
+     }
+
+     // Rétablissez la couleur par défaut
+     cout << "\033[0m  ";
+ }
+ 
+
+
+
+>>>>>>> ahmed's-work
 
 void piece::afficher() const {
     switch (_color) {
