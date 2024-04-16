@@ -27,7 +27,7 @@ public:
 	void inserer_left_shapes(Plateau* p, piece P);
 	void inserer_left_colors(Plateau* p, piece P);
 	void inserer_right_colors(Plateau* p, piece P);
-	void evaluate_plate(Plateau* colors, Plateau* shapes);
+	int evaluate_plate(Plateau** colors, Plateau** shapes);
 
 	int supprimer3_left(Plateau(*color)[4], Plateau (*shape)[4]);
 	int supprimer3_right(Plateau(*color)[4], Plateau (*shape)[4]);

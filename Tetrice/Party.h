@@ -83,6 +83,7 @@ public:
 	}
 	
 	void pause_menu(bool ai =false,bool score = false) {
+		// tab = 
 		std::string options[] = {"Continue","Save Game","Exit"};
 		Menu m(options, 3);
 		int choice = m.get_choice();
@@ -294,8 +295,7 @@ public:
 			//////////////////////////////////////////////////////////
 			//        sort the gpi and fix main head & tail        //
 			//////////////////////////////////////////////////////////
-			shape_node* debug_arr_gpi_1[16];
-			debug_copy(gpi, game_pieces.get_size(), debug_arr_gpi_1);
+			
 			shape_node* prev_first_imp;
 			if (cpi[0]->imp == 0)
 			{
@@ -370,6 +370,11 @@ public:
 			shape_node* debug_arr_gpi[16];
 			debug_copy(gpi, game_pieces.get_size(), debug_arr_gpi);
 			cout << "";
+			if (game_pieces.get_tail()->get_piece().get_color() == cpi[0]->get_piece().get_color())
+			{
+				game_pieces.set_tail(colors_heads[choice].get_tail());
+				game_pieces.get_tail()->set_next(game_pieces.get_head());
+			}
 
 
 			/////////////////////////////////////////////////////////////////
@@ -407,35 +412,197 @@ public:
 			}
 
 
-
+			
 
 
 
 
 		}
-		else//shape
+		else
 		{
+			//////////////////////////////////////
+			//          initialisation          //
+			// ///////////////////////////////////
 			//decallage de forme d'indice choice%4
 			// etablit tout les cpi
+			choice = choice % 4;
 			shape_node** cpis[4];
 			for (int i = 0; i < 4; i++)
 			{
 				cpis[i] = create_cpi(i);
 			}
 			// eablit le spi de forme 
-			shape_node** spi = create_spi(choice % 4);
-			// DEBUGGING:check acces to he last element of each list 
-			shape_node* test = spi[spi[0]->get_prev_shape()->isp];
-			if (spi[0]->imp == 0) {
-				game_pieces.set_head(spi[1]);
+			shape_node** spi = create_spi(choice);
+			int size_spi = shapes_heads[choice].get_size();
+			shape_node* debug_spi[10];
+			debug_copy(spi, size_spi, debug_spi);
+			
+			
+
+			
+			
+
+
+			//////////////////////////////////////////////////////////
+			//      sort the shapes and fix shape head & tail       //
+			//////////////////////////////////////////////////////////
+			shape_node* first_copy = spi[0];
+			shape_node* debug_gpi[10];
+			debug_copy(gpi, size_spi, debug_gpi);
+			int tmp_imp = spi[size_spi - 1]->imp;
+			shapes_heads[choice].set_tail(first_copy);
+			shapes_heads[choice].set_head(first_copy->get_next_shape());
+			shape_node* debug_arr_1[16];
+			debug_copy(spi, size_spi, debug_arr_1);
+			for (int i = 1; i < size_spi; i++)
+			{
+				int tmp_i = spi[i]->imp;
+				spi[i]->imp = first_copy->imp;
+				first_copy->imp = tmp_i;
+				spi[i]->isp--;
+				first_copy->isp++;
+				spi[i - 1] = spi[i];
+
+			}
+			spi[size_spi - 1] = first_copy;
+			shape_node* debug_arr[16];
+			debug_copy(spi, size_spi, debug_arr);
+
+
+
+			//////////////////////////////////////////////////////////
+			//        sort the gpi and fix main head & tail        //
+			//////////////////////////////////////////////////////////
+			shape_node* debug_arr_gpi_1[16];
+			debug_copy(gpi, game_pieces.get_size(), debug_arr_gpi_1);
+			shape_node* prev_first_imp = gpi[spi[0]->imp];
+			if (spi[0]->imp == 0)
+			{
+				game_pieces.set_head(spi[0]);
+				if (game_pieces.get_tail()->get_piece().get_shape() == game_pieces.get_head()->get_piece().get_shape())
+				{
+					prev_first_imp = gpi[spi[0]->imp];
+					game_pieces.set_tail(prev_first_imp);
+				}
+				else
+				{
+					prev_first_imp = game_pieces.get_tail();
+				}
+
+			}
+			else
+			{
+				if (game_pieces.get_tail()->get_piece().get_shape() == gpi[spi[0]->imp - 1]->get_piece().get_shape())
+				{
+					prev_first_imp = gpi[spi[0]->imp];
+					game_pieces.set_tail(prev_first_imp);
+				}
+				else
+				{
+					prev_first_imp = gpi[spi[0]->imp - 1];
+				}
+
+			}
+			
+			if (spi[size_spi - 1] == game_pieces.get_tail()) {
+				spi[size_spi - 1]->set_next(game_pieces.get_head());
+			}
+			else
+			{
+				spi[size_spi - 1]->set_next(gpi[spi[size_spi - 1]->imp + 1]);
+			}
+			if (gpi[spi[size_spi - 1]->imp - 1]->get_piece().get_shape() != spi[size_spi - 1]->get_piece().get_shape())
+			{
+				gpi[spi[size_spi - 1]->imp - 1]->get_next_shape()->set_next(spi[size_spi - 1]);
+			}
+			else
+			{
+				gpi[spi[size_spi - 1]->imp - 1]->get_next_shape()->set_next(spi[size_spi - 1]);
+			}
+			gpi[spi[size_spi - 1]->imp] = spi[size_spi - 1];
+			
+			for (int j = size_spi - 2; j > 0; j--)
+			{
+				spi[j]->set_next(gpi[spi[j]->imp + 1]);
+				if (gpi[spi[j]->imp - 1]->get_piece().get_shape() != spi[j]->get_piece().get_shape())
+				{
+					gpi[spi[j]->imp - 1]->set_next(spi[j]);
+				}
+				else
+				{
+					gpi[spi[j]->imp - 1]->get_next_shape()->set_next(spi[j]);
+				}
+				gpi[spi[j]->imp] = spi[j];
+
+
+			}
+			spi[0]->set_next(gpi[spi[0]->imp + 1]);
+			if (spi[0]->imp == 0)
+			{
+				game_pieces.get_tail()->set_next(spi[0]);
+			}
+			else
+			{
+				gpi[spi[0]->imp - 1]->set_next(spi[0]);
+			}
+			gpi[spi[0]->imp] = spi[size_spi - 1];
+
+			shape_node* debug_arr_gpi[16];
+			debug_copy(gpi, game_pieces.get_size(), debug_arr_gpi);
+			
+			// idk whereer to ad this 
+			if (game_pieces.get_tail()->get_piece().get_shape() == spi[0]->get_piece().get_shape())
+			{
+				game_pieces.set_tail(shapes_heads[choice].get_tail());
+				game_pieces.get_tail()->set_next(game_pieces.get_head());
 			}
 
-			//////////////////////////////////////
-			//           Traitement            //
-			// ///////////////////////////////////
+			/////////////////////////////////////////////////////////////////
+			//        sort colors based on imp and fix head an tail        //
+			/////////////////////////////////////////////////////////////////
+			shape_node* debug_arr_shapes[4][3];
+			int size;
+			for (int i = 0; i < 4; i++)
+			{
+				size = colors_heads[i].get_size();
+				cpis[i] = mergeSort(cpis[i], 0, size - 1);
+
+				debug_copy(cpis[i], size, debug_arr_shapes[i]);
+				// set propper nexts and prev shapes
+				if (size)
+				{
+					cpis[i][0]->set_next_color((size > 1) ? cpis[i][1] : cpis[i][0]);
+					cpis[i][0]->icp = 0;
+					cpis[i][0]->set_prev_color((size > 1) ? cpis[i][size - 1] : cpis[i][0]);
+					for (int j = 1; j < size - 1; j++)
+					{
+						cpis[i][j]->set_next_color(cpis[i][j + 1]);
+						cpis[i][j]->set_prev_color(cpis[i][j - 1]);
+						cpis[i][j]->icp = j;
+					}
+					cpis[i][size - 1]->set_next_color((size > 1) ? cpis[i][0] : cpis[i][size - 1]);
+					cpis[i][size - 1]->set_prev_color((size > 1) ? cpis[i][size - 2] : cpis[i][size - 1]);
+					cpis[i][size - 1]->icp = size - 1;
+					colors_heads[i].set_head(cpis[i][0]);
+					colors_heads[i].set_tail(cpis[i][size - 1]);
+				}
+
+				debug_copy(cpis[i], size, debug_arr_shapes[i]);
+
+			}
 
 
 		}
+		Plateau* tmpc[4];Plateau* tmps[4];
+		for (int i = 0; i < 4; i++)
+		{
+			tmpc[i] = &colors_heads[i];
+			tmps[i] = &shapes_heads[i];
+		}
+		shape_node* debug_arr_gpi_1[16];
+		//keeppp 
+		debug_copy(gpi, game_pieces.get_size(), debug_arr_gpi_1);
+		this->score = game_pieces.evaluate_plate(tmpc, tmps);
 		return;
 
 	}
@@ -626,11 +793,20 @@ public:
 			shape_node* tail = colors_heads[i].get_tail();
 			do
 			{
-				if (tmp)
+				try
 				{
-					tmp->get_piece().afficher();
-					tmp = tmp->get_next_color();
+					
+					if (tmp)
+					{
+						tmp->get_piece().afficher();
+						tmp = tmp->get_next_color();
+					}
 				}
+				catch (...)
+				{
+					tmp == NULL;
+				}
+				
 
 			} while (tmp != colors_heads[i].get_head());
 			cout << endl;
@@ -641,10 +817,18 @@ public:
 			shape_node* tmp = shapes_heads[i].get_head();
 			do
 			{
-				if (tmp)
+				try
 				{
-					tmp->get_piece().afficher();
-					tmp = tmp->get_next_shape();
+
+					if (tmp)
+					{
+						tmp->get_piece().afficher();
+						tmp = tmp->get_next_shape();
+					}
+				}
+				catch (...)
+				{
+					//tmp == NULL;
 				}
 
 			} while (tmp != shapes_heads[i].get_head());

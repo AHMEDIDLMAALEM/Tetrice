@@ -1,5 +1,6 @@
 #include "Plateau.h"
 #include <conio.h>
+#include "Party.h"
 
 Plateau::Plateau()
 {
@@ -225,30 +226,328 @@ void show(int tables) {
 	//switch 
 }
 
-void Plateau::evaluate_plate(Plateau* colors, Plateau* shapes) {
+
+
+
+int Plateau::evaluate_plate(Plateau ** colors, Plateau **shapes) {
 	shape_node* pos = this->head;
-	while (pos != this->tail)
+	///////////////////////////////////////////////////
+	//      evaluate and delete based on shapes      //
+	///////////////////////////////////////////////////
+	
+	for (shape_node* tmp = get_head(), *prev = get_tail(); tmp->imp < size - 2;prev = tmp, tmp = tmp->get_next())
 	{
-		int max_streak_color = 0 ,max_streak_shape = 0;
-		int streak_color = 0, streak_shape = 0;
-		shape_node* tmp_c = pos;
-		while (tmp_c->get_piece().get_color() == tmp_c->get_next()->get_piece().get_color()) {
-			streak_color++;
-			tmp_c = tmp_c->get_next();
-		}
-		shape_node* tmp_s = pos;
-		while (tmp_s->get_piece().get_color() == tmp_s->get_next()->get_piece().get_color()) {
-			streak_shape++;
-			tmp_s = tmp_s->get_next();
-		}
-		if (streak_color >= this->min_supp || streak_shape >= this->min_supp)
-		{
-			//(streak_color >= streak_shape) ? delete() : ;
-		}
+		// base on shapes
+		if (tmp->imp + 1 == tmp->get_next_shape()->imp && tmp->get_next_shape()->get_next_shape()->imp == tmp->get_next_shape()->imp + 1) {
+			int score = 10;
+			int i = static_cast<int>(tmp->get_piece().get_shape()) -1;
+
+			//tmp = tmp->get_next_shape()->get_next_shape();
+			while (tmp->imp + 1 == tmp->get_next_shape()->imp)
+			{
+				// change the sizes of each plate
+				this->size--;
+				int index_color = static_cast<int>(tmp->get_piece().get_color()) - 1;
+				colors[index_color]->set_size(colors[index_color]->get_size() - 1);
+				shapes[i]->set_size(shapes[i]->get_size() - 1);
+				//change the heads if demanded
+				if (tmp == this->get_head())
+				{
+					if (tmp != this->get_tail())
+					{
+						this->head = head->get_next();
+					}
+					else
+					{
+						this->set_head(nullptr);
+						this->set_tail(nullptr);
+					}
+
+				}
+				else if(tmp == this->get_tail())
+				{
+					shape_node* ttt = prev;
+					this->tail = ttt;
+				}
+				if (tmp == colors[index_color]->get_head()) {
+					if (tmp != colors[index_color]->get_tail())
+					{
+						colors[index_color]->set_head(tmp->get_next_color());
+					}
+					else
+					{
+						colors[index_color]->set_head(nullptr);
+						colors[index_color]->set_tail(nullptr);
+					}
+				}
+				else if (tmp == colors[index_color]->get_tail())
+				{
+					shape_node* ttt = tmp->get_prev_color();
+					colors[index_color]->set_tail(ttt);
+				}
+				if (tmp == shapes[i]->get_head()) {
+					if (tmp != shapes[i]->get_tail())
+					{
+						shapes[i]->set_head(tmp->get_next_shape());
+					}
+					else
+					{
+						shapes[i]->set_head(nullptr);
+						shapes[i]->set_tail(nullptr);
+					}
+				}
+				else if (tmp == shapes[i]->get_tail())
+				{
+					shape_node* ttt = tmp->get_prev_shape();
+					shapes[i]->set_tail(ttt);
+				}
+
+				
+				
+				
+				//change the nexts 
+				prev->set_next(tmp->get_next());
+				tmp->get_prev_color()->set_next_color(tmp->get_next_color());
+				tmp->get_prev_shape()->set_next_shape(tmp->get_next_shape());
+				//change the prevs
+				tmp->get_next_color()->set_prev_color(tmp->get_prev_color());
+				tmp->get_next_shape()->set_prev_shape(tmp->get_prev_shape());
+				shape_node* del = tmp;
+				tmp = tmp->get_next_shape();
+				delete del;
+				score += 30;
+			}
+			// corigger hadsjhi iwlli fhal lfo9
+
+			// change the sizes of each plate
+			this->size--;
+			int index_color = static_cast<int>(tmp->get_piece().get_color()) -1;
+			colors[index_color]->set_size(colors[index_color]->get_size() - 1);
+			shapes[i]->set_size(shapes[i]->get_size() - 1);
+			//change the heads if demanded
+			if (tmp == this->get_head())
+			{
+				if (tmp != this->get_tail())
+				{
+					this->head = head->get_next();
+				}
+				else
+				{
+					this->set_head(nullptr);
+					this->set_tail(nullptr);
+				}
+
+			}
+			else if (tmp == this->get_tail())
+			{
+				shape_node* ttt = prev;
+				this->tail = ttt;
+			}
+			if (tmp == colors[index_color]->get_head()) {
+				if (tmp != colors[index_color]->get_tail())
+				{
+					colors[index_color]->set_head(tmp->get_next_color());
+				}
+				else
+				{
+					colors[index_color]->set_head(nullptr);
+					colors[index_color]->set_tail(nullptr);
+				}
+			}
+			else if (tmp == colors[index_color]->get_tail())
+			{
+				shape_node* ttt = tmp->get_prev_color();
+				colors[index_color]->set_tail(ttt);
+			}
+			if (tmp == shapes[i]->get_head()) {
+				if (tmp != shapes[i]->get_tail())
+				{
+					shapes[i]->set_head(tmp->get_next_shape());
+				}
+				else
+				{
+					shapes[i]->set_head(nullptr);
+					shapes[i]->set_tail(nullptr);
+				}
+			}
+			else if (tmp == shapes[i]->get_tail())
+			{
+				shape_node* ttt = tmp->get_prev_shape();
+				shapes[i]->set_tail(ttt);
+			}
 
 
-		
+
+
+			//change the nexts 
+			prev->set_next(tmp->get_next());
+			tmp->get_prev_color()->set_next_color(tmp->get_next_color());
+			tmp->get_prev_shape()->set_next_shape(tmp->get_next_shape());
+			//change the prevs
+			tmp->get_next_color()->set_prev_color(tmp->get_prev_color());
+			tmp->get_next_shape()->set_prev_shape(tmp->get_prev_shape());
+			shape_node* del = tmp;
+			tmp = tmp->get_next_shape();
+			delete del;
+			score += 30;
+			return (score + evaluate_plate(colors, shapes));
+		}
+		// based on colors
+		if (tmp->imp + 1 == tmp->get_next_color()->imp && tmp->get_next_color()->get_next_color()->imp == tmp->get_next_color()->imp + 1) {
+			int score = 10;
+			int i = static_cast<int>(tmp->get_piece().get_color()) - 1;
+			//tmp = tmp->get_next_shape()->get_next_shape();
+			while (tmp->imp + 1 == tmp->get_next_color()->imp)
+			{
+				// change the sizes of each plate
+				this->size--;
+				int index_shape = static_cast<int>(tmp->get_piece().get_shape()) - 1;
+				shapes[index_shape]->set_size(shapes[index_shape]->get_size() - 1);
+				colors[i]->set_size(colors[i]->get_size() - 1);
+				//change the heads if demanded
+				if (tmp == this->get_head())
+				{
+					if (tmp != this->get_tail())
+					{
+						this->head = head->get_next();
+					}
+					else
+					{
+						this->set_head(nullptr);
+						this->set_tail(nullptr);
+					}
+
+				}
+				else if (tmp == this->get_tail())
+				{
+					shape_node* ttt = prev;
+					this->tail = ttt;
+				}
+				if (tmp == shapes[index_shape]->get_head()) {
+					if (tmp != shapes[index_shape]->get_tail())
+					{
+						shapes[index_shape]->set_head(tmp->get_next_color());
+					}
+					else
+					{
+						shapes[index_shape]->set_head(nullptr);
+						shapes[index_shape]->set_tail(nullptr);
+					}
+				}
+				else if (tmp == shapes[index_shape]->get_tail())
+				{
+					shape_node* ttt = tmp->get_prev_shape();
+					shapes[index_shape]->set_tail(ttt);
+				}
+				if (tmp == colors[i]->get_head()) {
+					if (tmp != colors[i]->get_tail())
+					{
+						colors[i]->set_head(tmp->get_next_color());
+					}
+					else
+					{
+						colors[i]->set_head(nullptr);
+						colors[i]->set_tail(nullptr);
+					}
+				}
+				else if (tmp == colors[i]->get_tail())
+				{
+					shape_node* ttt = tmp->get_prev_color();
+					colors[i]->set_tail(ttt);
+				}
+
+
+
+
+				//change the nexts 
+				prev->set_next(tmp->get_next());
+				tmp->get_prev_color()->set_next_color(tmp->get_next_color());
+				tmp->get_prev_shape()->set_next_shape(tmp->get_next_shape());
+				//change the prevs
+				tmp->get_next_color()->set_prev_color(tmp->get_prev_color());
+				tmp->get_next_shape()->set_prev_shape(tmp->get_prev_shape());
+				shape_node* del = tmp;
+				tmp = tmp->get_next_color();
+				delete del;
+				score += 30;
+			}
+			// corigger hadsjhi iwlli fhal lfo9
+
+			// change the sizes of each plate
+			this->size--;
+			int index_shape = static_cast<int>(tmp->get_piece().get_shape()) - 1;
+			shapes[index_shape]->set_size(shapes[index_shape]->get_size() - 1);
+			colors[i]->set_size(colors[i]->get_size() - 1);
+			//change the heads if demanded
+			if (tmp == this->get_head())
+			{
+				if (tmp != this->get_tail())
+				{
+					this->head = head->get_next();
+				}
+				else
+				{
+					this->set_head(nullptr);
+					this->set_tail(nullptr);
+				}
+
+			}
+			else if (tmp == this->get_tail())
+			{
+				shape_node* ttt = prev;
+				this->tail = ttt;
+			}
+			if (tmp == shapes[index_shape]->get_head()) {
+				if (tmp != shapes[index_shape]->get_tail())
+				{
+					shapes[index_shape]->set_head(tmp->get_next_shape());
+				}
+				else
+				{
+					shapes[index_shape]->set_head(nullptr);
+					shapes[index_shape]->set_tail(nullptr);
+				}
+			}
+			else if (tmp == shapes[index_shape]->get_tail())
+			{
+				shape_node* ttt = tmp->get_prev_shape();
+				shapes[index_shape]->set_tail(ttt);
+			}
+			if (tmp == colors[i]->get_head()) {
+				if (tmp != colors[i]->get_tail())
+				{
+					colors[i]->set_head(tmp->get_next_color());
+				}
+				else
+				{
+					colors[i]->set_head(nullptr);
+					colors[i]->set_tail(nullptr);
+				}
+			}
+			else if (tmp == colors[i]->get_tail())
+			{
+				shape_node* ttt = tmp->get_prev_color();
+				colors[i]->set_tail(ttt);
+			}
+
+
+
+
+			//change the nexts 
+			prev->set_next(tmp->get_next());
+			tmp->get_prev_color()->set_next_color(tmp->get_next_color());
+			tmp->get_prev_shape()->set_next_shape(tmp->get_next_shape());
+			//change the prevs
+			tmp->get_next_color()->set_prev_color(tmp->get_prev_color());
+			tmp->get_next_shape()->set_prev_shape(tmp->get_prev_shape());
+			shape_node* del = tmp;
+			tmp = tmp->get_next_shape();
+			delete del;
+			score += 30;
+			return (score + evaluate_plate(colors, shapes));
+		}
 	}
+	return 0;
 
 }
 
