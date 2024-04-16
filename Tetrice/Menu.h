@@ -46,6 +46,10 @@ class Menu
 
 		}
 	}
+
+	
+
+
 	static void gotoxy(int x, int y,std::string s) {
 		COORD coord;
 		coord.X = x;

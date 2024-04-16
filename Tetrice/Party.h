@@ -36,27 +36,60 @@ private:
 	bool using_cursor = false;
 	party_type Type = ni;
 	//for saving 
-	int saving_time;
+	int saving_time=120;
 public:
-	/*Party P(int s, int time , int typ , int siz) {
-		score = s;
-		party_time = std::chrono::seconds(time);
-		Type = (party_type)typ;
-		game_pieces = Plateau(siz);
+	Plateau get_game_pieces() {
+		return game_pieces;
+	}
 
-	}*/
+	Party(int s, int time , int typ , Plateau P , Plateau next , Plateau HS[4], Plateau HC[4]) {
+		score = s;
+		saving_time = time;
+		//party_time = std::chrono::seconds(time);
+		Type = (party_type)typ;
+		game_pieces = P;
+		next_pieces = next;
+
+		for (int i = 0; i < 4; i++) {
+			shapes_heads[i] = HS[i];
+			colors_heads[i] = HC[i];
+		}
+
+		init_scene(0, false, false, true);
+		switch (typ)
+		{
+		case 1:
+			Tetriste(true);
+			break;
+		case 2:
+			std::cout << "Tepatrice";
+			break;
+		case 3:
+			Tecontent(true);
+			break;
+		case 4:
+			std::cout << "Tavalide";
+			break;
+		case 5:
+			std::cout << "Bonus";
+		default:
+			break;
+		}
+
+
+	}
 	Party(int choice) {
 		system("cls");
 		switch (choice)
 		{
 		case 1:
-			Tetriste();
+			Tetriste(false);
 			break;
 		case 2:
 			std::cout << "Tepatrice";
 			break;
 		case 3:
-			Tecontent();
+			Tecontent(false);
 			break;
 		case 4:
 			std::cout << "Tavalide";
@@ -68,30 +101,31 @@ public:
 		}
 		_getch();
 	}
-	Party(int choice,std::chrono::seconds dur) {
-		this->party_time = dur;
-		system("cls");
-		switch (choice)
-		{
-		case 1:
-			Tetriste();
-			break;
-		case 2:
-			std::cout << "Tepatrice";
-			break;
-		case 3:
-			std::cout << "Tecontent";
-			break;
-		case 4:
-			std::cout << "Tavalide";
-			break;
-		case 5:
-			std::cout << "Bonus";
-		default:
-			break;
-		}
-		_getch();
-	}
+	//Party(int choice,std::chrono::seconds dur) {
+	//	this->party_time = dur;
+	//	system("cls");
+	//	
+	//	switch (choice)
+	//	{
+	//	case 1:
+	//		Tetriste(false);
+	//		break;
+	//	case 2:
+	//		std::cout << "Tepatrice";
+	//		break;
+	//	case 3:
+	//		std::cout << "Tecontent";
+	//		break;
+	//	case 4:
+	//		std::cout << "Tavalide";
+	//		break;
+	//	case 5:
+	//		std::cout << "Bonus";
+	//	default:
+	//		break;
+	//	}
+	//	_getch();
+	//}
 	
 	void pause_menu(bool ai =false,bool score = false) {
 		std::string options[] = {"Continue","Save Game","Exit"};
@@ -102,7 +136,7 @@ public:
 		case 1:
 			paused = false;
 			system("cls");
-			init_scene(0, ai, score);
+			init_scene(0, ai, score , false);
 			Menu::gotoxy(2, 2, ' ');
 			//Menu::gotoxy(5, 5, "DEBUGGING: after afficher goto");
 			game_pieces.afficher(false);
@@ -132,8 +166,27 @@ public:
 			// Vérification que le fichier a bien été ouvert
 			if (file.is_open()) {
 				std::string Json;
-				Json = "{\n\t\"Party\":{\n\t\t\"Type\":"+to_string((int)Type) + ",\n\t\t\"Timer\":" + to_string(saving_time) + ",\n\t\t\"score\":" + to_string(score) + ",\n\t\t";
-				Json += game_pieces.PlateauToJson()+'}';
+				Json = "{\n\t\"Party\":{\n\t\t\"Type\":"+to_string((int)Type) + ",\n\t\t\"Timer\":" + to_string(saving_time) + ",\n\t\t\"score\":" + to_string(score) + ",\n\t\t\"Next\""+next_pieces.PlateauToJson()+",\n\t\t\"Plateau\"";
+				Json += game_pieces.PlateauToJson() + ',';
+				string shapes[4] = { "\"Cercle\"","\"Rhombus\"","\"Square\"","\"Triangle\"" };
+				Json += "\n\t\t\t\"ShapesHeads\":[\n";
+				for (int i = 0; i < 4; i++) {
+					Json += "\t\t\t\t{\t\t\t\t\n\t\t\t\t" + shapes[i] + shapes_heads[i].ShapesToJson() + ",\n";
+				}
+				Json.pop_back();
+				Json.pop_back();
+				Json += "\n\t\t\t],";
+
+
+
+				Json += "\n\t\t\t\"colorHeads\":[\n";
+				string color[4] = { "\"Red\"","\"Green\"","\"Yellow\"","\"Blue\"" };
+				for (int i = 0; i < 4; i++) {
+					Json +="\t\t\t\t{\t\t\t\t\n\t\t\t\t" + color[i] + colors_heads[i].ColorsToJson() + ",\n";
+				}
+				Json.pop_back();
+				Json.pop_back();
+				Json += "\n\t\t\t]\n\t}\n}";
 				file << Json;
 
 				std::cout << "Game Was Saved" << std::endl;
@@ -144,19 +197,30 @@ public:
 			else {
 				std::cerr << "Erreur lors de l'ouverture du fichier." << std::endl;
 			}
+
+
+
 		}
-		exited = true;
+	
+		saveNameFile(file_name);
+
 		
-		_getch();
+
+		afterSaveGame();
 	}
-	int Tecontent() {
+
+
+
+
+
+	int Tecontent(bool render_at_first) {
 		this->Type = tecontent;
 		//std::cout << "\nDEBUGGING: start";
 		/*
 			***tag : Wonderful Code .SOF.
 			usual std::thread(func_name); didn't work
 		*/
-		init_scene(1,false,true);
+		init_scene(1,false,true , render_at_first);
 		std::thread thread_object(&Party::handle_time, this);
 
 		while (!exited)
@@ -293,14 +357,14 @@ public:
 		}
 		
 	}
-	int Tetriste() {
+	int Tetriste(bool render_at_first) {
 		this->Type = tetriste;
 		//std::cout << "\nDEBUGGING: start";
 		/*
 			***tag : Wonderful Code .SOF.
 			usual std::thread(func_name); didn't work 
 		*/
-		init_scene(1, false, false);
+		init_scene(1, false, false , render_at_first);
 		std::thread thread_object(&Party::handle_time,this);
 		
 		while (!exited)
@@ -469,8 +533,22 @@ public:
 		delete prv->get_next();
 	}
 	// next : L C
-	void init_scene(int size,bool ai ,bool score ) {
+	void init_scene(int size,bool ai ,bool score , bool render_at_first ) {
 		system("cls");
+		if (render_at_first) {
+
+			while (using_cursor) {}
+			using_cursor = true;
+			// erase old game pieces from console and show new state
+			Menu::gotoxy(2, 2, "                                          ");
+			Menu::gotoxy(2, 2, ' ');
+			//Menu::gotoxy(5, 5, "DEBUGGING: after afficher goto");
+			game_pieces.afficher(false);
+
+			//Menu::gotoxy(5, 6, "DEBUGGING: after afficher fasle");
+			using_cursor = false;
+		}
+
 		Menu::gotoxy(Menu::timer_x, Menu::timer_y, "                                                    ");
 		
 		Menu::gotoxy(0, Menu::timer_y - 1, ' ');
@@ -481,9 +559,11 @@ public:
 		cout << "Score : " << this->score;
 		}
 		//generated the waiting quee
-		for (int i = 0; i <size; i++)
-		{
-			this->next_pieces.inserer_left(piece(4, 4));
+		if (!render_at_first) {
+			for (int i = 0; i < size; i++)
+			{
+				this->next_pieces.inserer_left(piece(4, 4));
+			}
 		}
 		//this->next_elements = new shape_node[i];
 		Menu::gotoxy(0, 0, ' ');
@@ -495,7 +575,7 @@ public:
 		//start game & timer
 		//std::chrono::seconds time_elapsed = std::chrono::seconds(0);
 		std::chrono::system_clock::time_point old;
-		int time = 120;
+		int time = saving_time;
 		while (!exited) {
 			old = std::chrono::system_clock::now();
 
@@ -506,7 +586,8 @@ public:
 				Menu::gotoxy(Menu::timer_x, Menu::timer_y-1, "     ");
 				Menu::gotoxy(Menu::timer_x, Menu::timer_y-1,' ');
 				cout << --time;
-				saving_time = time;
+				saving_time--;
+				//saving_time = time;
 				if (this->Type != tetriste && this->Type != tepatrice)
 				{
 					Menu::gotoxy(14, Menu::timer_y - 1, ' ');
@@ -531,65 +612,52 @@ public:
 	}
 
 
-	static void Upload_Party() {
-	//	Party P(;
-	//	// Ouvrir le fichier JSON
-	//	ifstream file("safae.json");
+	void saveNameFile(std::string filename) {
+		std::ifstream file("savedPartiesNames.txt");
+		if (file.is_open()) {
+			std::string data;
+			std::string line;
+			while (getline(file, line)) {
+				data += line + "\n"; // Ajout du saut de ligne
+			}
+			file.close();
 
-	//	// Vérifier si le fichier est ouvert correctement
-	//	if (!file.is_open()) {
-	//		cerr << "Erreur: Impossible d'ouvrir le fichier." << endl;
-	//		return;
-	//	}
+			int pos = data.find(filename);
+			if (pos == std::string::npos) {
+				std::ofstream outFile("savedPartiesNames.txt", std::ios::app); // Ouverture en mode ajout
+				data = filename + "\n"; // Ajout du saut de ligne
+				outFile << data; // Écriture des données dans le fichier
+				outFile.close();
+			}
+		}
+		else {
+			std::ofstream newFile("savedPartiesNames.txt");
+			newFile.close();
+			saveNameFile(filename);
+		}
+	}
 
-	//	// Lire le contenu du fichier dans une chaîne
-	//	string json_data;
-	//	string line;
-	//	while (getline(file, line)) {
-	//		json_data += line;
-	//	}
+	 void afterSaveGame() {
+		 string options[2] = {"Restart","Exit"};
+		 Menu m(options, 2);
+		 int choice = m.get_choice();
 
-	//	// Fermer le fichier après la lecture
-	//	file.close();
-
-	//	// Parsing des données JSON
-	//	size_t pos = json_data.find("\"Timer\":");
-	//	party_time = stoi(json_data.substr(pos + 8, json_data.find(',', pos) - pos - 8));
-
-	//	pos = json_data.find("\"score\":");
-	//	score = stoi(json_data.substr(pos + 8, json_data.find(',', pos) - pos - 8));
-
-	//	pos = json_data.find("\"size\":");
-	//	party.plateau.size = stoi(json_data.substr(pos + 7, json_data.find(',', pos) - pos - 7));
-
-	//	pos = json_data.find("\"Pieces\":");
-	//	pos = json_data.find('[', pos);
-	//	size_t end_pos = json_data.find(']', pos);
-	//	string pieces_data = json_data.substr(pos, end_pos - pos + 1);
-
-	//	// Parsing des pièces
-	//	pos = pieces_data.find("{");
-	//	int index = 0;
-	//	while (pos != string::npos && index < 6) { // Assurer de ne pas dépasser la taille maximale
-	//		Piece piece;
-	//		size_t end_piece_pos = pieces_data.find('}', pos);
-	//		string piece_data = pieces_data.substr(pos, end_piece_pos - pos + 1);
-
-	//		size_t shape_pos = piece_data.find("\"shape\":");
-	//		piece.shape = stoi(piece_data.substr(shape_pos + 8, piece_data.find(',', shape_pos) - shape_pos - 8));
-
-	//		size_t color_pos = piece_data.find("\"color\":");
-	//		piece.color = stoi(piece_data.substr(color_pos + 8, piece_data.find('}', color_pos) - color_pos - 8));
-
-	//		party.plateau.pieces[index++] = piece;
-
-	//		pos = pieces_data.find("{", end_piece_pos);
-	//	}
-	//}
-
+		 switch (choice) {
+		 case 1:
+			 std::cout << "Restart the game" << std::endl;
+			break;
+		 case 2:
+			 exited = true;
+			 break;
+		 default:
+			 break;
+		 }
 
 
 	}
+
+
+	
 
 };
 /*
@@ -610,7 +678,6 @@ auto start = std::chrono::steady_clock().now();
 
 
 */
-
 
 ////playing for example
 				//if (!(i % 10))

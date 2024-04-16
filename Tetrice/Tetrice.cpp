@@ -38,6 +38,7 @@ int main() {
 
     //std::cout << "Hello from main!\n";
 
+    
 
    // Plateau L, HS[4], HC[4];
    // piece h(Cercle, Red);

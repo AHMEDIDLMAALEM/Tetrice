@@ -97,9 +97,9 @@ piece::~piece() {
  string piece::PieceToJson()
  {
      string json = "{\n";
-     json += "\t\t\t\t\"shape\": " + to_string((int)_shape) + " ,\n";
-     json += "\t\t\t\t\"color\": " + to_string((int)_color) + "\n";
-     json += "\t\t\t\t}";
+     json += "\t\t\t\t\t\"shape\": " + to_string((int)_shape) + " ,\n";
+     json += "\t\t\t\t\t\"color\": " + to_string((int)_color) + "\n";
+     json += "\t\t\t\t\t}";
      return json;
  }
  

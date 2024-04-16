@@ -8,7 +8,6 @@ private:
 	int size;
 
 public:
-	Plateau(int siz);
 	Plateau();
 	~Plateau();
 	//getter:
@@ -40,6 +39,9 @@ public:
 	void decalage_colors(shape_color p, Plateau HS[4], Plateau HC[4]);
 
 	string PlateauToJson();
+	string ShapesToJson();
+	string ColorsToJson();
+	void operator=(Plateau);
 
 	//piece supprimer();
 

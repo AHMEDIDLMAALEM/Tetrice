@@ -1,12 +1,6 @@
 #include "Plateau.h"
 #include <conio.h>
 
-Plateau::Plateau(int siz)
-{
-	head = NULL;
-	tail = NULL;
-	size = siz;
-}
 
 
 Plateau::Plateau()
@@ -347,22 +341,72 @@ void Plateau::decalage_colors(shape_color p, Plateau HS[4], Plateau HC[4])
 
 string Plateau::PlateauToJson()
 {
-	shape_node* temp = head;
-	string json = "\"Plateau\": {\n\t\t\t\"size\":" + to_string(size) + ",\n\t\t\t\"Pieces\":[\n";
+	string json = ":{\n\t\t\t\"size\":" + to_string(size) + ",\n\t\t\t\"Pieces\":[\n";
 	
-	
+	if (size != 0) {
+		shape_node* temp = head;
 
-	for (int i = 0; i < size-1; ++i) {
-		json += "\t\t\t\t "+temp->get_piece().PieceToJson()+",\n";
-		temp = temp->get_next();
+		for (int i = 0; i < size - 1; ++i) {
+			json += "\t\t\t\t " + temp->get_piece().PieceToJson() + ",\n";
+			temp = temp->get_next();
+		}
+		json += "\t\t\t\t " + temp->get_piece().PieceToJson() + "\n";
+
 	}
-	json += "\t\t\t\t " + temp->get_piece().PieceToJson() + "\n";
-
-
-	json += "\n\t\t\t  ]\n\t\t}\n\t}\n";
+	json += "\n\t\t\t  ]\n\t\t}";
 
 	return json;
 
+}
+
+string Plateau::ShapesToJson()
+{
+
+	string json = ":{\n\t\t\t\t\"size\":" + to_string(size) + ",\n\t\t\t\t\"Pieces\":[\n";
+	
+	if (size != 0) {
+		shape_node* temp = head;
+
+		for (int i = 0; i < size - 1; ++i) {
+			json += "\t\t\t\t\t " + temp->get_piece().PieceToJson() + ",\n";
+			temp = temp->get_next_shape();
+		}
+
+		json += "\t\t\t\t\t " + temp->get_piece().PieceToJson() + "\n";
+
+
+	}
+	json += "\n\t\t\t\t  ]\n\t\t\t\t}\n\t\t\t\t}";
+
+
+	return json;
+}
+
+string Plateau::ColorsToJson()
+{
+	
+		string json=":{\n\t\t\t\t\"size\":" + to_string(size) + ",\n\t\t\t\t\"Pieces\":[\n";
+
+		if (size != 0) {
+			shape_node* temp = head;
+
+			for (int i = 0; i < size - 1; ++i) {
+				json += "\t\t\t\t\t " + temp->get_piece().PieceToJson() + ",\n";
+				temp = temp->get_next_color();
+			}
+			json += "\t\t\t\t\t " + temp->get_piece().PieceToJson() + "\n";
+		}
+
+		json += "\n\t\t\t\t  ]\n\t\t\t\t}\n\t\t\t\t}";
+	
+		return json;
+}
+
+void Plateau::operator=(Plateau P)
+{
+	head = P.get_head();
+	tail = P.get_tail();
+	size = P.get_size();
 }
 
 void Plateau::supprimer_left(Plateau* color, Plateau* shape)
@@ -462,6 +506,8 @@ void Plateau::afficher(bool dis_last = false)
 		temp->get_piece().afficher();
 		temp = temp->get_next();
 	}
+	if (size == 0)
+		std::cout << "vide";
 }
 void Plateau::set_size(int s) {
 	this->size = s;
