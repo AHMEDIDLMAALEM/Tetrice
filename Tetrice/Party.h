@@ -256,6 +256,7 @@ public:
 			//          initialisation          //
 			// ///////////////////////////////////
 			int size_cpi = colors_heads[choice].get_size();
+			if (size_cpi < 2)return;
 			
 			// etablit tout les spi
 			shape_node** spis[4];
@@ -296,85 +297,80 @@ public:
 			//        sort the gpi and fix main head & tail        //
 			//////////////////////////////////////////////////////////
 			
-			shape_node* prev_first_imp;
-			if (cpi[0]->imp == 0)
-			{
-				game_pieces.set_head(cpi[0]);
-				if (game_pieces.get_tail()->get_piece().get_color() == game_pieces.get_head()->get_piece().get_color())
-				{
-					prev_first_imp = gpi[cpi[0]->imp];
-					game_pieces.set_tail(prev_first_imp);
-				}
-				else
-				{
-					prev_first_imp = game_pieces.get_tail();
-				}
+			
+			int size_gpi = game_pieces.get_size();
+			
 
-			}
-			else
-			{
-				if (game_pieces.get_tail()->get_piece().get_color() == gpi[cpi[0]->imp - 1]->get_piece().get_color())
+
+			//                                          first element
+			// set propper tail
+			if (game_pieces.get_tail()->get_piece().get_color() == cpi[0]->get_piece().get_color()) {
+				game_pieces.set_tail(cpi[size_cpi - 1]);
+				// rightly configure the previous element
+				// if the game piec before last one is different from shape we set it's next to the new tail otherwise we let it be
+				if (gpi[size_gpi - 2]->get_piece().get_color() != game_pieces.get_tail()->get_piece().get_color())
 				{
-					prev_first_imp = gpi[cpi[0]->imp];
-					game_pieces.set_tail(prev_first_imp);
+					gpi[size_gpi - 2]->set_next(game_pieces.get_tail());
+				}
+				// since it's tail the next elemnt is the new head if it changes and the same head if # color
+				if (game_pieces.get_head()->get_piece().get_color() == cpi[size_cpi - 1]->get_piece().get_color())
+				{
+					game_pieces.get_tail()->set_next(cpi[0]);
 				}
 				else
 				{
-					prev_first_imp = gpi[cpi[0]->imp - 1];
+					game_pieces.get_tail()->set_next(game_pieces.get_head());
 				}
-				
-			}
-			shape_node* first_copy_old_prev = (first_copy->get_next() == first_copy->get_next_color()) ? first_copy->get_next()->get_next_color() : first_copy->get_next();
-			if (cpi[size_cpi - 1] == game_pieces.get_tail()) {
-				cpi[size_cpi - 1]->set_next(game_pieces.get_head());
 			}
 			else
 			{
+				// check the nature of previous shape
+				int index_prev = cpi[size_cpi - 1]->imp - 1;
+				// set the prev next
+				// the prev element is no the same shape as our shifting so we affect him the current shap as next
+				if (gpi[index_prev]->get_piece().get_color() != cpi[size_cpi - 1]->get_piece().get_color())
+				{
+					gpi[index_prev]->set_next(cpi[size_cpi - 1]);
+				}
 				cpi[size_cpi - 1]->set_next(gpi[cpi[size_cpi - 1]->imp + 1]);
 			}
-			if (gpi[cpi[size_cpi - 1]->imp - 1]->get_piece().get_color() != cpi[size_cpi - 1]->get_piece().get_color())
-			{
-				gpi[cpi[size_cpi-1]->imp - 1]->get_next_color()->set_next(cpi[size_cpi - 1]);
-			}
-			else
-			{
-				gpi[cpi[size_cpi -1]->imp - 1]->get_next_color()->set_next(cpi[size_cpi - 1]);
-			}
+			// affect new gpi 
 			gpi[cpi[size_cpi - 1]->imp] = cpi[size_cpi - 1];
+
+			//                      midlle elements 
 			for (int j = size_cpi - 2; j > 0; j--)
 			{
+				// set the current spi next to gpi + 1
 				cpi[j]->set_next(gpi[cpi[j]->imp + 1]);
+
+				// if the prev element is of different shape affect him the spi j as next
 				if (gpi[cpi[j]->imp - 1]->get_piece().get_color() != cpi[j]->get_piece().get_color())
 				{
 					gpi[cpi[j]->imp - 1]->set_next(cpi[j]);
 				}
-				else
-				{
-					gpi[cpi[j]->imp - 1]->get_next_color()->set_next(cpi[j]);
-				}
+
+				//afect gpi[spij->imp] the value spij
 				gpi[cpi[j]->imp] = cpi[j];
 
-
 			}
+
+			//                      first element 
 			cpi[0]->set_next(gpi[cpi[0]->imp + 1]);
 			if (cpi[0]->imp == 0)
 			{
+				// if it's first change head and change tails next 
+				game_pieces.set_head(cpi[0]);
 				game_pieces.get_tail()->set_next(cpi[0]);
 			}
 			else
 			{
+				//if not the prev element in gpi should take him as next
 				gpi[cpi[0]->imp - 1]->set_next(cpi[0]);
 			}
-			gpi[cpi[0]->imp] = cpi[size_cpi - 1];
 
-			shape_node* debug_arr_gpi[16];
-			debug_copy(gpi, game_pieces.get_size(), debug_arr_gpi);
-			cout << "";
-			if (game_pieces.get_tail()->get_piece().get_color() == cpi[0]->get_piece().get_color())
-			{
-				game_pieces.set_tail(colors_heads[choice].get_tail());
-				game_pieces.get_tail()->set_next(game_pieces.get_head());
-			}
+			gpi[cpi[0]->imp] = cpi[0];
+
+
 
 
 			/////////////////////////////////////////////////////////////////
@@ -434,6 +430,7 @@ public:
 			// eablit le spi de forme 
 			shape_node** spi = create_spi(choice);
 			int size_spi = shapes_heads[choice].get_size();
+			if (size_spi < 2)return;
 			shape_node* debug_spi[10];
 			debug_copy(spi, size_spi, debug_spi);
 			
@@ -474,88 +471,85 @@ public:
 			//        sort the gpi and fix main head & tail        //
 			//////////////////////////////////////////////////////////
 			shape_node* debug_arr_gpi_1[16];
-			debug_copy(gpi, game_pieces.get_size(), debug_arr_gpi_1);
+			int size_gpi = game_pieces.get_size();
+			debug_copy(gpi, size_gpi, debug_arr_gpi_1);
 			shape_node* prev_first_imp = gpi[spi[0]->imp];
-			if (spi[0]->imp == 0)
-			{
-				game_pieces.set_head(spi[0]);
-				if (game_pieces.get_tail()->get_piece().get_shape() == game_pieces.get_head()->get_piece().get_shape())
-				{
-					prev_first_imp = gpi[spi[0]->imp];
-					game_pieces.set_tail(prev_first_imp);
-				}
-				else
-				{
-					prev_first_imp = game_pieces.get_tail();
-				}
-
-			}
-			else
-			{
-				if (game_pieces.get_tail()->get_piece().get_shape() == gpi[spi[0]->imp - 1]->get_piece().get_shape())
-				{
-					prev_first_imp = gpi[spi[0]->imp];
-					game_pieces.set_tail(prev_first_imp);
-				}
-				else
-				{
-					prev_first_imp = gpi[spi[0]->imp - 1];
-				}
-
-			}
+			shape_node* tmp_spi_last = new shape_node(spi[size_spi - 1]->get_piece(), spi[size_spi - 1]->get_next(), spi[size_spi - 1]->get_next_shape(), spi[size_spi - 1]->get_next_color(), spi[size_spi - 1]->get_prev_shape(), spi[size_spi - 1]->get_prev_color());
+			shape_node* debug_arr_spi_1[16];
+			debug_copy(spi, size_spi, debug_arr_spi_1);
 			
-			if (spi[size_spi - 1] == game_pieces.get_tail()) {
-				spi[size_spi - 1]->set_next(game_pieces.get_head());
+
+			//                                          first element
+			// set propper tail
+			if (game_pieces.get_tail()->get_piece().get_shape() == spi[0]->get_piece().get_shape()) {
+				game_pieces.set_tail(spi[size_spi -1]);
+				// rightly configure the previous element
+				// if the game piec before last one is different from shape we set it's next to the new tail otherwise we let it be
+				if (gpi[size_gpi - 2]->get_piece().get_shape() != game_pieces.get_tail()->get_piece().get_shape())
+				{
+					gpi[size_gpi - 2]->set_next(game_pieces.get_tail());
+				}
+				// since it's tail the next elemnt is the new head if it changes and the same head if # color
+				if (game_pieces.get_head()->get_piece().get_shape() == spi[size_spi - 1]->get_piece().get_shape())
+				{
+					game_pieces.get_tail()->set_next(spi[0]);
+				}
+				else
+				{
+					game_pieces.get_tail()->set_next(game_pieces.get_head());
+				}
 			}
 			else
 			{
+				// check the nature of previous shape
+				int index_prev = spi[size_spi - 1]->imp - 1;
+				// set the prev next
+				// the prev element is no the same shape as our shifting so we affect him the current shap as next
+				if (gpi[index_prev]->get_piece().get_shape() != spi[size_spi - 1]->get_piece().get_shape())
+				{
+					gpi[index_prev]->set_next(spi[size_spi - 1]);
+				}
 				spi[size_spi - 1]->set_next(gpi[spi[size_spi - 1]->imp + 1]);
 			}
-			if (gpi[spi[size_spi - 1]->imp - 1]->get_piece().get_shape() != spi[size_spi - 1]->get_piece().get_shape())
-			{
-				gpi[spi[size_spi - 1]->imp - 1]->get_next_shape()->set_next(spi[size_spi - 1]);
-			}
-			else
-			{
-				gpi[spi[size_spi - 1]->imp - 1]->get_next_shape()->set_next(spi[size_spi - 1]);
-			}
+			// affect new gpi 
 			gpi[spi[size_spi - 1]->imp] = spi[size_spi - 1];
-			
+			debug_copy(gpi, size_gpi, debug_arr_gpi_1);
+
+			//                      midlle elements 
 			for (int j = size_spi - 2; j > 0; j--)
 			{
+				// set the current spi next to gpi + 1
 				spi[j]->set_next(gpi[spi[j]->imp + 1]);
+
+				// if the prev element is of different shape affect him the spi j as next
 				if (gpi[spi[j]->imp - 1]->get_piece().get_shape() != spi[j]->get_piece().get_shape())
 				{
 					gpi[spi[j]->imp - 1]->set_next(spi[j]);
 				}
-				else
-				{
-					gpi[spi[j]->imp - 1]->get_next_shape()->set_next(spi[j]);
-				}
+
+				//afect gpi[spij->imp] the value spij
 				gpi[spi[j]->imp] = spi[j];
 
-
 			}
+
+			//                      first element 
 			spi[0]->set_next(gpi[spi[0]->imp + 1]);
 			if (spi[0]->imp == 0)
 			{
+				// if it's first change head and change tails next 
+				game_pieces.set_head(spi[0]);
 				game_pieces.get_tail()->set_next(spi[0]);
 			}
 			else
 			{
+				//if not the prev element in gpi should take him as next
 				gpi[spi[0]->imp - 1]->set_next(spi[0]);
 			}
-			gpi[spi[0]->imp] = spi[size_spi - 1];
 
-			shape_node* debug_arr_gpi[16];
-			debug_copy(gpi, game_pieces.get_size(), debug_arr_gpi);
+			gpi[spi[0]->imp] = spi[0];
 			
-			// idk whereer to ad this 
-			if (game_pieces.get_tail()->get_piece().get_shape() == spi[0]->get_piece().get_shape())
-			{
-				game_pieces.set_tail(shapes_heads[choice].get_tail());
-				game_pieces.get_tail()->set_next(game_pieces.get_head());
-			}
+			
+			
 
 			/////////////////////////////////////////////////////////////////
 			//        sort colors based on imp and fix head an tail        //
