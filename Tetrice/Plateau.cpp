@@ -410,6 +410,7 @@ int Plateau::evaluate_plate(Plateau ** colors, Plateau **shapes) {
 					if (tmp != this->get_tail())
 					{
 						this->head = head->get_next();
+						this->get_tail()->set_next(head);
 					}
 					else
 					{
@@ -426,7 +427,9 @@ int Plateau::evaluate_plate(Plateau ** colors, Plateau **shapes) {
 				if (tmp == shapes[index_shape]->get_head()) {
 					if (tmp != shapes[index_shape]->get_tail())
 					{
-						shapes[index_shape]->set_head(tmp->get_next_color());
+						shapes[index_shape]->get_tail()->set_next_shape(tmp->get_next_shape());
+						tmp->get_next_shape()->set_prev_shape(shapes[index_shape]->get_tail());
+						shapes[index_shape]->set_head(tmp->get_next_shape());
 					}
 					else
 					{
@@ -442,6 +445,8 @@ int Plateau::evaluate_plate(Plateau ** colors, Plateau **shapes) {
 				if (tmp == colors[i]->get_head()) {
 					if (tmp != colors[i]->get_tail())
 					{
+						colors[i]->get_tail()->set_next_color(tmp->get_next_color());
+						tmp->get_next_color()->set_prev_color(colors[i]->get_tail());
 						colors[i]->set_head(tmp->get_next_color());
 					}
 					else
