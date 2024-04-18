@@ -390,6 +390,28 @@ int Plateau::evaluate_plate(Plateau ** colors, Plateau **shapes) {
 			tmp = tmp->get_next_shape();
 			delete del;
 			score += 30;
+			// based on shapes : alll the imps after prev will be increased and same for icps and isps 
+			// imp and isp of all the pieces with same shape after prev
+			// 
+			int imp_diff = this->get_tail()->imp - this->get_size();
+			int isp_diff = shapes[i]->get_tail()->imp - shapes[i]->get_size();
+			while (prev->get_next() != this->get_head())
+			{
+				//avancer en avant
+				prev = prev->get_next();
+				// increase imp by difference
+				prev->imp -= imp_diff;
+				if (prev->get_piece().get_shape() == shapes[i]->get_head()->get_piece().get_shape()) {
+					prev->isp -= isp_diff;
+				}
+				int index_color = static_cast<int>(prev->get_piece().get_color()) - 1;
+				int icp_diff = colors[index_color]->get_tail()->imp - colors[index_color]->get_size();
+				if (icp_diff)
+				{
+					prev->icp -= icp_diff;
+				}
+			}
+
 			return (score + evaluate_plate(colors, shapes));
 		}
 		// based on colors
@@ -547,10 +569,33 @@ int Plateau::evaluate_plate(Plateau ** colors, Plateau **shapes) {
 			tmp->get_next_shape()->set_prev_shape(tmp->get_prev_shape());
 			shape_node* del = tmp;
 			tmp = tmp->get_next_shape();
+			// based on shapes : alll the imps after prev will be increased and same for icps and isps 
+			// imp and icp of all the pieces with same color after prev
+			// 
+			int imp_diff = this->get_tail()->imp - this->get_size();
+			int icp_diff = colors[i]->get_tail()->imp - colors[i]->get_size();
+			while (prev->get_next() != this->get_head())
+			{
+				//avancer en avant
+				prev = prev->get_next();
+				// increase imp by difference
+				prev->imp -= imp_diff;
+				if (prev->get_piece().get_color() == colors[i]->get_head()->get_piece().get_color()) {
+					prev->icp -= icp_diff;
+				}
+				int index_shape = static_cast<int>(prev->get_piece().get_shape()) - 1;
+				int isp_diff = shapes[index_shape]->get_tail()->imp - shapes[index_shape]->get_size();
+				if (isp_diff)
+				{
+					prev->isp -= isp_diff;
+				}
+			}
 			delete del;
 			score += 30;
 			return (score + evaluate_plate(colors, shapes));
 		}
+	
+		// correct imps icps isps 
 	}
 	return 0;
 
