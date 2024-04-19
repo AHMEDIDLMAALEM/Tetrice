@@ -13,6 +13,7 @@ class Game
 		bool playing = true;
 
 	public:
+
 		Game() {
 			system("cls");
 			std::cout << "Welcome to game press any key to continue ...";
@@ -188,7 +189,38 @@ class Game
 
 		void show_scores() {
 			system("cls");
-			std::cout <<std::endl<< "this is a show game scores,we should be able to show best 10 scores";
+			std::cout <<std::endl<< "this is a show game scores,we should be able to show best 10 scores"<<std::endl<<std::endl;
+
+			int nb_entiers = 0;
+			int entiers[10];
+
+			std::ifstream fichier("Best10Scores.txt"); // Ouvre le fichier en mode lecture
+			if (!fichier.is_open()) {
+				std::cerr << "Erreur lors de l'ouverture du fichier best score." << std::endl;
+				; // Retourne -1 en cas d'erreur
+			}
+			else {
+				int entier;
+				if (!(fichier >> entier ))
+					std::cout << "File is empty" << std::endl;
+
+				else {
+					
+					// Lire chaque entier du fichier tant que nous ne dépassons pas la taille maximale du tableau
+					while (fichier >> entier && nb_entiers < 10) {
+						entiers[nb_entiers++] = entier; // Stocker l'entier dans le tableau
+
+					}
+					fichier.close(); // Ferme le fichier
+
+					Party::trierEntiers(entiers, nb_entiers);
+					for (int i = 0; i < nb_entiers; i++) {
+					std:cout << i + 1 << '_' << entiers[i] << std::endl;
+					}
+				}
+				
+			}
+
 			_getch();
 		}
 		

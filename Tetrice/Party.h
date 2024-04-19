@@ -38,6 +38,7 @@ private:
 	//for saving 
 	int saving_time=120;
 public:
+
 	Plateau get_game_pieces() {
 		return game_pieces;
 	}
@@ -148,6 +149,9 @@ public:
 		case 3:
 			paused = true;
 			exited = true;
+			saveScores();
+
+			break;
 		default:
 			break;
 		}
@@ -203,6 +207,8 @@ public:
 		}
 	
 		saveNameFile(file_name);
+		saveScores();
+
 
 		
 
@@ -648,16 +654,125 @@ public:
 			break;
 		 case 2:
 			 exited = true;
-			 break;
+			 
+			 
 		 default:
 			 break;
 		 }
 
 
+
 	}
 
 
-	
+	 //~Party() {
+		// /*string type;
+		// switch ((int)Type) {
+		// case 1:
+		//	 type = "Tetrice";
+		//	 break;
+		// case 2:
+		//	 type = "Tepatrice";
+		//	 break;
+		// case 3:
+		//	 type = "Tecontent";
+		//	 break;
+		// case 4:
+		//	 type = "Tevalide";
+		//	 break;
+
+		// }*/
+		// std::cout << "im here" << std::endl;
+
+		// // Ouverture du fichier JSON en mode écriture
+		// std::ofstream fichier("Best10Scores.txt", std::ios::app); // Ouvre le fichier en mode ajout
+		// if (fichier.is_open()) {
+		//	 string data = to_string(score) + '\n' /*+ type+'\n'*/;
+		//	 fichier << data; // Écrit le contenu à la fin du fichier
+		//	 fichier.close(); // Ferme le fichier
+		// }
+		// else {
+		//	 std::cerr << "Erreur lors de l'ouverture du fichier Best10Scores." << std::endl;
+		// }
+
+	 //}
+
+	 void saveScores() {
+		 int nb_entiers = 0;
+		 int entiers[10];
+
+		std::ifstream fichier("Best10Scores.txt"); // Ouvre le fichier en mode lecture
+		 if (!fichier.is_open()) {
+			 std::cerr << "Erreur lors de l'ouverture du fichier best score." << std::endl;
+			 ; // Retourne -1 en cas d'erreur
+		 }
+		 else {
+			 
+
+			 int entier;
+			 // Lire chaque entier du fichier tant que nous ne dépassons pas la taille maximale du tableau
+			 while (fichier >> entier && nb_entiers < 10) {
+				 entiers[nb_entiers++] = entier; // Stocker l'entier dans le tableau
+				 
+			 }
+			 fichier.close(); // Ferme le fichier
+
+			 trierEntiers(entiers, nb_entiers);
+		 }
+
+		 
+
+
+		 std::ofstream File("Best10Scores.txt", std::ios::trunc); // Ouvre le fichier en mode ajout
+		 if (File.is_open()) {
+			 if (nb_entiers == 10) {
+				 for (int i = 0; i < nb_entiers; i++) {
+					 if (score > entiers[i]) {
+						 entiers[9] = score;
+						 break;
+					 }
+				 }
+			 }
+			 else {
+
+				 entiers[nb_entiers++] = score;
+
+			 }
+			 
+			 
+
+
+			 for (int i = 0; i < nb_entiers; i++) {
+				 //string data = to_string(score) + '\n' /*+ type+'\n'*/;
+				 File << to_string(entiers[i]) + '\n'; // Écrit le contenu à la fin du fichier
+			 }
+			 File.close();
+		 }
+
+		 else {
+			 std::cerr << "Erreur lors de l'ouverture du fichier Best10Scores." << std::endl;
+		 }
+
+
+			 
+		 
+
+	 }
+
+
+	 static void trierEntiers(int entiers[], int nb_entiers) {
+		 for (int i = 0; i < nb_entiers - 1; ++i) {
+			 for (int j = 0; j < nb_entiers - i - 1; ++j) {
+				 if (entiers[j] < entiers[j + 1]) {
+					 // Échange les éléments entiers[j] et entiers[j + 1]
+					 int temp = entiers[j];
+					 entiers[j] = entiers[j + 1];
+					 entiers[j + 1] = temp;
+				 }
+			 }
+		 }
+	 }
+	 
 
 };
 /*
