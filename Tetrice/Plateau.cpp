@@ -31,6 +31,9 @@ int Plateau::get_size() const
 	return size;
 }
 
+//clone all the 9 main plates with a single parcours
+
+
 void Plateau::set_head(shape_node* tete)
 {
 	head = tete;
@@ -390,27 +393,30 @@ int Plateau::evaluate_plate(Plateau ** colors, Plateau **shapes) {
 			tmp = tmp->get_next_shape();
 			delete del;
 			score += 30;
-			// based on shapes : alll the imps after prev will be increased and same for icps and isps 
+			// based on shapes : alll the imps after prev will be decreased and same for icps and isps 
 			// imp and isp of all the pieces with same shape after prev
 			// 
-			int imp_diff = this->get_tail()->imp - this->get_size();
-			int isp_diff = shapes[i]->get_tail()->imp - shapes[i]->get_size();
+			int imp_diff =(this->get_tail())?this->get_tail()->imp:0 - this->get_size();
+			int isp_diff =(shapes[i]->get_tail())?shapes[i]->get_tail()->imp:0 - shapes[i]->get_size();
 			while (prev->get_next() != this->get_head())
 			{
 				//avancer en avant
 				prev = prev->get_next();
 				// increase imp by difference
 				prev->imp -= imp_diff;
-				if (prev->get_piece().get_shape() == shapes[i]->get_head()->get_piece().get_shape()) {
+				
+				
+				if (prev->get_piece().get_shape() == static_cast<shape>(i+1)) {
 					prev->isp -= isp_diff;
 				}
 				int index_color = static_cast<int>(prev->get_piece().get_color()) - 1;
-				int icp_diff = colors[index_color]->get_tail()->imp - colors[index_color]->get_size();
+				int icp_diff =(colors[index_color]->get_tail())?colors[index_color]->get_tail()->imp:0 - colors[index_color]->get_size();
 				if (icp_diff)
 				{
 					prev->icp -= icp_diff;
 				}
 			}
+			
 
 			return (score + evaluate_plate(colors, shapes));
 		}
@@ -572,19 +578,19 @@ int Plateau::evaluate_plate(Plateau ** colors, Plateau **shapes) {
 			// based on shapes : alll the imps after prev will be increased and same for icps and isps 
 			// imp and icp of all the pieces with same color after prev
 			// 
-			int imp_diff = this->get_tail()->imp - this->get_size();
-			int icp_diff = colors[i]->get_tail()->imp - colors[i]->get_size();
+			int imp_diff =(this->get_tail())?this->get_tail()->imp:0 - this->get_size();
+			int icp_diff =(colors[i]->get_tail())? colors[i]->get_tail()->imp:0 - colors[i]->get_size();
 			while (prev->get_next() != this->get_head())
 			{
 				//avancer en avant
 				prev = prev->get_next();
 				// increase imp by difference
 				prev->imp -= imp_diff;
-				if (prev->get_piece().get_color() == colors[i]->get_head()->get_piece().get_color()) {
+				if (prev->get_piece().get_color() == static_cast<shape_color>(i+1)) {
 					prev->icp -= icp_diff;
 				}
 				int index_shape = static_cast<int>(prev->get_piece().get_shape()) - 1;
-				int isp_diff = shapes[index_shape]->get_tail()->imp - shapes[index_shape]->get_size();
+				int isp_diff =(shapes[index_shape]->get_tail())? shapes[index_shape]->get_tail()->imp:0 - shapes[index_shape]->get_size();
 				if (isp_diff)
 				{
 					prev->isp -= isp_diff;
@@ -597,6 +603,7 @@ int Plateau::evaluate_plate(Plateau ** colors, Plateau **shapes) {
 	
 		// correct imps icps isps 
 	}
+	
 	return 0;
 
 }

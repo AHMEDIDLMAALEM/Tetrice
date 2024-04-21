@@ -5,7 +5,7 @@
 static bool s_finished = false;
 
 int main() {
-
+ 
     Party p(3);
     //Game g;
     _getch();

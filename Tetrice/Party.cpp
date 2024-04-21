@@ -1,7 +1,175 @@
 #include "Party.h"
+std::unordered_map<string, int> Party::isCaseCalculated;
+std::string Party::best_action;
+int Party::max_score;
+// construct a clone via another party to clone states
+Party::Party(Party* origin, action effect) {
+	
+	if (origin->get_next_pieces().get_head())
+	{
+		shape_node* origine_next_pieces_current_node = origin->get_next_pieces().get_head(), * origin_next_pieces_head = origine_next_pieces_current_node;
+		this->next_pieces.inserer_right(origine_next_pieces_current_node->get_piece());
+		// first clone the next pieces 
+		while (origine_next_pieces_current_node->get_next() != origin_next_pieces_head) {
+
+			// forward 
+			origine_next_pieces_current_node = origine_next_pieces_current_node->get_next();
+
+			//add origine current piece to current next_piece
+			this->next_pieces.inserer_right(origine_next_pieces_current_node->get_piece());
+		}
+	}
+	if (origin->get_game_pieces().get_head())
+	{
+		shape_node* origine_current_node = origin->get_game_pieces().get_head(), * origin_head = origine_current_node;
+		//add origine current piece to current game_piece
+		this->game_pieces.inserer_right(origine_current_node->get_piece());
+
+
+		int index_shape = static_cast<int>(origine_current_node->get_piece().get_shape()) - 1;
+		int index_color = static_cast<int>(origine_current_node->get_piece().get_color()) - 1;
+
+		// add it to the right of color and shape plates
+		this->colors_heads[index_color].inserer_right_colors(&this->game_pieces, origine_current_node->get_piece());
+		this->shapes_heads[index_shape].inserer_right_shapes(&this->game_pieces, origine_current_node->get_piece());
+
+
+
+		// now go for the rest as long as they are not the head (already done) 
+		while (origine_current_node->get_next() != origin_head) {
+
+			// forward 
+			origine_current_node = origine_current_node->get_next();
+
+			//add origine current piece to current game_piece
+			this->game_pieces.inserer_right(origine_current_node->get_piece());
+
+			int index_shape = static_cast<int>(origine_current_node->get_piece().get_shape()) - 1;
+			int index_color = static_cast<int>(origine_current_node->get_piece().get_color()) - 1;
+
+			// add it to the right of color and shape plates
+			this->colors_heads[index_color].inserer_right_colors(&this->game_pieces, origine_current_node->get_piece());
+			this->shapes_heads[index_shape].inserer_right_shapes(&this->game_pieces, origine_current_node->get_piece());
+
+		}
+
+	}
+	
+
+
+	
+	this->score = origin->score;
+	switch (effect)
+	{
+	case decallage_red:
+		decallage_gauche(0);
+		break;
+	case decallage_green:
+		decallage_gauche(1);
+		break;
+	case decallage_yellow:
+		decallage_gauche(2);
+		break;
+	case decallage_blue:
+		decallage_gauche(3);
+		break;
+	case decallage_cercle:
+		decallage_gauche(4);
+		break;
+	case decallage_rhombus:
+		decallage_gauche(5);
+		break;
+	case decallage_square:
+		decallage_gauche(6);
+		break;
+	case decallage_triangle:
+		decallage_gauche(7);
+		break;
+	case insertion_droite:
+		if (next_pieces.get_size())
+		{
+			piece p = next_pieces.get_tail()->get_piece();
+			int index_c = static_cast<int>(p.get_color()) - 1;
+			int index_sh = static_cast<int>(p.get_shape()) - 1;
+			//add right next_piece to game pieces 
+			this->game_pieces.inserer_right(p);
+			// add it to the right of color and shape plates
+			this->colors_heads[index_c].inserer_right_colors(&this->game_pieces, p);
+			this->shapes_heads[index_sh].inserer_right_shapes(&this->game_pieces, p);
+			this->score += this->game_pieces.supprimer3_right(&(this->colors_heads), &(this->shapes_heads));
+
+			// supression 
+			this->next_pieces.set_size(next_pieces.get_size() - 1);
+			shape_node* prv = next_pieces.get_head();
+			while (prv->get_next() != next_pieces.get_tail()) {
+				prv = prv->get_next();
+			}
+			next_pieces.set_tail(prv);
+			delete prv->get_next();
+			prv->set_next(NULL);
+		}
+		if (!this->next_pieces.get_size())
+		{
+			this->next_pieces.set_head(NULL);
+			this->next_pieces.set_tail(NULL);
+		}
+
+		break;
+	case insertion_gauche:
+		if (next_pieces.get_size())
+		{
+			piece p = next_pieces.get_tail()->get_piece();
+			int index_c = static_cast<int>(p.get_color()) - 1;
+			int index_sh = static_cast<int>(p.get_shape()) - 1;
+			//add right next_piece to game pieces 
+			this->game_pieces.inserer_left(p);
+			// add it to the right of color and shape plates
+			this->colors_heads[index_c].inserer_left_colors(&this->game_pieces, p);
+			this->shapes_heads[index_sh].inserer_left_shapes(&this->game_pieces, p);
+			this->score += this->game_pieces.supprimer3_left(&(this->colors_heads), &(this->shapes_heads));
+
+
+			//supressionde next piece tail
+			this->next_pieces.set_size(next_pieces.get_size() - 1);
+			shape_node* prv = next_pieces.get_head();
+			while (prv->get_next() != next_pieces.get_tail()) {
+				prv = prv->get_next();
+			}
+			next_pieces.set_tail(prv);
+			delete prv->get_next();
+			prv->set_next(NULL);
+		}
+		
+		if (!this->next_pieces.get_size())
+		{
+			this->next_pieces.set_head(NULL);
+			this->next_pieces.set_tail(NULL);
+		}
+		
+		break;
+	default:
+		break;
+	}
+	if (effect != none)
+	{
+		// save that action was performed for origine state
+		string key_i = origin->StatetoString(effect);
+		isCaseCalculated[key_i] = (this->score - origin->score) ;
+
+		
+	}
+	
+
+	return;
+
+
+
+
+}
 
 Party::Party(int choice) {
 	system("cls");
+	Party::initializeMap();
 	switch (choice)
 	{
 	case 1:
@@ -153,12 +321,18 @@ int Party::Tecontent() {
 	while (!exited)
 	{
 		while (!paused) {
+			if (game_pieces.get_size())
+			{
+				backtracking_bestAction();	
+
+			}
+
 			////////////////////////////////////////////////
 			///    handle player input and upadates      ///
 			///////////////////////////////////////////////
 			player_action(false, true, true);
 
-			//evaluate plate and delete triplets
+			// evaluate plate and delete triplets
 
 			//update list and score delete triplets and all 
 
@@ -215,7 +389,7 @@ void Party::chose_decallage() {
 	Menu::gotoxy(0, 4, "Chose a color or a shape :\n");
 	// print options 
 	Menu::gotoxy(0, 5, ' ');
-	cout << "\033[31m" << "RED   " << "\033[0m" << "\033[32m" << " GREEN " << "\033[0m" << "\033[33m" << " YELLOW" << "\033[0m" << "\033[34m" << " BLUE  " << "\033[0m" << " CERCLE" << " RHOMBU" << " SQUARE" << " TRIANGLE";
+	std::cout << "\033[31m" << "RED   " << "\033[0m" << "\033[32m" << " GREEN " << "\033[0m" << "\033[33m" << " YELLOW" << "\033[0m" << "\033[34m" << " BLUE  " << "\033[0m" << " CERCLE" << " RHOMBU" << " SQUARE" << " TRIANGLE";
 
 	char in = 'a';
 	int choice = 0;
@@ -248,6 +422,7 @@ void Party::chose_decallage() {
 	7 => decallage triangle;
 
 	*/
+
 	decallage_gauche(choice);
 	////////////////////////////////////////////
 	///    Render game pieces in scene      ///
@@ -274,6 +449,7 @@ void Party::debug_copy(shape_node** tab, int size, shape_node** res) {
 
 }
 void Party::decallage_gauche(int choice) {
+	
 	shape_node** gpi = new shape_node * [game_pieces.get_size()];
 	gpi = create_gpi();
 	if (choice < 4)// color
@@ -694,7 +870,12 @@ shape_node** Party::mergeSort(shape_node* arr[], int left, int right) {
 	}
 	return arr;
 }
-
+Plateau Party::get_game_pieces() {
+	return this->game_pieces;
+}
+Plateau Party::get_next_pieces() {
+	return this->next_pieces;
+}
 shape_node** Party::create_gpi() {
 	shape_node** gpi = new shape_node * [game_pieces.get_size()];
 	shape_node* tmp = game_pieces.get_head();
@@ -728,6 +909,164 @@ shape_node** Party::create_cpi(int index) {
 	}
 	return cpi;
 }
+
+void Party::backtracking_bestAction() {
+	ofstream fout;
+	Party* pptr = new Party(this, none);
+	fout.open(pptr->StatetoString(none));
+	Party::isCaseCalculated.clear();
+	std::string course_of_action;
+	max_score = 0;
+	best_action = "";
+	course_of_action.append("best action :");
+	if (backTrack_State(pptr,none, course_of_action)) {
+	
+		Menu::gotoxy(20, 3,"AI:Actions made evaluation succeded : ");
+		std::cout << best_action;
+	}
+	else
+	{
+		Menu::gotoxy(20, 3, "AI:I have nothing to say");
+	}
+	fout.close();
+}
+int Party::get_score() {
+	return this->score;
+}
+string Party::action_toString(action a) {
+	switch (a)
+	{
+	case decallage_red:
+		return "_d0";
+		
+	case decallage_green:
+		return("_d1");
+		
+	case decallage_yellow:
+		return("_d2");
+		
+	case decallage_blue:
+		return("_d3");
+		
+	case decallage_cercle:
+		return("_d4");
+		
+	case decallage_rhombus:
+		return("_d5");
+		
+	case decallage_square:
+		return("_d6");
+		
+	case decallage_triangle:
+		return("_d7");
+		
+	case insertion_droite:
+		return("_id");
+		
+	case insertion_gauche:
+		return("_ig");
+		
+	default:
+		return "";
+		
+	}
+}
+bool Party::backTrack_State(Party* initial_state,action a, string course_of_action) {
+	bool succes = false;
+	std::string key = initial_state->StatetoString(none);
+	// if all actions for this case all already calculated
+	int	count_key = isCaseCalculated.count(key);
+	
+	
+	if (count_key == 0)
+	{
+		// write into file
+		ofstream fout;
+		// what it is calculated hh
+		
+		fout.open("record.txt", std::ios_base::app);
+		fout << isCaseCalculated.size() << " :" << key << " , " << max_score << " with : " << best_action << endl;
+		isCaseCalculated[key] = 1;
+		// if not calculated we first calculate each of it's possible options also save it 
+		for (int i = 1; i <= 10; i++)
+		{
+			string key_i = initial_state->StatetoString(static_cast<action>(i));
+			// if the action for this state is not yet calculated
+			if (isCaseCalculated.find(key_i) == isCaseCalculated.end()) {
+				fout <<"\t" << action_toString(static_cast<action>(i)) << " on " << key << endl;
+				string new_course = course_of_action;
+				new_course.append("_");
+				new_course.append(action_toString(static_cast<action>(i)));
+				//fixed ::: WARNING error we should backtrack the state we recieved with constructor not the one we are in rn
+				Party* state_after_action = new Party(initial_state, static_cast<action>(i));
+				if (state_after_action->StatetoString(none) != initial_state->StatetoString(none)) {
+					succes = initial_state->backTrack_State(state_after_action, static_cast<action>(i), new_course);
+				}
+				
+			}
+			
+		}
+		
+		fout.close();
+		
+	}
+
+	// we see if any of them's score is bigger than the current one 
+	for (int i = 1; i <= 10; i++)
+	{
+		// we get it's key
+		string key_i = initial_state->StatetoString(static_cast<action>(i));
+		// we compare their value if added to current with current max if it's gonne make change
+		if (initial_state->get_score() + isCaseCalculated[key_i] >= Party::max_score)
+		{
+			// if it's greater we set the best action and the new max_score
+			max_score = initial_state->get_score() + isCaseCalculated[key_i];
+			best_action = "";
+			best_action.append(course_of_action);
+			best_action.append(action_toString(static_cast<action>(i)));
+			// we set succes to true means that we have a suggestion
+			succes = true;
+		}
+	}
+	
+	
+	
+
+	return succes;
+}
+
+std::string Party::StatetoString(action a) {
+	std::string res = "N:";
+	shape_node* tmp;
+	if (next_pieces.get_head())
+	{
+		tmp = next_pieces.get_head();
+		res.append(tmp->get_piece().toString());
+		while (tmp->get_next() != next_pieces.get_head())
+		{
+			tmp = tmp->get_next();
+			res.append(tmp->get_piece().toString());
+		}
+
+	}
+	
+	res.append(",M:");
+	if (game_pieces.get_head())
+	{
+		tmp = game_pieces.get_head();
+		res.append(tmp->get_piece().toString());
+		while (tmp->get_next() != game_pieces.get_head())
+		{
+			tmp = tmp->get_next();
+			res.append(tmp->get_piece().toString());
+		}
+
+	}
+	
+	res.append(action_toString(a));
+	return res;
+}
+
 int Party::Tetriste() {
 	this->Type = tetriste;
 	//std::cout << "\nDEBUGGING: start";
@@ -741,6 +1080,12 @@ int Party::Tetriste() {
 	while (!exited)
 	{
 		while (!paused) {
+			/////////////////////////////////////////////////////
+			///    evaluate state and suggest best action     ///
+			////////////////////////////////////////////////////
+			
+
+
 			////////////////////////////////////////////////
 			///    handle player input and upadates      ///
 			///////////////////////////////////////////////
@@ -823,7 +1168,7 @@ void Party::render_colorsANDshapes() {
 		{
 			try
 			{
-
+				
 				if (tmp)
 				{
 					tmp->get_piece().afficher();
@@ -832,14 +1177,14 @@ void Party::render_colorsANDshapes() {
 			}
 			catch (...)
 			{
-				tmp == NULL;
+				tmp = NULL;
 			}
 
 
 		} while (tmp != colors_heads[i].get_head());
-		cout << endl;
+		std::cout << endl;
 	}
-	cout << "______________sahpes____________\n";
+	std::cout << "______________sahpes____________\n";
 	for (int i = 0; i < 4; i++)
 	{
 		shape_node* tmp = shapes_heads[i].get_head();
@@ -860,7 +1205,7 @@ void Party::render_colorsANDshapes() {
 			}
 
 		} while (tmp != shapes_heads[i].get_head());
-		cout << endl;
+		std::cout << endl;
 	}
 }
 
@@ -918,6 +1263,7 @@ void Party::player_action(bool ai = false, bool dec = false, bool score = false)
 	}
 	next_pieces.set_tail(prv);
 	delete prv->get_next();
+	prv->set_next(NULL);
 }
 // next : L C
 void Party::init_scene(int size, bool ai, bool score) {
@@ -925,11 +1271,11 @@ void Party::init_scene(int size, bool ai, bool score) {
 	Menu::gotoxy(Menu::timer_x, Menu::timer_y, "                                                    ");
 
 	Menu::gotoxy(0, Menu::timer_y - 1, ' ');
-	cout << "Time :";
+	std::cout << "Time :";
 	if (score)
 	{
 		Menu::gotoxy(14, Menu::timer_y - 1, ' ');
-		cout << "Score : " << this->score;
+		std::cout << "Score : " << this->score;
 	}
 	//generated the waiting quee
 	for (int i = 0; i < size; i++)
@@ -956,11 +1302,11 @@ void Party::handle_time() {
 
 			Menu::gotoxy(Menu::timer_x, Menu::timer_y - 1, "     ");
 			Menu::gotoxy(Menu::timer_x, Menu::timer_y - 1, ' ');
-			cout << --time;
+			std::cout << --time;
 			if (this->Type != tetriste && this->Type != tepatrice)
 			{
 				Menu::gotoxy(14, Menu::timer_y - 1, ' ');
-				cout << "Score : " << this->score;
+				std::cout << "Score : " << this->score;
 			}
 
 

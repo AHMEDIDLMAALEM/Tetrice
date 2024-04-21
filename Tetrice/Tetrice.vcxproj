@@ -143,6 +143,9 @@
     <ClInclude Include="Plateau.h" />
     <ClInclude Include="shape_node.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="record.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

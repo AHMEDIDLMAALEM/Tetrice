@@ -1,0 +1,413 @@
+0 :N:Sr,M:RbSrRrSy , 0 with : 
+	_d0 on N:Sr,M:RbSrRrSy
+2 :N:Sr,M:RbRrSrSy , 0 with : 
+	_d0 on N:Sr,M:RbRrSrSy
+	_d1 on N:Sr,M:RbRrSrSy
+	_d2 on N:Sr,M:RbRrSrSy
+	_d3 on N:Sr,M:RbRrSrSy
+	_d4 on N:Sr,M:RbRrSrSy
+	_d5 on N:Sr,M:RbRrSrSy
+18 :N:Sr,M:RrRbSrSy , 0 with : best action :__d0__d0_id
+	_d0 on N:Sr,M:RrRbSrSy
+20 :N:Sr,M:SrRbRrSy , 0 with : best action :__d0__d0_id
+	_d0 on N:Sr,M:SrRbRrSy
+	_d1 on N:Sr,M:SrRbRrSy
+	_d2 on N:Sr,M:SrRbRrSy
+	_d3 on N:Sr,M:SrRbRrSy
+	_d4 on N:Sr,M:SrRbRrSy
+	_d5 on N:Sr,M:SrRbRrSy
+36 :N:Sr,M:SrRrRbSy , 0 with : best action :__d0__d5__d0__d0_id
+	_d0 on N:Sr,M:SrRrRbSy
+38 :N:Sr,M:RrSrRbSy , 0 with : best action :__d0__d5__d0__d0_id
+	_d0 on N:Sr,M:RrSrRbSy
+	_d1 on N:Sr,M:RrSrRbSy
+	_d2 on N:Sr,M:RrSrRbSy
+	_d3 on N:Sr,M:RrSrRbSy
+	_d4 on N:Sr,M:RrSrRbSy
+	_d5 on N:Sr,M:RrSrRbSy
+	_d6 on N:Sr,M:RrSrRbSy
+55 :N:Sr,M:RrSyRbSr , 0 with : best action :__d0__d5__d0__d5__d0__d5_id
+	_d0 on N:Sr,M:RrSyRbSr
+57 :N:Sr,M:SrSyRbRr , 0 with : best action :__d0__d5__d0__d5__d0__d5_id
+	_d0 on N:Sr,M:SrSyRbRr
+	_d1 on N:Sr,M:SrSyRbRr
+	_d2 on N:Sr,M:SrSyRbRr
+	_d3 on N:Sr,M:SrSyRbRr
+	_d4 on N:Sr,M:SrSyRbRr
+	_d5 on N:Sr,M:SrSyRbRr
+73 :N:Sr,M:SrSyRrRb , 0 with : best action :__d0__d5__d0__d5__d0__d6__d0__d0_id
+	_d0 on N:Sr,M:SrSyRrRb
+75 :N:Sr,M:RrSySrRb , 0 with : best action :__d0__d5__d0__d5__d0__d6__d0__d0_id
+	_d0 on N:Sr,M:RrSySrRb
+	_d1 on N:Sr,M:RrSySrRb
+	_d2 on N:Sr,M:RrSySrRb
+	_d3 on N:Sr,M:RrSySrRb
+	_d4 on N:Sr,M:RrSySrRb
+	_d5 on N:Sr,M:RrSySrRb
+91 :N:Sr,M:RbSySrRr , 0 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d0_id
+	_d0 on N:Sr,M:RbSySrRr
+93 :N:Sr,M:RbSyRrSr , 0 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d0_id
+	_d0 on N:Sr,M:RbSyRrSr
+	_d1 on N:Sr,M:RbSyRrSr
+	_d2 on N:Sr,M:RbSyRrSr
+	_d3 on N:Sr,M:RbSyRrSr
+	_d4 on N:Sr,M:RbSyRrSr
+	_d5 on N:Sr,M:RbSyRrSr
+	_d6 on N:Sr,M:RbSyRrSr
+	_d7 on N:Sr,M:RbSyRrSr
+	_ig on N:Sr,M:RbSyRrSr
+112 :N:,M:SrRbSyRrSr , 0 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d5__d0__d6_id
+	_d0 on N:,M:SrRbSyRrSr
+114 :N:,M:RrRb , 0 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d5__d0__d6_id
+	_d0 on N:,M:RrRb
+	_d1 on N:,M:RrRb
+	_d2 on N:,M:RrRb
+	_d3 on N:,M:RrRb
+	_d4 on N:,M:RrRb
+	_d5 on N:,M:RrRb
+121 :N:,M:RbRr , 0 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d5__d0__d6_id
+	_d0 on N:,M:RbRr
+	_d1 on N:,M:RbRr
+	_d2 on N:,M:RbRr
+	_d3 on N:,M:RbRr
+	_d4 on N:,M:RbRr
+	_d5 on N:,M:RbRr
+	_d6 on N:,M:RbRr
+	_d7 on N:,M:RbRr
+	_ig on N:,M:RbRr
+	_id on N:,M:RbRr
+	_d1 on N:,M:SrRbSyRrSr
+	_d2 on N:,M:SrRbSyRrSr
+	_d3 on N:,M:SrRbSyRrSr
+	_d4 on N:,M:SrRbSyRrSr
+	_d5 on N:,M:SrRbSyRrSr
+141 :N:,M:SrRrSyRbSr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig__d0_id
+	_d0 on N:,M:SrRrSyRbSr
+143 :N:,M:RrSrSyRbSr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig__d0_id
+	_d0 on N:,M:RrSrSyRbSr
+	_d1 on N:,M:RrSrSyRbSr
+	_d2 on N:,M:RrSrSyRbSr
+	_d3 on N:,M:RrSrSyRbSr
+	_d4 on N:,M:RrSrSyRbSr
+	_d5 on N:,M:RrSrSyRbSr
+150 :N:,M:RbSrSyRrSr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig__d5__d0__d0_id
+	_d0 on N:,M:RbSrSyRrSr
+	_d1 on N:,M:RbSrSyRrSr
+	_d2 on N:,M:RbSrSyRrSr
+	_d3 on N:,M:RbSrSyRrSr
+	_d4 on N:,M:RbSrSyRrSr
+	_d5 on N:,M:RbSrSyRrSr
+	_d6 on N:,M:RbSrSyRrSr
+162 :N:,M:RbSy , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig__d5__d0__d5__d5_d0
+	_d0 on N:,M:RbSy
+	_d1 on N:,M:RbSy
+	_d2 on N:,M:RbSy
+	_d3 on N:,M:RbSy
+	_d4 on N:,M:RbSy
+	_d5 on N:,M:RbSy
+	_d6 on N:,M:RbSy
+	_d7 on N:,M:RbSy
+	_ig on N:,M:RbSy
+	_id on N:,M:RbSy
+	_d7 on N:,M:RbSrSyRrSr
+	_ig on N:,M:RbSrSyRrSr
+	_id on N:,M:RbSrSyRrSr
+	_d1 on N:,M:SrRrSyRbSr
+	_d2 on N:,M:SrRrSyRbSr
+	_d3 on N:,M:SrRrSyRbSr
+	_d4 on N:,M:SrRrSyRbSr
+	_d5 on N:,M:SrRrSyRbSr
+	_d6 on N:,M:SrRrSyRbSr
+186 :N:,M:SyRrSrRbSr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig__d5__d5_d0
+	_d0 on N:,M:SyRrSrRbSr
+	_d1 on N:,M:SyRrSrRbSr
+	_d2 on N:,M:SyRrSrRbSr
+	_d3 on N:,M:SyRrSrRbSr
+	_d4 on N:,M:SyRrSrRbSr
+	_d5 on N:,M:SyRrSrRbSr
+193 :N:,M:SyRb , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig__d5__d6__d0_id
+	_d0 on N:,M:SyRb
+	_d1 on N:,M:SyRb
+	_d2 on N:,M:SyRb
+	_d3 on N:,M:SyRb
+	_d4 on N:,M:SyRb
+	_d5 on N:,M:SyRb
+	_d6 on N:,M:SyRb
+	_d7 on N:,M:SyRb
+	_ig on N:,M:SyRb
+	_id on N:,M:SyRb
+	_d6 on N:,M:SyRrSrRbSr
+	_d7 on N:,M:SyRrSrRbSr
+	_ig on N:,M:SyRrSrRbSr
+	_id on N:,M:SyRrSrRbSr
+	_d7 on N:,M:SrRrSyRbSr
+	_ig on N:,M:SrRrSyRbSr
+	_id on N:,M:SrRrSyRbSr
+	_id on N:Sr,M:RbSyRrSr
+	_d6 on N:Sr,M:RrSySrRb
+213 :N:Sr,M:RrSrSyRb , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig_d0
+	_d0 on N:Sr,M:RrSrSyRb
+215 :N:Sr,M:SrRrSyRb , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig_d0
+	_d0 on N:Sr,M:SrRrSyRb
+	_d1 on N:Sr,M:SrRrSyRb
+	_d2 on N:Sr,M:SrRrSyRb
+	_d3 on N:Sr,M:SrRrSyRb
+	_d4 on N:Sr,M:SrRrSyRb
+	_d5 on N:Sr,M:SrRrSyRb
+231 :N:Sr,M:SrRbSyRr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig_d0
+	_d0 on N:Sr,M:SrRbSyRr
+233 :N:Sr,M:RrRbSySr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig_d0
+	_d0 on N:Sr,M:RrRbSySr
+	_d1 on N:Sr,M:RrRbSySr
+	_d2 on N:Sr,M:RrRbSySr
+	_d3 on N:Sr,M:RrRbSySr
+	_d4 on N:Sr,M:RrRbSySr
+	_d5 on N:Sr,M:RrRbSySr
+249 :N:Sr,M:RbRrSySr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig_d0
+	_d0 on N:Sr,M:RbRrSySr
+251 :N:Sr,M:RbSrSyRr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig_d0
+	_d0 on N:Sr,M:RbSrSyRr
+	_d1 on N:Sr,M:RbSrSyRr
+	_d2 on N:Sr,M:RbSrSyRr
+	_d3 on N:Sr,M:RbSrSyRr
+	_d4 on N:Sr,M:RbSrSyRr
+	_d5 on N:Sr,M:RbSrSyRr
+	_d6 on N:Sr,M:RbSrSyRr
+	_d7 on N:Sr,M:RbSrSyRr
+	_ig on N:Sr,M:RbSrSyRr
+270 :N:,M:SrRbSrSyRr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig_d0
+	_d0 on N:,M:SrRbSrSyRr
+272 :N:,M:SrRbRrSySr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig_d0
+	_d0 on N:,M:SrRbRrSySr
+	_d1 on N:,M:SrRbRrSySr
+	_d2 on N:,M:SrRbRrSySr
+	_d3 on N:,M:SrRbRrSySr
+	_d4 on N:,M:SrRbRrSySr
+	_d5 on N:,M:SrRbRrSySr
+279 :N:,M:SrRrRbSySr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig__d0__d0_id
+	_d0 on N:,M:SrRrRbSySr
+281 :N:,M:RrSrRbSySr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig__d0__d0_id
+	_d0 on N:,M:RrSrRbSySr
+283 :N:,M:SrSrRbSyRr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig__d0__d0_id
+	_d0 on N:,M:SrSrRbSyRr
+	_d1 on N:,M:SrSrRbSyRr
+	_d2 on N:,M:SrSrRbSyRr
+	_d3 on N:,M:SrSrRbSyRr
+	_d4 on N:,M:SrSrRbSyRr
+	_d5 on N:,M:SrSrRbSyRr
+	_d6 on N:,M:SrSrRbSyRr
+300 :N:,M:SrSyRbSrRr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig__d0__d5__d0__d0__d5_id
+	_d0 on N:,M:SrSyRbSrRr
+302 :N:,M:SrSyRbRrSr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig__d0__d5__d0__d0__d5_id
+	_d0 on N:,M:SrSyRbRrSr
+304 :N:,M:RrSyRbSrSr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig__d0__d5__d0__d0__d5_id
+	_d0 on N:,M:RrSyRbSrSr
+	_d1 on N:,M:RrSyRbSrSr
+	_d2 on N:,M:RrSyRbSrSr
+	_d3 on N:,M:RrSyRbSrSr
+	_d4 on N:,M:RrSyRbSrSr
+	_d5 on N:,M:RrSyRbSrSr
+	_d6 on N:,M:RrSyRbSrSr
+321 :N:,M:RrSrRbSrSy , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig__d0__d5__d0__d0__d6__d0__d0__d5_id
+	_d0 on N:,M:RrSrRbSrSy
+323 :N:,M:SrSrRbRrSy , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig__d0__d5__d0__d0__d6__d0__d0__d5_id
+	_d0 on N:,M:SrSrRbRrSy
+325 :N:,M:SrRrRbSrSy , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig__d0__d5__d0__d0__d6__d0__d0__d5_id
+	_d0 on N:,M:SrRrRbSrSy
+	_d1 on N:,M:SrRrRbSrSy
+	_d2 on N:,M:SrRrRbSrSy
+	_d3 on N:,M:SrRrRbSrSy
+	_d4 on N:,M:SrRrRbSrSy
+	_d5 on N:,M:SrRrRbSrSy
+341 :N:,M:SrRbRrSrSy , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig__d0__d5__d0__d0__d6__d0__d0__d5_id
+	_d0 on N:,M:SrRbRrSrSy
+	_d1 on N:,M:SrRbRrSrSy
+	_d2 on N:,M:SrRbRrSrSy
+	_d3 on N:,M:SrRbRrSrSy
+	_d4 on N:,M:SrRbRrSrSy
+	_d5 on N:,M:SrRbRrSrSy
+	_d6 on N:,M:SrRbRrSrSy
+	_d7 on N:,M:SrRbRrSrSy
+	_ig on N:,M:SrRbRrSrSy
+	_id on N:,M:SrRbRrSrSy
+	_d1 on N:,M:SrSrRbRrSy
+	_d2 on N:,M:SrSrRbRrSy
+	_d3 on N:,M:SrSrRbRrSy
+	_d4 on N:,M:SrSrRbRrSy
+	_d5 on N:,M:SrSrRbRrSy
+	_d6 on N:,M:SrSrRbRrSy
+	_d7 on N:,M:SrSrRbRrSy
+	_ig on N:,M:SrSrRbRrSy
+	_id on N:,M:SrSrRbRrSy
+	_d7 on N:,M:RrSyRbSrSr
+	_ig on N:,M:RrSyRbSrSr
+	_id on N:,M:RrSyRbSrSr
+	_d7 on N:,M:SrSrRbSyRr
+	_ig on N:,M:SrSrRbSyRr
+	_id on N:,M:SrSrRbSyRr
+	_d1 on N:,M:RrSrRbSySr
+	_d2 on N:,M:RrSrRbSySr
+	_d3 on N:,M:RrSrRbSySr
+	_d4 on N:,M:RrSrRbSySr
+	_d5 on N:,M:RrSrRbSySr
+389 :N:,M:RbSrRrSySr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig__d0__d5__d0__d0_d5
+	_d0 on N:,M:RbSrRrSySr
+	_d1 on N:,M:RbSrRrSySr
+	_d2 on N:,M:RbSrRrSySr
+	_d3 on N:,M:RbSrRrSySr
+	_d4 on N:,M:RbSrRrSySr
+	_d5 on N:,M:RbSrRrSySr
+	_d6 on N:,M:RbSrRrSySr
+	_d7 on N:,M:RbSrRrSySr
+	_ig on N:,M:RbSrRrSySr
+	_id on N:,M:RbSrRrSySr
+	_d1 on N:,M:SrRbSrSyRr
+	_d2 on N:,M:SrRbSrSyRr
+	_d3 on N:,M:SrRbSrSyRr
+	_d4 on N:,M:SrRbSrSyRr
+	_d5 on N:,M:SrRbSrSyRr
+	_d6 on N:,M:SrRbSrSyRr
+410 :N:,M:SrRbSySrRr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig__d5_id
+	_d0 on N:,M:SrRbSySrRr
+	_d1 on N:,M:SrRbSySrRr
+	_d2 on N:,M:SrRbSySrRr
+	_d3 on N:,M:SrRbSySrRr
+	_d4 on N:,M:SrRbSySrRr
+	_d5 on N:,M:SrRbSySrRr
+417 :N:,M:SrRrSySrRb , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d5__d0__d5__d0__ig__d6__d0_d0
+	_d0 on N:,M:SrRrSySrRb
+	_d1 on N:,M:SrRrSySrRb
+	_d2 on N:,M:SrRrSySrRb
+	_d3 on N:,M:SrRrSySrRb
+	_d4 on N:,M:SrRrSySrRb
+	_d5 on N:,M:SrRrSySrRb
+	_d6 on N:,M:SrRrSySrRb
+	_d7 on N:,M:SrRrSySrRb
+	_ig on N:,M:SrRrSySrRb
+	_id on N:,M:SrRrSySrRb
+	_d7 on N:,M:SrRbSrSyRr
+	_ig on N:,M:SrRbSrSyRr
+	_id on N:,M:SrRbSrSyRr
+	_id on N:Sr,M:RbSrSyRr
+	_d6 on N:Sr,M:RrRbSySr
+	_d7 on N:Sr,M:RrRbSySr
+	_ig on N:Sr,M:RrRbSySr
+	_id on N:Sr,M:RrRbSySr
+	_d6 on N:Sr,M:SrRrSyRb
+441 :N:Sr,M:SyRrSrRb , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d5__d0__d5__d0__id_d6
+	_d0 on N:Sr,M:SyRrSrRb
+443 :N:Sr,M:SySrRrRb , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d5__d0__d5__d0__id_d6
+	_d0 on N:Sr,M:SySrRrRb
+	_d1 on N:Sr,M:SySrRrRb
+	_d2 on N:Sr,M:SySrRrRb
+	_d3 on N:Sr,M:SySrRrRb
+	_d4 on N:Sr,M:SySrRrRb
+	_d5 on N:Sr,M:SySrRrRb
+459 :N:Sr,M:SySrRbRr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d5__d0__d5__d0__id_d6
+	_d0 on N:Sr,M:SySrRbRr
+461 :N:Sr,M:SyRrRbSr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d5__d0__d5__d0__id_d6
+	_d0 on N:Sr,M:SyRrRbSr
+	_d1 on N:Sr,M:SyRrRbSr
+	_d2 on N:Sr,M:SyRrRbSr
+	_d3 on N:Sr,M:SyRrRbSr
+	_d4 on N:Sr,M:SyRrRbSr
+	_d5 on N:Sr,M:SyRrRbSr
+477 :N:Sr,M:SyRbRrSr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d5__d0__d5__d0__id_d6
+	_d0 on N:Sr,M:SyRbRrSr
+479 :N:Sr,M:SyRbSrRr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d5__d0__d5__d0__id_d6
+	_d0 on N:Sr,M:SyRbSrRr
+	_d1 on N:Sr,M:SyRbSrRr
+	_d2 on N:Sr,M:SyRbSrRr
+	_d3 on N:Sr,M:SyRbSrRr
+	_d4 on N:Sr,M:SyRbSrRr
+	_d5 on N:Sr,M:SyRbSrRr
+	_d6 on N:Sr,M:SyRbSrRr
+	_d7 on N:Sr,M:SyRbSrRr
+	_ig on N:Sr,M:SyRbSrRr
+	_id on N:Sr,M:SyRbSrRr
+	_d6 on N:Sr,M:SyRrRbSr
+	_d7 on N:Sr,M:SyRrRbSr
+	_ig on N:Sr,M:SyRrRbSr
+502 :N:,M:SrSyRrRbSr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d5__d0__d5__d0__id_d6
+	_d0 on N:,M:SrSyRrRbSr
+504 :N:,M:RrSySrRbSr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d5__d0__d5__d0__id_d6
+	_d0 on N:,M:RrSySrRbSr
+	_d1 on N:,M:RrSySrRbSr
+	_d2 on N:,M:RrSySrRbSr
+	_d3 on N:,M:RrSySrRbSr
+	_d4 on N:,M:RrSySrRbSr
+	_d5 on N:,M:RrSySrRbSr
+	_d6 on N:,M:RrSySrRbSr
+	_d7 on N:,M:RrSySrRbSr
+	_ig on N:,M:RrSySrRbSr
+	_id on N:,M:RrSySrRbSr
+	_d1 on N:,M:SrSyRrRbSr
+	_d2 on N:,M:SrSyRrRbSr
+	_d3 on N:,M:SrSyRrRbSr
+	_d4 on N:,M:SrSyRrRbSr
+	_d5 on N:,M:SrSyRrRbSr
+	_d6 on N:,M:SrSyRrRbSr
+521 :N:,M:SySrRrRbSr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d6__d0__d5__d0__ig__d0_d6
+	_d0 on N:,M:SySrRrRbSr
+	_d1 on N:,M:SySrRrRbSr
+	_d2 on N:,M:SySrRrRbSr
+	_d3 on N:,M:SySrRrRbSr
+	_d4 on N:,M:SySrRrRbSr
+	_d5 on N:,M:SySrRrRbSr
+528 :N:,M:SySrRbRrSr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d6__d0__d5__d0__ig__d6__d0_d6
+	_d0 on N:,M:SySrRbRrSr
+530 :N:,M:SyRrRbSrSr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d6__d0__d5__d0__ig__d6__d0_d6
+	_d0 on N:,M:SyRrRbSrSr
+532 :N:,M:SySrRbSrRr , 100 with : best action :__d0__d5__d0__d5__d0__d6__d0__d5__d0__d6__d0__d6__d0__d5__d0__ig__d6__d0_d6
+	_d0 on N:,M:SySrRbSrRr
+	_d1 on N:,M:SySrRbSrRr
+	_d2 on N:,M:SySrRbSrRr
+	_d3 on N:,M:SySrRbSrRr
+	_d4 on N:,M:SySrRbSrRr
+	_d5 on N:,M:SySrRbSrRr
+	_d6 on N:,M:SySrRbSrRr
+	_d7 on N:,M:SySrRbSrRr
+	_ig on N:,M:SySrRbSrRr
+	_id on N:,M:SySrRbSrRr
+	_d1 on N:,M:SyRrRbSrSr
+	_d2 on N:,M:SyRrRbSrSr
+	_d3 on N:,M:SyRrRbSrSr
+	_d4 on N:,M:SyRrRbSrSr
+	_d5 on N:,M:SyRrRbSrSr
+	_d6 on N:,M:SyRrRbSrSr
+	_d7 on N:,M:SyRrRbSrSr
+	_ig on N:,M:SyRrRbSrSr
+	_id on N:,M:SyRrRbSrSr
+	_d6 on N:,M:SySrRrRbSr
+	_d7 on N:,M:SySrRrRbSr
+	_ig on N:,M:SySrRrRbSr
+	_id on N:,M:SySrRrRbSr
+	_d7 on N:,M:SrSyRrRbSr
+	_ig on N:,M:SrSyRrRbSr
+	_id on N:,M:SrSyRrRbSr
+	_id on N:Sr,M:SyRrRbSr
+	_d6 on N:Sr,M:SySrRrRb
+	_d7 on N:Sr,M:SySrRrRb
+	_ig on N:Sr,M:SySrRrRb
+	_id on N:Sr,M:SySrRrRb
+	_d7 on N:Sr,M:SrRrSyRb
+	_ig on N:Sr,M:SrRrSyRb
+	_id on N:Sr,M:SrRrSyRb
+	_d7 on N:Sr,M:RrSySrRb
+	_ig on N:Sr,M:RrSySrRb
+	_id on N:Sr,M:RrSySrRb
+	_d6 on N:Sr,M:SrSyRbRr
+	_d7 on N:Sr,M:SrSyRbRr
+	_ig on N:Sr,M:SrSyRbRr
+	_id on N:Sr,M:SrSyRbRr
+	_d7 on N:Sr,M:RrSrRbSy
+	_ig on N:Sr,M:RrSrRbSy
+	_id on N:Sr,M:RrSrRbSy
+	_d6 on N:Sr,M:SrRbRrSy
+	_d7 on N:Sr,M:SrRbRrSy
+	_ig on N:Sr,M:SrRbRrSy
+	_id on N:Sr,M:SrRbRrSy
+	_d6 on N:Sr,M:RbRrSrSy
+	_d7 on N:Sr,M:RbRrSrSy
+	_ig on N:Sr,M:RbRrSrSy
+	_id on N:Sr,M:RbRrSrSy

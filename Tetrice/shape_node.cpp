@@ -44,6 +44,20 @@ shape_node::shape_node(piece PI , shape_node* next = NULL, shape_node* next_shap
     }
 }
 
+shape_node::shape_node(shape_node* copy)
+{
+    if (copy) {
+        this->P = copy->get_piece();
+    }
+    this->imp = copy->imp;
+    this->icp = copy->icp;
+    this->isp = copy->isp;
+
+    
+    
+}
+
+
 // getters
 
 piece shape_node::get_piece()

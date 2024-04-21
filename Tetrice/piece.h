@@ -35,6 +35,7 @@ public:
     shape_color get_color();
     piece& operator=(const piece& other);
     void afficher() const;
+    string toString();
     
     ~piece();
     

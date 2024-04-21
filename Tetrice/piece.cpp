@@ -93,6 +93,50 @@ piece::~piece() {
      // Rétablissez la couleur par défaut
      cout << "\033[0m  ";
  }
+
+ string piece::toString(){
+     string res;
+
+     // Affichez la forme (ici, nous utilisons un exemple avec un cercle)
+     switch (_shape)
+     {
+     case Cercle:
+         res.append("C");
+         break;
+     case Rhombus:
+         res.append("R");
+         break;
+     case Square:
+         res.append("S");
+         break;
+     case Triangle:
+         res.append("T");
+         break;
+     default:
+         break;
+     }
+
+     switch (_color)
+     {
+     case Red:
+         res.append("r"); // Code d'échappement ANSI pour le rouge
+         break;
+     case Green:
+         res.append("g"); // Code d'échappement ANSI pour le vert
+         break;
+     case Yellow:
+         res.append("y"); // Code d'échappement ANSI pour le jaune
+         break;
+     case Blue:
+         res.append("b"); // Code d'échappement ANSI pour le bleu
+         break;
+     default:
+         break;
+     }
+     // Rétablissez la couleur par défaut
+     
+     return res;
+ }
  
 
 

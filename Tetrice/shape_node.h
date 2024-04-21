@@ -6,11 +6,11 @@ class shape_node
 {
 private:
     piece P;
-    shape_node* next;//zr9a
-    shape_node* next_shape;
-    shape_node* next_color;
-    shape_node* prev_color;
-    shape_node* prev_shape;
+    shape_node* next = NULL;//zr9a
+    shape_node* next_shape = NULL;
+    shape_node* next_color = NULL;
+    shape_node* prev_color = NULL;
+    shape_node* prev_shape = NULL;
     
 
 public:
@@ -18,6 +18,7 @@ public:
     int icp = 0;
     int isp = 0;
     // constructur
+    shape_node(shape_node *);
     shape_node(piece PI , shape_node*  , shape_node*  , shape_node* , shape_node*, shape_node* );
 
     // getters

@@ -1,11 +1,13 @@
-#pragma once
+
 #include<iostream>
 #include<conio.h>
 #include<thread>
 #include<Windows.h>
 #include "Menu.h"
 #include <chrono>
+#include<fstream>
 #include "Plateau.h"
+using namespace std;
 typedef enum {
 	ni,
 	tetriste,
@@ -14,12 +16,28 @@ typedef enum {
 	tavalide,
 	Bonus
 }party_type;
+
+typedef enum {
+	none,
+	decallage_red,
+	decallage_green,
+	decallage_yellow,
+	decallage_blue,
+	decallage_cercle,
+	decallage_rhombus,
+	decallage_square,
+	decallage_triangle,
+	insertion_gauche,
+	insertion_droite,
+}action;
  
 
 
 class Party
 {
 private:
+	static int max_score;
+	static unordered_map<string,int> isCaseCalculated;
 	Plateau game_pieces ;
 	Plateau next_pieces ;
 	Plateau colors_heads[4];
@@ -34,13 +52,23 @@ private:
 	bool using_cursor = false;
 	party_type Type = ni;
 public:
+	static std::string best_action;
+	//create from a clone 
+	Party(Party* origin, action effect);
+
 	Party(int choice);
 	Party(int choice, std::chrono::seconds dur);
-	
+	int get_score();
+	Plateau get_game_pieces();
+	Plateau get_next_pieces();
+	string action_toString(action a);
+	bool backTrack_State(Party *,action,string );
+	void backtracking_bestAction();
 	void pause_menu(bool , bool );
 	void save_game();
 	int Tecontent();
-	int Tepatrice();;
+	int Tepatrice();
+	string StatetoString(action);
 	void chose_decallage();
 	void debug_copy(shape_node** tab, int size, shape_node** res);
 	void decallage_gauche(int choice);
@@ -60,6 +88,12 @@ public:
 	
 	
 	void handle_time();
+
+	static void initializeMap() {
+		isCaseCalculated.clear(); // Clear any previous values
+		// Perform other initialization if necessary
+	}
+	
 
 };
 /*
