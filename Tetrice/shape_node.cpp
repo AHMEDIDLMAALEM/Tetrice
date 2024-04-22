@@ -111,3 +111,6 @@ void shape_node:: set_prev_shape(shape_node* v)
 {
     this->prev_shape = v;
 }
+int shape_node::get_imp() {
+    return this->imp;
+}

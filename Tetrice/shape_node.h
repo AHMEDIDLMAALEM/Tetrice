@@ -29,7 +29,7 @@ public:
         shape_node* get_next();
 
         shape_node* get_next_shape();
-
+        int get_imp();
         shape_node* get_next_color();
 
         shape_node* get_prev_color();

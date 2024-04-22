@@ -2,6 +2,8 @@
 std::unordered_map<string, int> Party::isCaseCalculated;
 std::string Party::best_action;
 int Party::max_score;
+int Party::min_depth;
+
 // construct a clone via another party to clone states
 Party::Party(Party* origin, action effect) {
 	
@@ -911,17 +913,19 @@ shape_node** Party::create_cpi(int index) {
 }
 
 void Party::backtracking_bestAction() {
+	Party::min_depth = 2147483646;
 	ofstream fout;
 	Party* pptr = new Party(this, none);
 	fout.open(pptr->StatetoString(none));
 	Party::isCaseCalculated.clear();
-	std::string course_of_action;
+	std::string course_of_action = "";
 	max_score = 0;
 	best_action = "";
 	course_of_action.append("best action :");
-	if (backTrack_State(pptr,none, course_of_action)) {
+	if (backTrack_State(pptr,none, course_of_action,0)) {
 	
-		Menu::gotoxy(20, 3,"AI:Actions made evaluation succeded : ");
+		Menu::gotoxy(20, 3, "                                                              ");
+		Menu::gotoxy(20, 3,"AI:  ");
 		std::cout << best_action;
 	}
 	else
@@ -930,50 +934,10 @@ void Party::backtracking_bestAction() {
 	}
 	fout.close();
 }
-int Party::get_score() {
-	return this->score;
-}
-string Party::action_toString(action a) {
-	switch (a)
-	{
-	case decallage_red:
-		return "_d0";
-		
-	case decallage_green:
-		return("_d1");
-		
-	case decallage_yellow:
-		return("_d2");
-		
-	case decallage_blue:
-		return("_d3");
-		
-	case decallage_cercle:
-		return("_d4");
-		
-	case decallage_rhombus:
-		return("_d5");
-		
-	case decallage_square:
-		return("_d6");
-		
-	case decallage_triangle:
-		return("_d7");
-		
-	case insertion_droite:
-		return("_id");
-		
-	case insertion_gauche:
-		return("_ig");
-		
-	default:
-		return "";
-		
-	}
-}
-bool Party::backTrack_State(Party* initial_state,action a, string course_of_action) {
-	bool succes = false;
-	std::string key = initial_state->StatetoString(none);
+
+bool Party::backTrack_State(Party* initial_state,action a, string course_of_action,int depth) {
+	bool succes = true;
+		std::string key = initial_state->StatetoString(none);
 	// if all actions for this case all already calculated
 	int	count_key = isCaseCalculated.count(key);
 	
@@ -995,12 +959,12 @@ bool Party::backTrack_State(Party* initial_state,action a, string course_of_acti
 			if (isCaseCalculated.find(key_i) == isCaseCalculated.end()) {
 				fout <<"\t" << action_toString(static_cast<action>(i)) << " on " << key << endl;
 				string new_course = course_of_action;
-				new_course.append("_");
+				new_course.append(" " + to_string(depth)+":");
 				new_course.append(action_toString(static_cast<action>(i)));
 				//fixed ::: WARNING error we should backtrack the state we recieved with constructor not the one we are in rn
 				Party* state_after_action = new Party(initial_state, static_cast<action>(i));
 				if (state_after_action->StatetoString(none) != initial_state->StatetoString(none)) {
-					succes = initial_state->backTrack_State(state_after_action, static_cast<action>(i), new_course);
+					succes = initial_state->backTrack_State(state_after_action, static_cast<action>(i), new_course,depth+1);
 				}
 				
 			}
@@ -1017,12 +981,13 @@ bool Party::backTrack_State(Party* initial_state,action a, string course_of_acti
 		// we get it's key
 		string key_i = initial_state->StatetoString(static_cast<action>(i));
 		// we compare their value if added to current with current max if it's gonne make change
-		if (initial_state->get_score() + isCaseCalculated[key_i] >= Party::max_score)
+		if (initial_state->get_score() + isCaseCalculated[key_i] >= Party::max_score && depth <= Party::min_depth)
 		{
+			Party::min_depth = depth;
 			// if it's greater we set the best action and the new max_score
 			max_score = initial_state->get_score() + isCaseCalculated[key_i];
 			best_action = "";
-			best_action.append(course_of_action);
+			best_action.append(course_of_action +"  " + to_string(depth)+":");
 			best_action.append(action_toString(static_cast<action>(i)));
 			// we set succes to true means that we have a suggestion
 			succes = true;
@@ -1035,6 +1000,47 @@ bool Party::backTrack_State(Party* initial_state,action a, string course_of_acti
 	return succes;
 }
 
+int Party::get_score() {
+	return this->score;
+}
+string Party::action_toString(action a) {
+	switch (a)
+	{
+	case decallage_red:
+		return "d0";
+
+	case decallage_green:
+		return("d1");
+
+	case decallage_yellow:
+		return("d2");
+
+	case decallage_blue:
+		return("d3");
+
+	case decallage_cercle:
+		return("d4");
+
+	case decallage_rhombus:
+		return("d5");
+
+	case decallage_square:
+		return("d6");
+
+	case decallage_triangle:
+		return("d7");
+
+	case insertion_droite:
+		return("id");
+
+	case insertion_gauche:
+		return("ig");
+
+	default:
+		return "";
+
+	}
+}
 std::string Party::StatetoString(action a) {
 	std::string res = "N:";
 	shape_node* tmp;
@@ -1325,3 +1331,4 @@ void Party::handle_time() {
 	}
 	//end game & timer
 }
+

@@ -36,6 +36,7 @@ typedef enum {
 class Party
 {
 private:
+	static int min_depth;
 	static int max_score;
 	static unordered_map<string,int> isCaseCalculated;
 	Plateau game_pieces ;
@@ -62,7 +63,7 @@ public:
 	Plateau get_game_pieces();
 	Plateau get_next_pieces();
 	string action_toString(action a);
-	bool backTrack_State(Party *,action,string );
+	bool backTrack_State(Party *,action,string ,int);
 	void backtracking_bestAction();
 	void pause_menu(bool , bool );
 	void save_game();
