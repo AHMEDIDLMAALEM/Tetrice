@@ -23,6 +23,14 @@ piece::piece(int shapes_count, int colors_count) {
     _color = static_cast<shape_color>(c);
 
 }
+piece::piece(int shapes_count, int colors_count, float x, float y) {
+    int s = (rand() % shapes_count) + 1;
+    int c = (rand() % colors_count) + 1;
+    _shape = static_cast<shape>(s);
+    _color = static_cast<shape_color>(c);
+    this->x = x;
+    this->y = y;
+}
 
 void piece::set_shape(shape s) {
     _shape = s;

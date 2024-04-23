@@ -131,6 +131,7 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Party.cpp" />
+    <ClCompile Include="PartyRaylib.cpp" />
     <ClCompile Include="piece.cpp" />
     <ClCompile Include="Plateau.cpp" />
     <ClCompile Include="shape_node.cpp" />
@@ -141,6 +142,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Party.h" />
+    <ClInclude Include="PartyRaylib.h" />
     <ClInclude Include="piece.h" />
     <ClInclude Include="Plateau.h" />
     <ClInclude Include="shape_node.h" />

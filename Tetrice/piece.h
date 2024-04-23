@@ -31,6 +31,7 @@ public:
     piece();
     piece(shape s, shape_color c, float x, float y);
     piece(int shapes_count, int colors_count);
+    piece(int shapes_count, int colors_count, float x, float y);
     void set_shape(shape s);
     void set_color(shape_color c);
     void set_X(float x);
