@@ -100,7 +100,6 @@ public:
 		default:
 			break;
 		}
-		_getch();
 	}
 	//Party(int choice,std::chrono::seconds dur) {
 	//	this->party_time = dur;
@@ -287,7 +286,6 @@ public:
 
 		thread_object.join();
 		std::cout << "\nDEBUGGING: tetris exit";
-		_getch();
 		return -1;
 	}
 	void chose_decallage() {
@@ -435,7 +433,7 @@ public:
 		
 		thread_object.join();
 		std::cout << "\nDEBUGGING: tetris exit";
-		_getch();
+		
 		return -1;
 	}
 	void render_colorsANDshapes() {
@@ -490,7 +488,9 @@ public:
 		// add while to enter either g or d and ignore the other inputs 
 		char choice = 'a';
 		do {
+			
 			using_cursor = true;
+			
 			choice = _getch();
 			switch (choice)
 			{
@@ -507,36 +507,42 @@ public:
 			default:
 				break;
 			}
-			using_cursor = false;	
-		} while (choice != 75 && choice != 77 );
-		switch (choice)
-		{
-		case 75:
-			//add right next_piece to game pieces 
-			this->game_pieces.inserer_left(next_pieces.get_tail()->get_piece());
-			// add it to the left of color and shape plates
-			this->colors_heads[index_c].inserer_left_colors(&this->game_pieces, next_pieces.get_tail()->get_piece());
-			this->shapes_heads[index_sh].inserer_left_shapes(&this->game_pieces, next_pieces.get_tail()->get_piece());
-			this->score += this->game_pieces.supprimer3_left(&colors_heads, &shapes_heads);
-			break;
-		case 77:
-			//add right next_piece to game pieces 
-			this->game_pieces.inserer_right(next_pieces.get_tail()->get_piece());
-			// add it to the right of color and shape plates
-			this->colors_heads[index_c].inserer_right_colors(&this->game_pieces, next_pieces.get_tail()->get_piece());
-			this->shapes_heads[index_sh].inserer_right_shapes(&this->game_pieces, next_pieces.get_tail()->get_piece());
-			this->score += this->game_pieces.supprimer3_right(&(this->colors_heads), &(this->shapes_heads));
-
-			break;
 			
+			using_cursor = false;	
+		} while (choice != 75 && choice != 77 && exited == false );
+
+		std::cout << exited << std::endl;
+		if (exited==false) {
+			switch (choice)
+			{
+			case 75:
+				//add right next_piece to game pieces 
+				this->game_pieces.inserer_left(next_pieces.get_tail()->get_piece());
+				// add it to the left of color and shape plates
+				this->colors_heads[index_c].inserer_left_colors(&this->game_pieces, next_pieces.get_tail()->get_piece());
+				this->shapes_heads[index_sh].inserer_left_shapes(&this->game_pieces, next_pieces.get_tail()->get_piece());
+				this->score += this->game_pieces.supprimer3_left(&colors_heads, &shapes_heads);
+				break;
+			case 77:
+				//add right next_piece to game pieces 
+				this->game_pieces.inserer_right(next_pieces.get_tail()->get_piece());
+				// add it to the right of color and shape plates
+				this->colors_heads[index_c].inserer_right_colors(&this->game_pieces, next_pieces.get_tail()->get_piece());
+				this->shapes_heads[index_sh].inserer_right_shapes(&this->game_pieces, next_pieces.get_tail()->get_piece());
+				this->score += this->game_pieces.supprimer3_right(&(this->colors_heads), &(this->shapes_heads));
+
+				break;
+
+			}
+
+			this->next_pieces.set_size(next_pieces.get_size() - 1);
+			shape_node* prv = next_pieces.get_head();
+			while (prv->get_next() != next_pieces.get_tail()) {
+				prv = prv->get_next();
+			}
+			next_pieces.set_tail(prv);
+			delete prv->get_next();
 		}
-		this->next_pieces.set_size(next_pieces.get_size() - 1);
-		shape_node* prv = next_pieces.get_head();
-		while (prv->get_next() != next_pieces.get_tail()) {
-			prv = prv->get_next();
-		}
-		next_pieces.set_tail(prv);
-		delete prv->get_next();
 	}
 	// next : L C
 	void init_scene(int size,bool ai ,bool score , bool render_at_first ) {
@@ -644,16 +650,19 @@ public:
 	}
 
 	 void afterSaveGame() {
+
 		 string options[2] = {"Restart","Exit"};
 		 Menu m(options, 2);
 		 int choice = m.get_choice();
-
 		 switch (choice) {
+
 		 case 1:
+			 exited = true;
+
 			 std::cout << "Restart the game" << std::endl;
 			break;
 		 case 2:
-			 exited = true;
+			 exit(-1);
 			 
 			 
 		 default:
