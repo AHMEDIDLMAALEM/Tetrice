@@ -915,6 +915,7 @@ shape_node** Party::create_cpi(int index) {
 void Party::backtracking_bestAction() {
 	Party::min_depth = 2147483646;
 	ofstream fout;
+	// copy the state attributes to pptr
 	Party* pptr = new Party(this, none);
 	fout.open(pptr->StatetoString(none));
 	Party::isCaseCalculated.clear();
@@ -949,7 +950,7 @@ bool Party::backTrack_State(Party* initial_state,action a, string course_of_acti
 		// what it is calculated hh
 		
 		fout.open("record.txt", std::ios_base::app);
-		fout << isCaseCalculated.size() << " :" << key << " , " << max_score << " with : " << best_action << endl;
+		fout << isCaseCalculated.size() << " :" << key << " , score : " << this->score << " MAX:" << max_score << " with : " << best_action << endl;
 		isCaseCalculated[key] = 1;
 		// if not calculated we first calculate each of it's possible options also save it 
 		for (int i = 1; i <= 10; i++)
