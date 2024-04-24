@@ -37,6 +37,13 @@ public:
 	void supprimer_right(Plateau* color, Plateau* shape);
 	void afficher(bool dis_last);
 	void delete_node();
+	void decalage_shapes(shape p, Plateau HS[4], Plateau HC[4]);
+	void decalage_colors(shape_color p, Plateau HS[4], Plateau HC[4]);
+
+	string PlateauToJson();
+	string ShapesToJson();
+	string ColorsToJson();
+	void operator=(Plateau);
 
 	//piece supprimer();
 

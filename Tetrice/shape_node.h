@@ -49,4 +49,6 @@ public:
         void set_prev_color(shape_node* v);
 
         void set_prev_shape(shape_node* v);
+
+        void NodeToJson();
 };

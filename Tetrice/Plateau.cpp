@@ -2,6 +2,8 @@
 #include <conio.h>
 #include "Party.h"
 
+
+
 Plateau::Plateau()
 {
 	head = NULL;
@@ -667,6 +669,138 @@ void Plateau::delete_node()
 	////shape
 }
 
+void Plateau::decalage_shapes(shape p, Plateau HS[4], Plateau HC[4])
+{
+	if (size != 0) {
+		int i = (int)(p - 1);
+		shape_node* temp = HS[i].get_head(), * inter = HS[i].get_head();
+
+		piece p = temp->get_piece();
+		do {
+			temp = temp->get_next_shape();
+			inter->set_piece(temp->get_piece());
+			inter = temp;
+
+		} while (temp != HS[i].get_head());
+		HS[i].get_tail()->set_piece(p);
+
+		for (int k = 0; k < 4; k++) {
+			HC[k].set_head(nullptr);
+			HC[k].set_tail(nullptr);
+			HC[k].set_size(0);
+
+		}
+
+		temp = head;
+		for (int k = 0; k < size; k++) {
+			int i = ((int)temp->get_piece().get_color() - 1);
+			HC[i].inserer_right_colors(this ,temp->get_piece());
+			temp = temp->get_next();
+		}
+	}
+}
+
+void Plateau::decalage_colors(shape_color p, Plateau HS[4], Plateau HC[4])
+{
+	if (size != 0) {
+		int i = (int)(p - 1);
+		shape_node* temp = HC[i].get_head(), * inter = HC[i].get_head();
+
+		piece p = temp->get_piece();
+		do {
+			temp = temp->get_next_shape();
+			inter->set_piece(temp->get_piece());
+			inter = temp;
+
+		} while (temp != HS[i].get_head());
+		HC[i].get_tail()->set_piece(p);
+
+		for (int k = 0; k < 4; k++) {
+			HS[k].set_head(nullptr);
+			HS[k].set_tail(nullptr);
+			HS[k].set_size(0);
+
+		}
+
+		temp = head;
+		for (int k = 0; k < size; k++) {
+			int i = ((int)temp->get_piece().get_color() - 1);
+			HS[i].inserer_right_shapes(this, temp->get_piece());
+			temp = temp->get_next();
+		}
+	}
+}
+
+string Plateau::PlateauToJson()
+{
+	string json = ":{\n\t\t\t\"size\":" + to_string(size) + ",\n\t\t\t\"Pieces\":[\n";
+	
+	if (size != 0) {
+		shape_node* temp = head;
+
+		for (int i = 0; i < size - 1; ++i) {
+			json += "\t\t\t\t " + temp->get_piece().PieceToJson() + ",\n";
+			temp = temp->get_next();
+		}
+		json += "\t\t\t\t " + temp->get_piece().PieceToJson() + "\n";
+
+	}
+	json += "\n\t\t\t  ]\n\t\t}";
+
+	return json;
+
+}
+
+string Plateau::ShapesToJson()
+{
+
+	string json = ":{\n\t\t\t\t\"size\":" + to_string(size) + ",\n\t\t\t\t\"Pieces\":[\n";
+	
+	if (size != 0) {
+		shape_node* temp = head;
+
+		for (int i = 0; i < size - 1; ++i) {
+			json += "\t\t\t\t\t " + temp->get_piece().PieceToJson() + ",\n";
+			temp = temp->get_next_shape();
+		}
+
+		json += "\t\t\t\t\t " + temp->get_piece().PieceToJson() + "\n";
+
+
+	}
+	json += "\n\t\t\t\t  ]\n\t\t\t\t}\n\t\t\t\t}";
+
+
+	return json;
+}
+
+string Plateau::ColorsToJson()
+{
+	
+		string json=":{\n\t\t\t\t\"size\":" + to_string(size) + ",\n\t\t\t\t\"Pieces\":[\n";
+
+		if (size != 0) {
+			shape_node* temp = head;
+
+			for (int i = 0; i < size - 1; ++i) {
+				json += "\t\t\t\t\t " + temp->get_piece().PieceToJson() + ",\n";
+				temp = temp->get_next_color();
+			}
+			json += "\t\t\t\t\t " + temp->get_piece().PieceToJson() + "\n";
+		}
+
+		json += "\n\t\t\t\t  ]\n\t\t\t\t}\n\t\t\t\t}";
+	
+		return json;
+}
+
+void Plateau::operator=(Plateau P)
+{
+	head = P.get_head();
+	tail = P.get_tail();
+	size = P.get_size();
+}
+
 void Plateau::supprimer_left(Plateau* color, Plateau* shape)
 {
 	// delete trace from main plate
@@ -764,6 +898,8 @@ void Plateau::afficher(bool dis_last = false)
 		temp->get_piece().afficher();
 		temp = temp->get_next();
 	}
+	if (size == 0)
+		std::cout << "vide";
 }
 void Plateau::set_size(int s) {
 	this->size = s;

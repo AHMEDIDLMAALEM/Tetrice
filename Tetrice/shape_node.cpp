@@ -91,6 +91,10 @@ void shape_node:: set_piece(piece v)
 {
     this->P = v;
 }
+void shape_node::NodeToJson()
+{
+    
+}
 void shape_node:: set_next(shape_node* v)
 {
     this->next = v;
