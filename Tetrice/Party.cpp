@@ -1,4 +1,4 @@
-#include "Party.h"
+﻿#include "Party.h"
 std::unordered_map<string, int> Party::isCaseCalculated;
 std::string Party::best_action;
 int Party::max_score;
@@ -171,7 +171,7 @@ Party::Party(Party* origin, action effect) {
 
 Party::Party(int choice) {
 	system("cls");
-	Party::initializeMap();
+	isCaseCalculated.clear();
 	switch (choice)
 	{
 	case 1:
@@ -239,17 +239,70 @@ void Party::pause_menu(bool ai = false, bool score = false) {
 	case 3:
 		paused = true;
 		exited = true;
+		saveScores();
 	default:
 		break;
 	}
 }
 void Party::save_game() {
+	std::string file_name;
+	system("cls");
+	std::cout << "\nWhat would you like to call your game: ";
+	std::cin >> file_name;
+	file_name += ".json";
 
-	std::cout << "\nDEBUGGING: Game was saved";
-	exited = true;
+	{
+		// Ouverture du fichier JSON en mode �criture
+		std::ofstream file(file_name);
 
-	_getch();
+		// V�rification que le fichier a bien �t� ouvert
+		if (file.is_open()) {
+			std::string Json;
+			Json = "{\n\t\"Party\":{\n\t\t\"Type\":" + to_string((int)Type) + ",\n\t\t\"Timer\":" + to_string(saving_time) + ",\n\t\t\"score\":" + to_string(score) + ",\n\t\t\"Next\"" + next_pieces.PlateauToJson() + ",\n\t\t\"Plateau\"";
+			Json += game_pieces.PlateauToJson() + ',';
+			string shapes[4] = { "\"Cercle\"","\"Rhombus\"","\"Square\"","\"Triangle\"" };
+			Json += "\n\t\t\t\"ShapesHeads\":[\n";
+			for (int i = 0; i < 4; i++) {
+				Json += "\t\t\t\t{\t\t\t\t\n\t\t\t\t" + shapes[i] + shapes_heads[i].ShapesToJson() + ",\n";
+			}
+			Json.pop_back();
+			Json.pop_back();
+			Json += "\n\t\t\t],";
+
+
+
+			Json += "\n\t\t\t\"colorHeads\":[\n";
+			string color[4] = { "\"Red\"","\"Green\"","\"Yellow\"","\"Blue\"" };
+			for (int i = 0; i < 4; i++) {
+				Json += "\t\t\t\t{\t\t\t\t\n\t\t\t\t" + color[i] + colors_heads[i].ColorsToJson() + ",\n";
+			}
+			Json.pop_back();
+			Json.pop_back();
+			Json += "\n\t\t\t]\n\t}\n}";
+			file << Json;
+
+			std::cout << "Game Was Saved" << std::endl;
+
+			// Fermeture du fichier
+			file.close();
+		}
+		else {
+			std::cerr << "Erreur lors de l'ouverture du fichier." << std::endl;
+		}
+
+
+
+	}
+
+	saveNameFile(file_name);
+	saveScores();
+
+
+
+
+	afterSaveGame();
 }
+
 int Party::Tepatrice() {
 	this->Type = tepatrice;
 	
@@ -310,14 +363,14 @@ int Party::Tepatrice() {
 	_getch();
 	return -1;
 }
-int Party::Tecontent() {
+int Party::Tecontent(bool render_at_first ) {
 	this->Type = tecontent;
 	//std::cout << "\nDEBUGGING: start";
 	/*
 		***tag : Wonderful Code .SOF.
 		usual std::thread(func_name); didn't work
 	*/
-	init_scene(1, false, true);
+	init_scene(1, false, true,render_at_first);
 	std::thread thread_object(&Party::handle_time, this);
 
 	while (!exited)
@@ -1074,7 +1127,7 @@ std::string Party::StatetoString(action a) {
 	return res;
 }
 
-int Party::Tetriste() {
+int Party::Tetriste(bool render_at_first ) {
 	this->Type = tetriste;
 	//std::cout << "\nDEBUGGING: start";
 	/*
@@ -1273,8 +1326,21 @@ void Party::player_action(bool ai = false, bool dec = false, bool score = false)
 	prv->set_next(NULL);
 }
 // next : L C
-void Party::init_scene(int size, bool ai, bool score) {
+void Party::init_scene(int size, bool ai, bool score, bool render_at_first) {
 	system("cls");
+	if (render_at_first) {
+
+		while (using_cursor) {}
+		using_cursor = true;
+		// erase old game pieces from console and show new state
+		Menu::gotoxy(2, 2, "                                          ");
+		Menu::gotoxy(2, 2, ' ');
+		//Menu::gotoxy(5, 5, "DEBUGGING: after afficher goto");
+		game_pieces.afficher(false);
+
+		//Menu::gotoxy(5, 6, "DEBUGGING: after afficher fasle");
+		using_cursor = false;
+	}
 	Menu::gotoxy(Menu::timer_x, Menu::timer_y, "                                                    ");
 
 	Menu::gotoxy(0, Menu::timer_y - 1, ' ');
