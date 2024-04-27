@@ -23,12 +23,14 @@ class Game
 
 		
 
-
+		void tetrice_draw(int x, int y);
 
 		void show_scores();
+		void setConsoleBufferSize(int width, int height);
+		void setConsoleWindowSize(int width, int height);
 		
 		size_t trouverOccurrence(const std::string& chaine, const std::string& mot, int occurrence);
-
+		void setConsoleBackgroundColor(int color);
 		string* extractFileName();
 
 		int countLines(const std::string& filename);

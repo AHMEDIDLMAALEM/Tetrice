@@ -60,4 +60,7 @@
   <ItemGroup>
     <Text Include="record.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Readme.md" />
+  </ItemGroup>
 </Project>

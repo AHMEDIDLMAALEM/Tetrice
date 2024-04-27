@@ -1,8 +1,20 @@
 ﻿#include "Game.h"
-
+#define S 0xDB    // Represents a solid block (█)
+#define L 0xB0    // Represents a light shade (░)
+#define M 0xB2   // Represents a medium shade (▒)
+#define LT 0xC9   // Represents the bottom left corner (╔)
+#define H 0xCD      // Represents a horizontal line (═)
+#define LB 0xC8       // Represents the top left corner (╚)
+#define RB 0xBC      // Represents the top right corner (╝)
+#define RT 0xBB   // Represents the bottom right corner (╗)
+#define V 0xBA        // Represents a vertical line (║)
 
 Game::Game() {
+	setConsoleWindowSize(600 ,400);
 	system("cls");
+	tetrice_draw(10, 5);
+	//setConsoleBackgroundColor(BACKGROUND_BLUE);
+	Menu::gotoxy(14, 12, ' ');
 	std::cout << "Welcome to game press any key to continue ...";
 	_getch();
 	while (playing)
@@ -12,11 +24,50 @@ Game::Game() {
 		// function
 	}
 }
+void Game::tetrice_draw(int x, int y) {
+	Menu::gotoxy(x, y,' ');
+	cout << "\xDB\xDB\xDB\xDB\xDB\xDB\xDB\xDB\xBB\xDB\xDB\xDB\xDB\xDB\xDB\xDB\xBB\xDB\xDB\xDB\xDB\xDB\xDB\xDB\xDB\xBB\xDB\xDB\xDB\xDB\xDB\xDB\xBB \xDB\xDB\xBB \xDB\xDB\xDB\xDB\xDB\xDB\xBB\xDB\xDB\xDB\xDB\xDB\xDB\xDB\xBB\n";
+	Menu::gotoxy(x, y + 1, ' ');
+	cout << "\xC8\xCD\xCD\xDB\xDB\xC9\xCD\xCD\xBC\xDB\xDB\xC9\xCD\xCD\xCD\xCD\xBC\xC8\xCD\xCD\xDB\xDB\xC9\xCD\xCD\xBC\xDB\xDB\xC9\xCD\xCD\xDB\xDB\xBB\xDB\xDB\xBA\xDB\xDB\xC9\xCD\xCD\xCD\xCD\xBC\xDB\xDB\xC9\xCD\xCD\xCD\xCD\xBC\n";
+	Menu::gotoxy(x, y + 2, ' ');
+	cout << "   \xDB\xDB\xBA   \xDB\xDB\xDB\xDB\xDB\xBB     \xDB\xDB\xBA   \xDB\xDB\xDB\xDB\xDB\xDB\xC9\xBC\xDB\xDB\xBA\xDB\xDB\xBA     \xDB\xDB\xDB\xDB\xDB\xBB  \n";
+	Menu::gotoxy(x, y + 3, ' ');
+	cout << "   \xDB\xDB\xBA   \xDB\xDB\xC9\xCD\xCD\xBC     \xDB\xDB\xBA   \xDB\xDB\xC9\xCD\xCD\xDB\xDB\xBB\xDB\xDB\xBA\xDB\xDB\xBA     \xDB\xDB\xC9\xCD\xCD\xBC  \n";
+	Menu::gotoxy(x, y + 4, ' ');
+	cout << "   \xDB\xDB\xBA   \xDB\xDB\xDB\xDB\xDB\xDB\xDB\xBB   \xDB\xDB\xBA   \xDB\xDB\xBA  \xDB\xDB\xBA\xDB\xDB\xBA\xC8\xDB\xDB\xDB\xDB\xDB\xDB\xBB\xDB\xDB\xDB\xDB\xDB\xDB\xDB\xBB\n";
+	Menu::gotoxy(x, y + 5, ' ');
+	cout << "   \xC8\xCD\xBC   \xC8\xCD\xCD\xCD\xCD\xCD\xCD\xBC   \xC8\xCD\xBC   \xC8\xCD\xBC  \xC8\xCD\xBC\xC8\xCD\xBC \xC8\xCD\xCD\xCD\xCD\xCD\xBC\xC8\xCD\xCD\xCD\xCD\xCD\xCD\xBC\n";
+}
+void Game::setConsoleWindowSize(int width, int height) {
+	
+	HWND console = GetConsoleWindow();
+	RECT rect;
+	GetWindowRect(console, &rect);
+	MoveWindow(console, rect.left, rect.top, width, height, TRUE);
+	//
+
+	
+}
+
+void Game::setConsoleBufferSize(int width, int height) {
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD bufferSize = { width, height };
+	SetConsoleScreenBufferSize(hConsole, bufferSize);
+}
+void Game::setConsoleBackgroundColor(int color) {
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_SCREEN_BUFFER_INFO consoleInfo;
+	GetConsoleScreenBufferInfo(hConsole, &consoleInfo);
+	WORD attributes = consoleInfo.wAttributes;
+	attributes &= 0xFFF0; // clear background color
+	attributes |= color;
+	SetConsoleTextAttribute(hConsole, attributes);
+}
 void Game::show_start_menu() {
 
 	std::string options[] = { "New Game","Load a Game","Best Scores","Exit" };
 
-	Menu m(options, 4);
+	Menu m(options, 4,28,8);
 	int choice = m.get_choice();
 	switch (choice)
 	{
@@ -41,7 +92,7 @@ void Game::show_start_menu() {
 void Game::show_difficulty_menu() {
 	std::string options[] = { "Tetriste","Tepatrice","Tecontent","Tavalide","Bonus" };
 
-	Menu m(options, 5);
+	Menu m(options, 5,28,7);
 	Party party(m.get_choice());
 
 }
@@ -52,10 +103,7 @@ void Game::new_game() {
 }
 void Game::load_games() {
 	system("cls");
-	/*Menu::gotoxy(1, 0, ' ');
-	std::cout << ">" << std::endl;
-	_getch();*/
-	std::cout << "this is a load games,we should be able to chose a record" << std::endl;
+	
 
 
 	string filename = chooseNameFile();
@@ -266,7 +314,7 @@ int Game::countLines(const std::string& filename) {
 string Game::chooseNameFile() {
 	string* nameFiles = extractFileName();
 	int index = countLines("savedPartiesNames.txt");
-	Menu m(nameFiles, index);
+	Menu m(nameFiles, index,26,5);
 	int i = m.get_choice() - 1;
 	return nameFiles[i];
 

@@ -246,7 +246,7 @@ int Plateau::evaluate_plate(Plateau ** colors, Plateau **shapes) {
 		{
 			// base on shapes
 			if (tmp->imp + 1 == tmp->get_next_shape()->imp && tmp->get_next_shape()->get_next_shape()->imp == tmp->get_next_shape()->imp + 1) {
-				int score = 10;
+				int score_d = 10;
 				int i = static_cast<int>(tmp->get_piece().get_shape()) - 1;
 
 				//tmp = tmp->get_next_shape()->get_next_shape();
@@ -322,7 +322,7 @@ int Plateau::evaluate_plate(Plateau ** colors, Plateau **shapes) {
 					shape_node* del = tmp;
 					tmp = tmp->get_next_shape();
 					delete del;
-					score += 30;
+					score_d += 30;
 				}
 				// corigger hadsjhi iwlli fhal lfo9
 
@@ -396,7 +396,7 @@ int Plateau::evaluate_plate(Plateau ** colors, Plateau **shapes) {
 				shape_node* del = tmp;
 				tmp = tmp->get_next_shape();
 				delete del;
-				score += 30;
+				score_d += 30;
 				// based on shapes : alll the imps after prev will be decreased and same for icps and isps 
 				// imp and isp of all the pieces with same shape after prev
 				// 
@@ -430,8 +430,8 @@ int Plateau::evaluate_plate(Plateau ** colors, Plateau **shapes) {
 						prev->icp -= icp_diff;
 					}
 				}
-
-				return (score + (this->get_size() != 0) ? evaluate_plate(colors, shapes) : 0);
+				score_d += (this->get_size() != 0) ? evaluate_plate(colors, shapes) : 0;
+				return (score_d );
 			}
 			// based on colors
 			if (tmp->imp + 1 == tmp->get_next_color()->imp && tmp->get_next_color()->get_next_color()->imp == tmp->get_next_color()->imp + 1) {

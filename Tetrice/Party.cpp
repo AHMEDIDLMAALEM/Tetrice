@@ -178,7 +178,7 @@ Party::Party(int choice) {
 		Tetriste();
 		break;
 	case 2:
-		std::cout << Tepatrice();
+		Tepatrice();
 		break;
 	case 3:
 		Tecontent();
@@ -187,11 +187,11 @@ Party::Party(int choice) {
 		std::cout << "Tavalide";
 		break;
 	case 5:
-		std::cout << "Bonus";
+		Bonus();
 	default:
 		break;
 	}
-	_getch();
+	
 }
 Party::Party(int choice, std::chrono::seconds dur) {
 	this->party_time = dur;
@@ -221,7 +221,7 @@ Party::Party(int choice, std::chrono::seconds dur) {
 void Party::pause_menu(bool ai = false, bool score = false) {
 	// tab = 
 	std::string options[] = { "Continue","Save Game","Exit" };
-	Menu m(options, 3);
+	Menu m(options, 3,28,8);
 	int choice = m.get_choice();
 	switch (choice)
 	{
@@ -237,6 +237,7 @@ void Party::pause_menu(bool ai = false, bool score = false) {
 		save_game();
 		break;
 	case 3:
+		
 		paused = true;
 		exited = true;
 		saveScores();
@@ -247,7 +248,9 @@ void Party::pause_menu(bool ai = false, bool score = false) {
 void Party::save_game() {
 	std::string file_name;
 	system("cls");
-	std::cout << "\nWhat would you like to call your game: ";
+	Menu::gotoxy(16, 7, ' ');
+	std::cout << "What would you like to call your game: \n";
+	Menu::gotoxy(30, 8, ' ');
 	std::cin >> file_name;
 	file_name += ".json";
 
@@ -303,10 +306,10 @@ void Party::save_game() {
 	afterSaveGame();
 }
 
-int Party::Tepatrice() {
+int Party::Tepatrice(bool render_at_first) {
 	this->Type = tepatrice;
 	
-	init_scene(1, false, true);
+	init_scene((render_at_first)?0:1, false, false,render_at_first);
 	std::thread thread_object(&Party::handle_time, this);
 
 	while (!exited)
@@ -357,30 +360,28 @@ int Party::Tepatrice() {
 		}
 
 	}
+	system("cls");
 
 	thread_object.join();
-	std::cout << "\nDEBUGGING: tetris exit";
-	_getch();
+	//std::cout << "\nDEBUGGING: tetris exit";
+	//_getch();
 	return -1;
 }
 int Party::Tecontent(bool render_at_first ) {
+	int nb_pieces = (this->game_pieces.get_head()) ? this->game_pieces.get_tail()->imp + 1 : 0;
 	this->Type = tecontent;
 	//std::cout << "\nDEBUGGING: start";
 	/*
 		***tag : Wonderful Code .SOF.
 		usual std::thread(func_name); didn't work
 	*/
-	init_scene(1, false, true,render_at_first);
+	init_scene((render_at_first)?0:1, false, true, render_at_first);
 	std::thread thread_object(&Party::handle_time, this);
 
-	while (!exited)
+	while (!exited && nb_pieces <15)
 	{
-		while (!paused) {
-			if (game_pieces.get_size())
-			{
-				backtracking_bestAction();	
-
-			}
+		while (!paused && nb_pieces <15) {
+			
 
 			////////////////////////////////////////////////
 			///    handle player input and upadates      ///
@@ -430,14 +431,109 @@ int Party::Tecontent(bool render_at_first ) {
 			/////////////////////////////////////////////////////
 			render_colorsANDshapes();
 
-
+			nb_pieces = (this->game_pieces.get_head()) ? this->game_pieces.get_tail()->imp +1 : 0;
 		}
+		paused = true;
+
+	}
+	exited = true;
+	// you lost block
+	if (nb_pieces >= 15)
+	{
+		system("cls");
+		cout << "you lost";
+		_getch();
+		
+	}
+
+	thread_object.join();
+	/*std::cout << "\nDEBUGGING: tetris exit";
+	_getch();*/
+	return -1;
+}
+int Party::Bonus(bool render_at_first) {
+	int nb_pieces = (this->game_pieces.get_head()) ? this->game_pieces.get_tail()->imp + 1 : 0;
+	this->Type = tecontent;
+	//std::cout << "\nDEBUGGING: start";
+	/*
+		***tag : Wonderful Code .SOF.
+		usual std::thread(func_name); didn't work
+	*/
+	init_scene((render_at_first) ? 0 : 1, false, true, render_at_first);
+	std::thread thread_object(&Party::handle_time, this);
+
+	while (!exited && nb_pieces < 15)
+	{
+		while (!paused && nb_pieces < 15) {
+
+			backtracking_bestAction();
+
+			////////////////////////////////////////////////
+			///    handle player input and upadates      ///
+			///////////////////////////////////////////////
+			player_action(false, true, true);
+
+			// evaluate plate and delete triplets
+
+			//update list and score delete triplets and all 
+
+
+			// and show it on the screen
+
+
+
+			////////////////////////////////////////////
+			///    Render game pieces in scene      ///
+			///////////////////////////////////////////
+			while (using_cursor) {}
+			using_cursor = true;
+			// erase old game pieces from console and show new state
+			Menu::gotoxy(2, 2, "                                          ");
+			Menu::gotoxy(2, 2, ' ');
+			//Menu::gotoxy(5, 5, "DEBUGGING: after afficher goto");
+			game_pieces.afficher(false);
+			//Menu::gotoxy(5, 6, "DEBUGGING: after afficher fasle");
+			using_cursor = false;
+
+
+
+
+
+
+			/////////////////////////////////////////////////////
+			///    Render and update  next pieces in scene    ///
+			/////////////////////////////////////////////////////
+			this->next_pieces.inserer_left(piece(4, 4));
+			while (using_cursor) {}
+			using_cursor = true;
+			Menu::gotoxy(0, 0, "                  ");
+			Menu::gotoxy(0, 0, " ");
+			next_pieces.afficher(true);
+			using_cursor = false;
+
+			/////////////////////////////////////////////////////
+			///      render the colors and shapes lists       ///
+			/////////////////////////////////////////////////////
+			render_colorsANDshapes();
+
+			nb_pieces = (this->game_pieces.get_head()) ? this->game_pieces.get_tail()->imp + 1 : 0;
+		}
+		paused = true;
+
+	}
+	exited = true;
+	// you lost block
+	if (nb_pieces >= 15)
+	{
+		system("cls");
+		cout << "you lost";
+		_getch();
 
 	}
 
 	thread_object.join();
-	std::cout << "\nDEBUGGING: tetris exit";
-	_getch();
+	/*std::cout << "\nDEBUGGING: tetris exit";
+	_getch();*/
 	return -1;
 }
 void Party::chose_decallage() {
@@ -853,9 +949,10 @@ void Party::decallage_gauche(int choice) {
 	shape_node* debug_arr_gpi_1[16];
 	//keeppp 
 	debug_copy(gpi, game_pieces.get_size(), debug_arr_gpi_1);
-	if (this->Type != tepatrice)
+	if (this->Type == tecontent || this->Type == tavalide || this->Type == party_type::Bonus)
 	{
-		this->score = game_pieces.evaluate_plate(tmpc, tmps);
+		int ds = game_pieces.evaluate_plate(tmpc, tmps);
+		this->score += ds;
 	}
 	else
 	{
@@ -1004,6 +1101,7 @@ bool Party::backTrack_State(Party* initial_state,action a, string course_of_acti
 		
 		fout.open("record.txt", std::ios_base::app);
 		fout << isCaseCalculated.size() << " :" << key << " , score : " << this->score << " MAX:" << max_score << " with : " << best_action << endl;
+		fout.close();
 		isCaseCalculated[key] = 1;
 		// if not calculated we first calculate each of it's possible options also save it 
 		for (int i = 1; i <= 10; i++)
@@ -1011,7 +1109,9 @@ bool Party::backTrack_State(Party* initial_state,action a, string course_of_acti
 			string key_i = initial_state->StatetoString(static_cast<action>(i));
 			// if the action for this state is not yet calculated
 			if (isCaseCalculated.find(key_i) == isCaseCalculated.end()) {
+				fout.open("record.txt", std::ios_base::app);
 				fout <<"\t" << action_toString(static_cast<action>(i)) << " on " << key << endl;
+				fout.close();
 				string new_course = course_of_action;
 				new_course.append(" " + to_string(depth)+":");
 				new_course.append(action_toString(static_cast<action>(i)));
@@ -1025,7 +1125,7 @@ bool Party::backTrack_State(Party* initial_state,action a, string course_of_acti
 			
 		}
 		
-		fout.close();
+		
 		
 	}
 
@@ -1134,7 +1234,7 @@ int Party::Tetriste(bool render_at_first ) {
 	tag : Wonderful Code .SOF.
 	usual std::thread(func_name); didn't work
 	*/
-	init_scene(1, false, false);
+	init_scene((render_at_first)?0:1, false, false, true);
 	std::thread thread_object(&Party::handle_time, this);
 
 	while (!exited)
@@ -1203,8 +1303,7 @@ int Party::Tetriste(bool render_at_first ) {
 	}
 
 	thread_object.join();
-	std::cout << "\nDEBUGGING: tetris exit";
-	_getch();
+	
 	return -1;
 }
 void Party::render_colorsANDshapes() {
@@ -1294,10 +1393,16 @@ void Party::player_action(bool ai = false, bool dec = false, bool score = false)
 			break;
 		}
 		using_cursor = false;
-	} while (choice != 75 && choice != 77);
+	} while ((choice != 75 && choice != 77) && !exited);
+	if (exited)
+	{
+		return;
+	}
+
 	switch (choice)
 	{
 	case 75:
+		
 		//add right next_piece to game pieces 
 		this->game_pieces.inserer_left(next_pieces.get_tail()->get_piece());
 		// add it to the left of color and shape plates
@@ -1330,17 +1435,17 @@ void Party::init_scene(int size, bool ai, bool score, bool render_at_first) {
 	system("cls");
 	if (render_at_first) {
 
-		while (using_cursor) {}
+		while (time_using_cursor);
 		using_cursor = true;
 		// erase old game pieces from console and show new state
 		Menu::gotoxy(2, 2, "                                          ");
 		Menu::gotoxy(2, 2, ' ');
-		//Menu::gotoxy(5, 5, "DEBUGGING: after afficher goto");
 		game_pieces.afficher(false);
 
-		//Menu::gotoxy(5, 6, "DEBUGGING: after afficher fasle");
 		using_cursor = false;
 	}
+	while (time_using_cursor);
+	using_cursor = true;
 	Menu::gotoxy(Menu::timer_x, Menu::timer_y, "                                                    ");
 
 	Menu::gotoxy(0, Menu::timer_y - 1, ' ');
@@ -1358,6 +1463,7 @@ void Party::init_scene(int size, bool ai, bool score, bool render_at_first) {
 	//this->next_elements = new shape_node[i];
 	Menu::gotoxy(0, 0, ' ');
 	this->next_pieces.afficher(true);
+	using_cursor = false;
 }
 
 
@@ -1373,13 +1479,23 @@ void Party::handle_time() {
 		{
 			std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
-			Menu::gotoxy(Menu::timer_x, Menu::timer_y - 1, "     ");
-			Menu::gotoxy(Menu::timer_x, Menu::timer_y - 1, ' ');
-			std::cout << --time;
+			if (!paused) {
+				//wait for cursor to be free
+				while (!using_cursor && !exited);
+				time_using_cursor = true;
+				Menu::gotoxy(Menu::timer_x, Menu::timer_y - 1, "     ");
+				Menu::gotoxy(Menu::timer_x, Menu::timer_y - 1, ' ');
+				std::cout << --time;
+				time_using_cursor = false;
+			}
 			if (this->Type != tetriste && this->Type != tepatrice)
-			{
+			{ 
+				//wait for cursor to be free
+				while (!using_cursor && !exited);
+				time_using_cursor = true;
 				Menu::gotoxy(14, Menu::timer_y - 1, ' ');
 				std::cout << "Score : " << this->score;
+				time_using_cursor = false;
 			}
 
 

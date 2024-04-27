@@ -7,9 +7,11 @@
 class Menu
 {
 	public:
+		int x;
+		int y;
 	const static int timer_x = 7, timer_y = 7;
 	int size;
-	Menu(std::string options[], int size);
+	Menu(std::string options[], int size,int x = 0,int y = 0);
 	int get_choice();
 
 	

@@ -1,0 +1,91 @@
+{
+	"Party":{
+		"Type":3,
+		"Timer":120,
+		"score":0,
+		"Next":{
+			"size":1,
+			"Pieces":[
+				 {
+					"shape": 3 ,
+					"color": 2
+					}
+
+			  ]
+		},
+		"Plateau":{
+			"size":0,
+			"Pieces":[
+
+			  ]
+		},
+			"ShapesHeads":[
+				{				
+				"Cercle":{
+				"size":0,
+				"Pieces":[
+
+				  ]
+				}
+				},
+				{				
+				"Rhombus":{
+				"size":0,
+				"Pieces":[
+
+				  ]
+				}
+				},
+				{				
+				"Square":{
+				"size":0,
+				"Pieces":[
+
+				  ]
+				}
+				},
+				{				
+				"Triangle":{
+				"size":0,
+				"Pieces":[
+
+				  ]
+				}
+				}
+			],
+			"colorHeads":[
+				{				
+				"Red":{
+				"size":0,
+				"Pieces":[
+
+				  ]
+				}
+				},
+				{				
+				"Green":{
+				"size":0,
+				"Pieces":[
+
+				  ]
+				}
+				},
+				{				
+				"Yellow":{
+				"size":0,
+				"Pieces":[
+
+				  ]
+				}
+				},
+				{				
+				"Blue":{
+				"size":0,
+				"Pieces":[
+
+				  ]
+				}
+				}
+			]
+	}
+}

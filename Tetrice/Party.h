@@ -53,6 +53,7 @@ private:
 	bool exited = false;
 	std::string player;
 	bool using_cursor = false;
+	bool time_using_cursor = false;
 	party_type Type = ni;
 	//for saving 
 	int saving_time=120;
@@ -73,14 +74,14 @@ public:
 			colors_heads[i] = HC[i];
 		}
 
-		init_scene(0, false, false, true);
+		
 		switch (typ)
 		{
 		case 1:
 			Tetriste(true);
 			break;
 		case 2:
-			std::cout << "Tepatrice";
+			std::cout << Tepatrice(true);
 			break;
 		case 3:
 			Tecontent(true);
@@ -101,7 +102,7 @@ public:
 	
 
 
-	int Tepatrice();
+	int Tepatrice(bool render_at_first = false);
 
 	int Tecontent(bool render_at_first = false);
 	
@@ -135,7 +136,7 @@ public:
 	shape_node** create_cpi(int index);
 	int Tetriste(bool render_at_first = false);
 	void render_colorsANDshapes();
-
+	int Bonus(bool render_at_first = false);
 	void player_action(bool , bool , bool );
 	// next : L C
 	void init_scene(int , bool, bool , bool render_at_first = false);
@@ -172,7 +173,7 @@ public:
 	 void afterSaveGame() {
 
 		 string options[2] = {"Restart","Exit"};
-		 Menu m(options, 2);
+		 Menu m(options, 2,28,8);
 		 int choice = m.get_choice();
 		 switch (choice) {
 
