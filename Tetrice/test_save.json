@@ -1,0 +1,139 @@
+{
+	"Party":{
+		"Type":3,
+		"Timer":120,
+		"score":0,
+		"Next":{
+			"size":1,
+			"Pieces":[
+				 {
+					"shape": 3 ,
+					"color": 1
+					}
+
+			  ]
+		},
+		"Plateau":{
+			"size":4,
+			"Pieces":[
+				 {
+					"shape": 2 ,
+					"color": 4
+					},
+				 {
+					"shape": 3 ,
+					"color": 1
+					},
+				 {
+					"shape": 2 ,
+					"color": 1
+					},
+				 {
+					"shape": 3 ,
+					"color": 3
+					}
+
+			  ]
+		},
+			"ShapesHeads":[
+				{				
+				"Cercle":{
+				"size":0,
+				"Pieces":[
+
+				  ]
+				}
+				},
+				{				
+				"Rhombus":{
+				"size":2,
+				"Pieces":[
+					 {
+					"shape": 2 ,
+					"color": 4
+					},
+					 {
+					"shape": 2 ,
+					"color": 1
+					}
+
+				  ]
+				}
+				},
+				{				
+				"Square":{
+				"size":2,
+				"Pieces":[
+					 {
+					"shape": 3 ,
+					"color": 1
+					},
+					 {
+					"shape": 3 ,
+					"color": 3
+					}
+
+				  ]
+				}
+				},
+				{				
+				"Triangle":{
+				"size":0,
+				"Pieces":[
+
+				  ]
+				}
+				}
+			],
+			"colorHeads":[
+				{				
+				"Red":{
+				"size":2,
+				"Pieces":[
+					 {
+					"shape": 3 ,
+					"color": 1
+					},
+					 {
+					"shape": 2 ,
+					"color": 1
+					}
+
+				  ]
+				}
+				},
+				{				
+				"Green":{
+				"size":0,
+				"Pieces":[
+
+				  ]
+				}
+				},
+				{				
+				"Yellow":{
+				"size":1,
+				"Pieces":[
+					 {
+					"shape": 3 ,
+					"color": 3
+					}
+
+				  ]
+				}
+				},
+				{				
+				"Blue":{
+				"size":1,
+				"Pieces":[
+					 {
+					"shape": 2 ,
+					"color": 4
+					}
+
+				  ]
+				}
+				}
+			]
+	}
+}

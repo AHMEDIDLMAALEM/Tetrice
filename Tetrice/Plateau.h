@@ -35,7 +35,7 @@ public:
 	int supprimer3_right(Plateau(*color)[4], Plateau (*shape)[4]);
 	void supprimer_left(Plateau* color, Plateau* shape);
 	void supprimer_right(Plateau* color, Plateau* shape);
-	void afficher(bool dis_last);
+	void afficher(bool dis_last,int,int);
 	void delete_node();
 	void decalage_shapes(shape p, Plateau HS[4], Plateau HC[4]);
 	void decalage_colors(shape_color p, Plateau HS[4], Plateau HC[4]);

@@ -1,0 +1,52 @@
+Before Shifting: 
+N:Rg,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+Colors              |Shapes
+ * 1  size:3         | * 1  size:0
+Before Shifting: 
+N:Rb,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rg(3)(0)(1)__Rb(4)(0)(2)__
+Colors              |Shapes
+ * 1  size:2         | * 1  size:0
+  head:Rr(0)        |  head:none(0)        
+  tail:Sr(2)        |  tail:none(0)        
+ * 2  size:1         | * 2  size:3
+  head:Rg(3)        |  head:Rr(0)        
+  tail:Rg(3)        |  tail:Rb(4)        
+ * 3  size:1         | * 3  size:2
+  head:Sy(1)        |  head:Sy(1)        
+  tail:Sy(1)        |  tail:Sr(2)        
+ * 4  size:1         | * 4  size:0
+  head:Rb(4)        |  head:none(0)        
+  tail:Rb(4)        |  tail:none(0)        
+Before Evaluation: 
+N:Rb,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rg(3)(0)(1)__Rb(4)(0)(2)__
+Colors              |Shapes
+ * 1  size:2         | * 1  size:0
+  head:Sr(0)        |  head:none(0)        
+  tail:Rr(2)        |  tail:none(0)        
+ * 2  size:1         | * 2  size:3
+  head:Rg(3)        |  head:Rr(2)        
+  tail:Rg(3)        |  tail:Rb(4)        
+ * 3  size:1         | * 3  size:2
+  head:Sy(1)        |  head:Sr(0)        
+  tail:Sy(1)        |  tail:Sy(1)        
+ * 4  size:1         | * 4  size:0
+  head:Rb(4)        |  head:none(0)        
+  tail:Rb(4)        |  tail:none(0)        
+After All: 
+N:Rb,M:Sr(0)(0)(0)__Sy(1)(-1)(1)__
+Colors              |Shapes
+ * 1  size:1         | * 1  size:0
+  head:Sr(0)        |  head:none(0)        
+  tail:Sr(0)        |  tail:none(0)        
+ * 2  size:0         | * 2  size:0
+  head:none(0)        |  head:none(0)        
+  tail:none(0)        |  tail:none(0)        
+ * 3  size:1         | * 3  size:2
+  head:Sy(1)        |  head:Sr(0)        
+  tail:Sy(1)        |  tail:Sy(1)        
+ * 4  size:0         | * 4  size:0
+  head:none(0)        |  head:none(0)        
+  tail:none(0)        |  tail:none(0)        
+
+
+

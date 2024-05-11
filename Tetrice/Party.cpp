@@ -220,8 +220,11 @@ Party::Party(int choice, std::chrono::seconds dur) {
 
 void Party::pause_menu(bool ai = false, bool score = false) {
 	// tab = 
+	while (time_using_cursor);
+	using_cursor = true;
 	std::string options[] = { "Continue","Save Game","Exit" };
 	Menu m(options, 3,28,8);
+	using_cursor = false;
 	int choice = m.get_choice();
 	switch (choice)
 	{
@@ -229,9 +232,8 @@ void Party::pause_menu(bool ai = false, bool score = false) {
 		paused = false;
 		system("cls");
 		init_scene(0, ai, score);
-		Menu::gotoxy(2, 2, ' ');
 		//Menu::gotoxy(5, 5, "DEBUGGING: after afficher goto");
-		game_pieces.afficher(false);
+		game_pieces.afficher(false,19,4);
 		break;
 	case 2:
 		save_game();
@@ -328,10 +330,10 @@ int Party::Tepatrice(bool render_at_first) {
 			while (using_cursor) {}
 			using_cursor = true;
 			// erase old game pieces from console and show new state
-			Menu::gotoxy(2, 2, "                                          ");
-			Menu::gotoxy(2, 2, ' ');
+			Menu::gotoxy(19, 2, "                                                                     ");
+			
 			//Menu::gotoxy(5, 5, "DEBUGGING: after afficher goto");
-			game_pieces.afficher(false);
+			game_pieces.afficher(false,19,4);
 			//Menu::gotoxy(5, 6, "DEBUGGING: after afficher fasle");
 			using_cursor = false;
 
@@ -346,9 +348,8 @@ int Party::Tepatrice(bool render_at_first) {
 			this->next_pieces.inserer_left(piece(4, 4));
 			while (using_cursor) {}
 			using_cursor = true;
-			Menu::gotoxy(0, 0, "                  ");
-			Menu::gotoxy(0, 0, " ");
-			next_pieces.afficher(true);
+			Menu::gotoxy(30, 1, "                            ");
+			next_pieces.afficher(true, 30, 1);
 			using_cursor = false;
 
 			/////////////////////////////////////////////////////
@@ -403,10 +404,10 @@ int Party::Tecontent(bool render_at_first ) {
 			while (using_cursor) {}
 			using_cursor = true;
 			// erase old game pieces from console and show new state
-			Menu::gotoxy(2, 2, "                                          ");
-			Menu::gotoxy(2, 2, ' ');
+			Menu::gotoxy(19, 4, "                                          ");
+			
 			//Menu::gotoxy(5, 5, "DEBUGGING: after afficher goto");
-			game_pieces.afficher(false);
+			game_pieces.afficher(false, 19, 4);
 			//Menu::gotoxy(5, 6, "DEBUGGING: after afficher fasle");
 			using_cursor = false;
 
@@ -421,9 +422,9 @@ int Party::Tecontent(bool render_at_first ) {
 			this->next_pieces.inserer_left(piece(4, 4));
 			while (using_cursor) {}
 			using_cursor = true;
-			Menu::gotoxy(0, 0, "                  ");
-			Menu::gotoxy(0, 0, " ");
-			next_pieces.afficher(true);
+			Menu::gotoxy(30, 1, "                  ");
+			
+			next_pieces.afficher(true,30,1);
 			using_cursor = false;
 
 			/////////////////////////////////////////////////////
@@ -488,10 +489,10 @@ int Party::Bonus(bool render_at_first) {
 			while (using_cursor) {}
 			using_cursor = true;
 			// erase old game pieces from console and show new state
-			Menu::gotoxy(2, 2, "                                          ");
-			Menu::gotoxy(2, 2, ' ');
+			Menu::gotoxy(19, 4, "                                          ");
+			
 			//Menu::gotoxy(5, 5, "DEBUGGING: after afficher goto");
-			game_pieces.afficher(false);
+			game_pieces.afficher(false, 19, 4);
 			//Menu::gotoxy(5, 6, "DEBUGGING: after afficher fasle");
 			using_cursor = false;
 
@@ -506,9 +507,8 @@ int Party::Bonus(bool render_at_first) {
 			this->next_pieces.inserer_left(piece(4, 4));
 			while (using_cursor) {}
 			using_cursor = true;
-			Menu::gotoxy(0, 0, "                  ");
-			Menu::gotoxy(0, 0, " ");
-			next_pieces.afficher(true);
+			Menu::gotoxy(30, 1, "                  ");
+			next_pieces.afficher(true,30,1);
 			using_cursor = false;
 
 			/////////////////////////////////////////////////////
@@ -537,42 +537,33 @@ int Party::Bonus(bool render_at_first) {
 	return -1;
 }
 void Party::chose_decallage() {
-	Menu::gotoxy(0, 4, "Chose a color or a shape :\n");
+	Menu::gotoxy(20, 7, "Chose a color or a shape to shift:\n");
 	// print options 
-	Menu::gotoxy(0, 5, ' ');
+	Menu::gotoxy(10, 9, ' ');
 	std::cout << "\033[31m" << "RED   " << "\033[0m" << "\033[32m" << " GREEN " << "\033[0m" << "\033[33m" << " YELLOW" << "\033[0m" << "\033[34m" << " BLUE  " << "\033[0m" << " CERCLE" << " RHOMBU" << " SQUARE" << " TRIANGLE";
 
 	char in = 'a';
 	int choice = 0;
-	Menu::gotoxy(0, 5, '>');
+	Menu::gotoxy(10, 9, '>');
 	do
 	{
 		in = _getch();
 		if (in == 77 && choice < 7) {
-			Menu::gotoxy(choice * 7, 5, ' ');
-			Menu::gotoxy(++choice * 7, 5, '>');
+			Menu::gotoxy(10+choice * 7, 9, ' ');
+			Menu::gotoxy(10 + ++choice * 7, 9, '>');
 		}
 		else if (in == 75 && choice > 0)
 		{
-			Menu::gotoxy(choice * 7, 5, ' ');
-			Menu::gotoxy(--choice * 7, 5, '>');
+			Menu::gotoxy(10+ choice * 7, 9, ' ');
+			Menu::gotoxy(10 + --choice * 7, 9, '>');
 		}
 
 	} while (in != 'e');
-	Menu::gotoxy(0, 4, "                                            \n                                                                           ");
-	/*
-	note to saad :
-	switch based on choice :
-	0 => decallage rouge;
-	1 => decallage vert;
-	2 => decallage jaune;
-	3 => decallage blue;
-	4 => decallage cercle;
-	5 => decallage losange;
-	6 => decallage carre ;
-	7 => decallage triangle;
 
-	*/
+	Menu::gotoxy(20, 7, "                                       ");
+	Menu::gotoxy(10, 9, ' ');
+	std::cout << "                                                        ";
+
 
 	decallage_gauche(choice);
 	////////////////////////////////////////////
@@ -581,10 +572,9 @@ void Party::chose_decallage() {
 
 
 	// erase old game pieces from console and show new state
-	Menu::gotoxy(2, 2, "                                          ");
-	Menu::gotoxy(2, 2, ' ');
+	Menu::gotoxy(19, 4, "                                          ");
 	//Menu::gotoxy(5, 5, "DEBUGGING: after afficher goto");
-	game_pieces.afficher(false);
+	game_pieces.afficher(false, 19, 4);
 	//Menu::gotoxy(5, 6, "DEBUGGING: after afficher fasle");
 
 	/////////////////////////////////////////////////////
@@ -600,6 +590,26 @@ void Party::debug_copy(shape_node** tab, int size, shape_node** res) {
 
 }
 void Party::decallage_gauche(int choice) {
+
+	// DEBUGGING shifts
+	ofstream fout;
+	// what it is calculated hh
+
+	fout.open("shifts_debug.csv", std::ios_base::app);
+	fout <<  this->StatetoString(none) << ",";
+	int size_c = colors_heads[0].get_size(), size_s = shapes_heads[0].get_size();
+	fout << "Before shifting,Red(size =" << size_c << "),head:" << ((size_c) ? colors_heads[0].get_head()->get_piece().toString() : "none") << "(" << ((size_c) ? colors_heads[0].get_head()->imp : -1) << "),tail:" << ((size_c) ? colors_heads[0].get_tail()->get_piece().toString() : "none") << "(" << ((size_c) ? colors_heads[0].get_head()->imp : -1) << "),Cercle(size =" << size_s << "),head:" << ((size_s) ? shapes_heads[0].get_head()->get_piece().toString() : "none") << "(" << ((size_s) ? shapes_heads[0].get_head()->imp : -1) << "),tail:" << ((size_s) ? shapes_heads[0].get_tail()->get_piece().toString() : "none") << "(" << ((size_s) ? shapes_heads[0].get_tail()->imp : -1) << ")\n";
+	string cs[3] = { "Green","Yellow","Blue" };
+	string ss[3] = { "Rhombus","Square","Triangle" };
+
+	for (int i = 1, nb_colors_shapes = 4; i < nb_colors_shapes; i++)
+	{
+		int size_c = colors_heads[i].get_size(), size_s = shapes_heads[i].get_size();
+		fout << ",,,"<< cs[i-1] <<"(size =" << size_c << "),head:" << ((size_c) ? colors_heads[i].get_head()->get_piece().toString() : "none") << "(" << ((size_c) ? colors_heads[i].get_head()->imp : -1) << "),tail:" << ((size_c) ? colors_heads[i].get_tail()->get_piece().toString() : "none") << "(" << ((size_c) ? colors_heads[i].get_head()->imp : -1) << "),"<<ss[i-1]<<"(size =" << size_s << "),head:" << ((size_s) ? shapes_heads[i].get_head()->get_piece().toString() : "none") << "(" << ((size_s) ? shapes_heads[i].get_head()->imp : -1) << "),tail:" << ((size_s) ? shapes_heads[i].get_tail()->get_piece().toString() : "none") << "(" << ((size_s) ? shapes_heads[i].get_tail()->imp : -1) << ")\n";
+
+	}
+	fout << "\n";
+	fout.close();
 	
 	shape_node** gpi = new shape_node * [game_pieces.get_size()];
 	gpi = create_gpi();
@@ -949,6 +959,24 @@ void Party::decallage_gauche(int choice) {
 	shape_node* debug_arr_gpi_1[16];
 	//keeppp 
 	debug_copy(gpi, game_pieces.get_size(), debug_arr_gpi_1);
+	// DEBUGGING shifts
+	
+	// what it is calculated hh
+
+	fout.open("shifts_debug.csv", std::ios_base::app);
+	fout << this->StatetoString(none) << ",";
+	size_c = colors_heads[0].get_size(), size_s = shapes_heads[0].get_size();
+	fout << "Before Evaluation,Red(size =" << size_c << "),head:" << ((size_c) ? colors_heads[0].get_head()->get_piece().toString() : "none") << "(" << ((size_c) ? colors_heads[0].get_head()->imp : -1) << "),tail:" << ((size_c) ? colors_heads[0].get_tail()->get_piece().toString() : "none") << "(" << ((size_c) ? colors_heads[0].get_head()->imp : -1) << "),Cercle(size =" << size_s << "),head:" << ((size_s) ? shapes_heads[0].get_head()->get_piece().toString() : "none") << "(" << ((size_s) ? shapes_heads[0].get_head()->imp : -1) << "),tail:" << ((size_s) ? shapes_heads[0].get_tail()->get_piece().toString() : "none") << "(" << ((size_s) ? shapes_heads[0].get_tail()->imp : -1) << ")\n";
+
+
+	for (int i = 1, nb_colors_shapes = 4; i < nb_colors_shapes; i++)
+	{
+		int size_c = colors_heads[i].get_size(), size_s = shapes_heads[i].get_size();
+		fout << ",,," << cs[i - 1] << "(size =" << size_c << "),head:" << ((size_c) ? colors_heads[i].get_head()->get_piece().toString() : "none") << "(" << ((size_c) ? colors_heads[i].get_head()->imp : -1) << "),tail:" << ((size_c) ? colors_heads[i].get_tail()->get_piece().toString() : "none") << "(" << ((size_c) ? colors_heads[i].get_head()->imp : -1) << ")," << ss[i - 1] << "(size =" << size_s << "),head:" << ((size_s) ? shapes_heads[i].get_head()->get_piece().toString() : "none") << "(" << ((size_s) ? shapes_heads[i].get_head()->imp : -1) << "),tail:" << ((size_s) ? shapes_heads[i].get_tail()->get_piece().toString() : "none") << "(" << ((size_s) ? shapes_heads[i].get_tail()->imp : -1) << ")\n";
+
+	}
+	fout << "\n";
+	fout.close();
 	if (this->Type == tecontent || this->Type == tavalide || this->Type == party_type::Bonus)
 	{
 		int ds = game_pieces.evaluate_plate(tmpc, tmps);
@@ -958,7 +986,23 @@ void Party::decallage_gauche(int choice) {
 	{
 		game_pieces.evaluate_plate(tmpc, tmps);
 	}
+	// DEBUGGING shifts
 	
+	// what it is calculated hh
+
+	fout.open("shifts_debug.csv", std::ios_base::app);
+	fout << this->StatetoString(none) << ",";
+	size_c = colors_heads[0].get_size(), size_s = shapes_heads[0].get_size();
+	fout << "After Evaluation ,Red(size =" << size_c << "),head:" << ((size_c) ? colors_heads[0].get_head()->get_piece().toString() : "none") << "(" << ((size_c) ? colors_heads[0].get_head()->imp : -1) << "),tail:" << ((size_c) ? colors_heads[0].get_tail()->get_piece().toString() : "none") << "(" << ((size_c) ? colors_heads[0].get_head()->imp : -1) << "),Cercle(size =" << size_s << "),head:" << ((size_s) ? shapes_heads[0].get_head()->get_piece().toString() : "none") << "(" << ((size_s) ? shapes_heads[0].get_head()->imp : -1) << "),tail:" << ((size_s) ? shapes_heads[0].get_tail()->get_piece().toString() : "none") << "(" << ((size_s) ? shapes_heads[0].get_tail()->imp : -1) << ")\n";
+
+	for (int i = 1, nb_colors_shapes = 4; i < nb_colors_shapes; i++)
+	{
+		int size_c = colors_heads[i].get_size(), size_s = shapes_heads[i].get_size();
+		fout << ",,," << cs[i - 1] << "(size =" << size_c << "),head:" << ((size_c) ? colors_heads[i].get_head()->get_piece().toString() : "none") << "(" << ((size_c) ? colors_heads[i].get_head()->imp : -1) << "),tail:" << ((size_c) ? colors_heads[i].get_tail()->get_piece().toString() : "none") << "(" << ((size_c) ? colors_heads[i].get_head()->imp : -1) << ")," << ss[i - 1] << "(size =" << size_s << "),head:" << ((size_s) ? shapes_heads[i].get_head()->get_piece().toString() : "none") << "(" << ((size_s) ? shapes_heads[i].get_head()->imp : -1) << "),tail:" << ((size_s) ? shapes_heads[i].get_tail()->get_piece().toString() : "none") << "(" << ((size_s) ? shapes_heads[i].get_tail()->imp : -1) << ")\n";
+
+	}
+	fout << "\n";
+	fout.close();
 	return;
 
 }
@@ -1195,7 +1239,7 @@ string Party::action_toString(action a) {
 
 	}
 }
-std::string Party::StatetoString(action a) {
+std::string Party::StatetoString(action a,bool with_indexes) {
 	std::string res = "N:";
 	shape_node* tmp;
 	if (next_pieces.get_head())
@@ -1214,11 +1258,11 @@ std::string Party::StatetoString(action a) {
 	if (game_pieces.get_head())
 	{
 		tmp = game_pieces.get_head();
-		res.append(tmp->get_piece().toString());
+		res.append(tmp->get_piece().toString()+"("+to_string(tmp->imp)+")" + "(" + to_string(tmp->icp) + ")" + "(" + to_string(tmp->isp) + ")__");
 		while (tmp->get_next() != game_pieces.get_head())
 		{
 			tmp = tmp->get_next();
-			res.append(tmp->get_piece().toString());
+			res.append(tmp->get_piece().toString() + "(" + to_string(tmp->imp) + ")" + "(" + to_string(tmp->icp) + ")" + "(" + to_string(tmp->isp) + ")__");
 		}
 
 	}
@@ -1266,10 +1310,9 @@ int Party::Tetriste(bool render_at_first ) {
 			while (using_cursor) {}
 			using_cursor = true;
 			// erase old game pieces from console and show new state
-			Menu::gotoxy(2, 2, "                                          ");
-			Menu::gotoxy(2, 2, ' ');
+			Menu::gotoxy(19, 4, "                                          ");
 			//Menu::gotoxy(5, 5, "DEBUGGING: after afficher goto");
-			game_pieces.afficher(false);
+			game_pieces.afficher(false, 19, 4);
 			//Menu::gotoxy(5, 6, "DEBUGGING: after afficher fasle");
 			using_cursor = false;
 
@@ -1284,9 +1327,8 @@ int Party::Tetriste(bool render_at_first ) {
 			this->next_pieces.inserer_left(piece(4, 4));
 			while (using_cursor) {}
 			using_cursor = true;
-			Menu::gotoxy(0, 0, "                  ");
-			Menu::gotoxy(0, 0, " ");
-			next_pieces.afficher(true);
+			Menu::gotoxy(30, 1, "                  ");
+			next_pieces.afficher(true,30,1);
 			using_cursor = false;
 
 
@@ -1438,21 +1480,20 @@ void Party::init_scene(int size, bool ai, bool score, bool render_at_first) {
 		while (time_using_cursor);
 		using_cursor = true;
 		// erase old game pieces from console and show new state
-		Menu::gotoxy(2, 2, "                                          ");
-		Menu::gotoxy(2, 2, ' ');
-		game_pieces.afficher(false);
+		Menu::gotoxy(19, 4, "                                          ");
+		game_pieces.afficher(false, 19, 4);
 
 		using_cursor = false;
 	}
 	while (time_using_cursor);
 	using_cursor = true;
-	Menu::gotoxy(Menu::timer_x, Menu::timer_y, "                                                    ");
+	Menu::gotoxy(18, 20, "                                                    ");
 
-	Menu::gotoxy(0, Menu::timer_y - 1, ' ');
+	Menu::gotoxy(18, 20, ' ');
 	std::cout << "Time :";
 	if (score)
 	{
-		Menu::gotoxy(14, Menu::timer_y - 1, ' ');
+		Menu::gotoxy(48, 20, ' ');
 		std::cout << "Score : " << this->score;
 	}
 	//generated the waiting quee
@@ -1460,9 +1501,8 @@ void Party::init_scene(int size, bool ai, bool score, bool render_at_first) {
 	{
 		this->next_pieces.inserer_left(piece(4, 4));
 	}
-	//this->next_elements = new shape_node[i];
-	Menu::gotoxy(0, 0, ' ');
-	this->next_pieces.afficher(true);
+	
+	this->next_pieces.afficher(true,30,1);
 	using_cursor = false;
 }
 
@@ -1483,8 +1523,8 @@ void Party::handle_time() {
 				//wait for cursor to be free
 				while (!using_cursor && !exited);
 				time_using_cursor = true;
-				Menu::gotoxy(Menu::timer_x, Menu::timer_y - 1, "     ");
-				Menu::gotoxy(Menu::timer_x, Menu::timer_y - 1, ' ');
+				Menu::gotoxy(24, 20, "     ");
+				Menu::gotoxy(24, 20, ' ');
 				std::cout << --time;
 				time_using_cursor = false;
 			}
@@ -1493,7 +1533,7 @@ void Party::handle_time() {
 				//wait for cursor to be free
 				while (!using_cursor && !exited);
 				time_using_cursor = true;
-				Menu::gotoxy(14, Menu::timer_y - 1, ' ');
+				Menu::gotoxy(48, 20, ' ');
 				std::cout << "Score : " << this->score;
 				time_using_cursor = false;
 			}

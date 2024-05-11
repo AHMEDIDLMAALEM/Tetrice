@@ -887,8 +887,9 @@ void Plateau::supprimer_right(Plateau* color, Plateau* shape)
 
 }
 
-void Plateau::afficher(bool dis_last = false)
+void Plateau::afficher(bool dis_last = false,int x =0,int y = 0)
 {
+	Menu::gotoxy(x, y, ' ');
 	shape_node *temp=head;
 	for (int i = 0; i < size; i++) {
 		if (dis_last && tail == temp)

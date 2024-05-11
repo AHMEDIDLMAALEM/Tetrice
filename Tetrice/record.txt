@@ -8,1163 +8,1041 @@
 	d6 on N:Rb,M:
 	d7 on N:Rb,M:
 	ig on N:Rb,M:
-10 :N:,M:Rb , score : 0 MAX:0 with : 
-	d0 on N:,M:Rb
-	d1 on N:,M:Rb
-	d2 on N:,M:Rb
-	d3 on N:,M:Rb
-	d4 on N:,M:Rb
-	d5 on N:,M:Rb
-	d6 on N:,M:Rb
-	d7 on N:,M:Rb
-	ig on N:,M:Rb
-	id on N:,M:Rb
+10 :N:,M:Rb(0)(0)(0)__ , score : 0 MAX:0 with : 
+	d0 on N:,M:Rb(0)(0)(0)__
+	d1 on N:,M:Rb(0)(0)(0)__
+	d2 on N:,M:Rb(0)(0)(0)__
+	d3 on N:,M:Rb(0)(0)(0)__
+	d4 on N:,M:Rb(0)(0)(0)__
+	d5 on N:,M:Rb(0)(0)(0)__
+	d6 on N:,M:Rb(0)(0)(0)__
+	d7 on N:,M:Rb(0)(0)(0)__
+	ig on N:,M:Rb(0)(0)(0)__
+	id on N:,M:Rb(0)(0)(0)__
 	id on N:Rb,M:
-0 :N:Sr,M:Rb , score : 0 MAX:0 with : 
-	d0 on N:Sr,M:Rb
-	d1 on N:Sr,M:Rb
-	d2 on N:Sr,M:Rb
-	d3 on N:Sr,M:Rb
-	d4 on N:Sr,M:Rb
-	d5 on N:Sr,M:Rb
-	d6 on N:Sr,M:Rb
-	d7 on N:Sr,M:Rb
-	ig on N:Sr,M:Rb
-10 :N:,M:SrRb , score : 0 MAX:0 with : 
-	d0 on N:,M:SrRb
-	d1 on N:,M:SrRb
-	d2 on N:,M:SrRb
-	d3 on N:,M:SrRb
-	d4 on N:,M:SrRb
-	d5 on N:,M:SrRb
-	d6 on N:,M:SrRb
-	d7 on N:,M:SrRb
-	ig on N:,M:SrRb
-	id on N:,M:SrRb
-	id on N:Sr,M:Rb
-22 :N:,M:RbSr , score : 0 MAX:0 with : best action : 0:ig  1:id
-	d0 on N:,M:RbSr
-	d1 on N:,M:RbSr
-	d2 on N:,M:RbSr
-	d3 on N:,M:RbSr
-	d4 on N:,M:RbSr
-	d5 on N:,M:RbSr
-	d6 on N:,M:RbSr
-	d7 on N:,M:RbSr
-	ig on N:,M:RbSr
-	id on N:,M:RbSr
-0 :N:Rr,M:RbSr , score : 0 MAX:0 with : 
-	d0 on N:Rr,M:RbSr
-	d1 on N:Rr,M:RbSr
-	d2 on N:Rr,M:RbSr
-	d3 on N:Rr,M:RbSr
-	d4 on N:Rr,M:RbSr
-	d5 on N:Rr,M:RbSr
-	d6 on N:Rr,M:RbSr
-	d7 on N:Rr,M:RbSr
-	ig on N:Rr,M:RbSr
-10 :N:,M:RrRbSr , score : 0 MAX:0 with : 
-	d0 on N:,M:RrRbSr
-12 :N:,M:SrRbRr , score : 0 MAX:0 with : 
-	d0 on N:,M:SrRbRr
-	d1 on N:,M:SrRbRr
-	d2 on N:,M:SrRbRr
-	d3 on N:,M:SrRbRr
-	d4 on N:,M:SrRbRr
-	d5 on N:,M:SrRbRr
-28 :N:,M:SrRrRb , score : 0 MAX:0 with : best action : 0:ig 1:d0 2:d0  3:id
-	d0 on N:,M:SrRrRb
-30 :N:,M:RrSrRb , score : 0 MAX:0 with : best action : 0:ig 1:d0 2:d0  3:id
-	d0 on N:,M:RrSrRb
-	d1 on N:,M:RrSrRb
-	d2 on N:,M:RrSrRb
-	d3 on N:,M:RrSrRb
-	d4 on N:,M:RrSrRb
-	d5 on N:,M:RrSrRb
-46 :N:,M:RbSrRr , score : 0 MAX:0 with : best action : 0:ig 1:d0 2:d0  3:id
-	d0 on N:,M:RbSrRr
-48 :N:,M:RbRrSr , score : 0 MAX:0 with : best action : 0:ig 1:d0 2:d0  3:id
-	d0 on N:,M:RbRrSr
-	d1 on N:,M:RbRrSr
-	d2 on N:,M:RbRrSr
-	d3 on N:,M:RbRrSr
-	d4 on N:,M:RbRrSr
-	d5 on N:,M:RbRrSr
-	d6 on N:,M:RbRrSr
-	d7 on N:,M:RbRrSr
-	ig on N:,M:RbRrSr
-	id on N:,M:RbRrSr
-	d6 on N:,M:RrSrRb
-	d7 on N:,M:RrSrRb
-	ig on N:,M:RrSrRb
-	id on N:,M:RrSrRb
-	d6 on N:,M:SrRbRr
-	d7 on N:,M:SrRbRr
-	ig on N:,M:SrRbRr
-	id on N:,M:SrRbRr
-	id on N:Rr,M:RbSr
-0 :N:Sy,M:RbSrRr , score : 0 MAX:0 with : 
-	d0 on N:Sy,M:RbSrRr
-2 :N:Sy,M:RbRrSr , score : 0 MAX:0 with : 
-	d0 on N:Sy,M:RbRrSr
-	d1 on N:Sy,M:RbRrSr
-	d2 on N:Sy,M:RbRrSr
-	d3 on N:Sy,M:RbRrSr
-	d4 on N:Sy,M:RbRrSr
-	d5 on N:Sy,M:RbRrSr
-18 :N:Sy,M:RrRbSr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sy,M:RrRbSr
-20 :N:Sy,M:SrRbRr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sy,M:SrRbRr
-	d1 on N:Sy,M:SrRbRr
-	d2 on N:Sy,M:SrRbRr
-	d3 on N:Sy,M:SrRbRr
-	d4 on N:Sy,M:SrRbRr
-	d5 on N:Sy,M:SrRbRr
-36 :N:Sy,M:SrRrRb , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sy,M:SrRrRb
-38 :N:Sy,M:RrSrRb , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sy,M:RrSrRb
-	d1 on N:Sy,M:RrSrRb
-	d2 on N:Sy,M:RrSrRb
-	d3 on N:Sy,M:RrSrRb
-	d4 on N:Sy,M:RrSrRb
-	d5 on N:Sy,M:RrSrRb
-	d6 on N:Sy,M:RrSrRb
-	d7 on N:Sy,M:RrSrRb
-	ig on N:Sy,M:RrSrRb
-57 :N:,M:SyRrSrRb , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SyRrSrRb
-59 :N:,M:SySrRrRb , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SySrRrRb
-	d1 on N:,M:SySrRrRb
-	d2 on N:,M:SySrRrRb
-	d3 on N:,M:SySrRrRb
-	d4 on N:,M:SySrRrRb
-	d5 on N:,M:SySrRrRb
-75 :N:,M:SySrRbRr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SySrRbRr
-77 :N:,M:SyRrRbSr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SyRrRbSr
-	d1 on N:,M:SyRrRbSr
-	d2 on N:,M:SyRrRbSr
-	d3 on N:,M:SyRrRbSr
-	d4 on N:,M:SyRrRbSr
-	d5 on N:,M:SyRrRbSr
-93 :N:,M:SyRbRrSr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SyRbRrSr
-95 :N:,M:SyRbSrRr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SyRbSrRr
-	d1 on N:,M:SyRbSrRr
-	d2 on N:,M:SyRbSrRr
-	d3 on N:,M:SyRbSrRr
-	d4 on N:,M:SyRbSrRr
-	d5 on N:,M:SyRbSrRr
-	d6 on N:,M:SyRbSrRr
-112 :N:,M:SrRbSyRr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SrRbSyRr
-114 :N:,M:RrRbSySr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:RrRbSySr
-	d1 on N:,M:RrRbSySr
-	d2 on N:,M:RrRbSySr
-	d3 on N:,M:RrRbSySr
-	d4 on N:,M:RrRbSySr
-	d5 on N:,M:RrRbSySr
-130 :N:,M:RbRrSySr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:RbRrSySr
-132 :N:,M:RbSrSyRr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:RbSrSyRr
-	d1 on N:,M:RbSrSyRr
-	d2 on N:,M:RbSrSyRr
-	d3 on N:,M:RbSrSyRr
-	d4 on N:,M:RbSrSyRr
-	d5 on N:,M:RbSrSyRr
-148 :N:,M:RrSrSyRb , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:RrSrSyRb
-150 :N:,M:SrRrSyRb , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SrRrSyRb
-	d1 on N:,M:SrRrSyRb
-	d2 on N:,M:SrRrSyRb
-	d3 on N:,M:SrRrSyRb
-	d4 on N:,M:SrRrSyRb
-	d5 on N:,M:SrRrSyRb
-	d6 on N:,M:SrRrSyRb
-	d7 on N:,M:SrRrSyRb
-	ig on N:,M:SrRrSyRb
-	id on N:,M:SrRrSyRb
-	d6 on N:,M:RbSrSyRr
-171 :N:,M:RbSySrRr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:RbSySrRr
-173 :N:,M:RbSyRrSr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:RbSyRrSr
-	d1 on N:,M:RbSyRrSr
-	d2 on N:,M:RbSyRrSr
-	d3 on N:,M:RbSyRrSr
-	d4 on N:,M:RbSyRrSr
-	d5 on N:,M:RbSyRrSr
-189 :N:,M:RrSyRbSr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:RrSyRbSr
-191 :N:,M:SrSyRbRr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SrSyRbRr
-	d1 on N:,M:SrSyRbRr
-	d2 on N:,M:SrSyRbRr
-	d3 on N:,M:SrSyRbRr
-	d4 on N:,M:SrSyRbRr
-	d5 on N:,M:SrSyRbRr
-207 :N:,M:SrSyRrRb , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SrSyRrRb
-209 :N:,M:RrSySrRb , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:RrSySrRb
-	d1 on N:,M:RrSySrRb
-	d2 on N:,M:RrSySrRb
-	d3 on N:,M:RrSySrRb
-	d4 on N:,M:RrSySrRb
-	d5 on N:,M:RrSySrRb
-	d6 on N:,M:RrSySrRb
-	d7 on N:,M:RrSySrRb
-	ig on N:,M:RrSySrRb
-	id on N:,M:RrSySrRb
-	d6 on N:,M:SrSyRbRr
-	d7 on N:,M:SrSyRbRr
-	ig on N:,M:SrSyRbRr
-	id on N:,M:SrSyRbRr
-	d6 on N:,M:RbSyRrSr
-234 :N:,M:RbSrRrSy , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:RbSrRrSy
-236 :N:,M:RbRrSrSy , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:RbRrSrSy
-	d1 on N:,M:RbRrSrSy
-	d2 on N:,M:RbRrSrSy
-	d3 on N:,M:RbRrSrSy
-	d4 on N:,M:RbRrSrSy
-	d5 on N:,M:RbRrSrSy
-252 :N:,M:RrRbSrSy , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:RrRbSrSy
-254 :N:,M:SrRbRrSy , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SrRbRrSy
-	d1 on N:,M:SrRbRrSy
-	d2 on N:,M:SrRbRrSy
-	d3 on N:,M:SrRbRrSy
-	d4 on N:,M:SrRbRrSy
-	d5 on N:,M:SrRbRrSy
-270 :N:,M:SrRrRbSy , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SrRrRbSy
-272 :N:,M:RrSrRbSy , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:RrSrRbSy
-	d1 on N:,M:RrSrRbSy
-	d2 on N:,M:RrSrRbSy
-	d3 on N:,M:RrSrRbSy
-	d4 on N:,M:RrSrRbSy
-	d5 on N:,M:RrSrRbSy
-	d6 on N:,M:RrSrRbSy
-	d7 on N:,M:RrSrRbSy
-	ig on N:,M:RrSrRbSy
-	id on N:,M:RrSrRbSy
-	d6 on N:,M:SrRbRrSy
-	d7 on N:,M:SrRbRrSy
-	ig on N:,M:SrRbRrSy
-	id on N:,M:SrRbRrSy
-	d6 on N:,M:RbRrSrSy
-	d7 on N:,M:RbRrSrSy
-	ig on N:,M:RbRrSrSy
-	id on N:,M:RbRrSrSy
-	d7 on N:,M:RbSyRrSr
-	ig on N:,M:RbSyRrSr
-	id on N:,M:RbSyRrSr
-	d7 on N:,M:RbSrSyRr
-	ig on N:,M:RbSrSyRr
-	id on N:,M:RbSrSyRr
-	d6 on N:,M:RrRbSySr
-	d7 on N:,M:RrRbSySr
-	ig on N:,M:RrRbSySr
-	id on N:,M:RrRbSySr
-	d7 on N:,M:SyRbSrRr
-	ig on N:,M:SyRbSrRr
-	id on N:,M:SyRbSrRr
-	d6 on N:,M:SyRrRbSr
-	d7 on N:,M:SyRrRbSr
-	ig on N:,M:SyRrRbSr
-	id on N:,M:SyRrRbSr
-	d6 on N:,M:SySrRrRb
-	d7 on N:,M:SySrRrRb
-	ig on N:,M:SySrRrRb
-	id on N:,M:SySrRrRb
-	id on N:Sy,M:RrSrRb
-	d6 on N:Sy,M:SrRbRr
-	d7 on N:Sy,M:SrRbRr
-	ig on N:Sy,M:SrRbRr
-	id on N:Sy,M:SrRbRr
-	d6 on N:Sy,M:RbRrSr
-	d7 on N:Sy,M:RbRrSr
-	ig on N:Sy,M:RbRrSr
-	id on N:Sy,M:RbRrSr
-0 :N:Sr,M:RbSrRrSy , score : 0 MAX:0 with : 
-	d0 on N:Sr,M:RbSrRrSy
-2 :N:Sr,M:RbRrSrSy , score : 0 MAX:0 with : 
-	d0 on N:Sr,M:RbRrSrSy
-	d1 on N:Sr,M:RbRrSrSy
-	d2 on N:Sr,M:RbRrSrSy
-	d3 on N:Sr,M:RbRrSrSy
-	d4 on N:Sr,M:RbRrSrSy
-	d5 on N:Sr,M:RbRrSrSy
-18 :N:Sr,M:RrRbSrSy , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sr,M:RrRbSrSy
-20 :N:Sr,M:SrRbRrSy , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sr,M:SrRbRrSy
-	d1 on N:Sr,M:SrRbRrSy
-	d2 on N:Sr,M:SrRbRrSy
-	d3 on N:Sr,M:SrRbRrSy
-	d4 on N:Sr,M:SrRbRrSy
-	d5 on N:Sr,M:SrRbRrSy
-36 :N:Sr,M:SrRrRbSy , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sr,M:SrRrRbSy
-38 :N:Sr,M:RrSrRbSy , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sr,M:RrSrRbSy
-	d1 on N:Sr,M:RrSrRbSy
-	d2 on N:Sr,M:RrSrRbSy
-	d3 on N:Sr,M:RrSrRbSy
-	d4 on N:Sr,M:RrSrRbSy
-	d5 on N:Sr,M:RrSrRbSy
-	d6 on N:Sr,M:RrSrRbSy
-55 :N:Sr,M:RrSyRbSr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sr,M:RrSyRbSr
-57 :N:Sr,M:SrSyRbRr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sr,M:SrSyRbRr
-	d1 on N:Sr,M:SrSyRbRr
-	d2 on N:Sr,M:SrSyRbRr
-	d3 on N:Sr,M:SrSyRbRr
-	d4 on N:Sr,M:SrSyRbRr
-	d5 on N:Sr,M:SrSyRbRr
-73 :N:Sr,M:SrSyRrRb , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sr,M:SrSyRrRb
-75 :N:Sr,M:RrSySrRb , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sr,M:RrSySrRb
-	d1 on N:Sr,M:RrSySrRb
-	d2 on N:Sr,M:RrSySrRb
-	d3 on N:Sr,M:RrSySrRb
-	d4 on N:Sr,M:RrSySrRb
-	d5 on N:Sr,M:RrSySrRb
-91 :N:Sr,M:RbSySrRr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sr,M:RbSySrRr
-93 :N:Sr,M:RbSyRrSr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sr,M:RbSyRrSr
-	d1 on N:Sr,M:RbSyRrSr
-	d2 on N:Sr,M:RbSyRrSr
-	d3 on N:Sr,M:RbSyRrSr
-	d4 on N:Sr,M:RbSyRrSr
-	d5 on N:Sr,M:RbSyRrSr
-	d6 on N:Sr,M:RbSyRrSr
-	d7 on N:Sr,M:RbSyRrSr
-	ig on N:Sr,M:RbSyRrSr
-112 :N:,M:SrRbSyRrSr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SrRbSyRrSr
-114 :N:,M:RrRb , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:RrRb
-	d1 on N:,M:RrRb
-	d2 on N:,M:RrRb
-	d3 on N:,M:RrRb
-	d4 on N:,M:RrRb
-	d5 on N:,M:RrRb
-121 :N:,M:RbRr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:RbRr
-	d1 on N:,M:RbRr
-	d2 on N:,M:RbRr
-	d3 on N:,M:RbRr
-	d4 on N:,M:RbRr
-	d5 on N:,M:RbRr
-	d6 on N:,M:RbRr
-	d7 on N:,M:RbRr
-	ig on N:,M:RbRr
-	id on N:,M:RbRr
-	d1 on N:,M:SrRbSyRrSr
-	d2 on N:,M:SrRbSyRrSr
-	d3 on N:,M:SrRbSyRrSr
-	d4 on N:,M:SrRbSyRrSr
-	d5 on N:,M:SrRbSyRrSr
-141 :N:,M:SrRrSyRbSr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SrRrSyRbSr
-143 :N:,M:RrSrSyRbSr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:RrSrSyRbSr
-	d1 on N:,M:RrSrSyRbSr
-	d2 on N:,M:RrSrSyRbSr
-	d3 on N:,M:RrSrSyRbSr
-	d4 on N:,M:RrSrSyRbSr
-	d5 on N:,M:RrSrSyRbSr
-150 :N:,M:RbSrSyRrSr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:RbSrSyRrSr
-	d1 on N:,M:RbSrSyRrSr
-	d2 on N:,M:RbSrSyRrSr
-	d3 on N:,M:RbSrSyRrSr
-	d4 on N:,M:RbSrSyRrSr
-	d5 on N:,M:RbSrSyRrSr
-	d6 on N:,M:RbSrSyRrSr
-162 :N:,M:RbSy , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:RbSy
-	d1 on N:,M:RbSy
-	d2 on N:,M:RbSy
-	d3 on N:,M:RbSy
-	d4 on N:,M:RbSy
-	d5 on N:,M:RbSy
-	d6 on N:,M:RbSy
-	d7 on N:,M:RbSy
-	ig on N:,M:RbSy
-	id on N:,M:RbSy
-	d7 on N:,M:RbSrSyRrSr
-	ig on N:,M:RbSrSyRrSr
-	id on N:,M:RbSrSyRrSr
-	d1 on N:,M:SrRrSyRbSr
-	d2 on N:,M:SrRrSyRbSr
-	d3 on N:,M:SrRrSyRbSr
-	d4 on N:,M:SrRrSyRbSr
-	d5 on N:,M:SrRrSyRbSr
-	d6 on N:,M:SrRrSyRbSr
-186 :N:,M:SyRrSrRbSr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SyRrSrRbSr
-	d1 on N:,M:SyRrSrRbSr
-	d2 on N:,M:SyRrSrRbSr
-	d3 on N:,M:SyRrSrRbSr
-	d4 on N:,M:SyRrSrRbSr
-	d5 on N:,M:SyRrSrRbSr
-193 :N:,M:SyRb , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SyRb
-	d1 on N:,M:SyRb
-	d2 on N:,M:SyRb
-	d3 on N:,M:SyRb
-	d4 on N:,M:SyRb
-	d5 on N:,M:SyRb
-	d6 on N:,M:SyRb
-	d7 on N:,M:SyRb
-	ig on N:,M:SyRb
-	id on N:,M:SyRb
-	d6 on N:,M:SyRrSrRbSr
-	d7 on N:,M:SyRrSrRbSr
-	ig on N:,M:SyRrSrRbSr
-	id on N:,M:SyRrSrRbSr
-	d7 on N:,M:SrRrSyRbSr
-	ig on N:,M:SrRrSyRbSr
-	id on N:,M:SrRrSyRbSr
-	id on N:Sr,M:RbSyRrSr
-	d6 on N:Sr,M:RrSySrRb
-213 :N:Sr,M:RrSrSyRb , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sr,M:RrSrSyRb
-215 :N:Sr,M:SrRrSyRb , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sr,M:SrRrSyRb
-	d1 on N:Sr,M:SrRrSyRb
-	d2 on N:Sr,M:SrRrSyRb
-	d3 on N:Sr,M:SrRrSyRb
-	d4 on N:Sr,M:SrRrSyRb
-	d5 on N:Sr,M:SrRrSyRb
-231 :N:Sr,M:SrRbSyRr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sr,M:SrRbSyRr
-233 :N:Sr,M:RrRbSySr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sr,M:RrRbSySr
-	d1 on N:Sr,M:RrRbSySr
-	d2 on N:Sr,M:RrRbSySr
-	d3 on N:Sr,M:RrRbSySr
-	d4 on N:Sr,M:RrRbSySr
-	d5 on N:Sr,M:RrRbSySr
-249 :N:Sr,M:RbRrSySr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sr,M:RbRrSySr
-251 :N:Sr,M:RbSrSyRr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sr,M:RbSrSyRr
-	d1 on N:Sr,M:RbSrSyRr
-	d2 on N:Sr,M:RbSrSyRr
-	d3 on N:Sr,M:RbSrSyRr
-	d4 on N:Sr,M:RbSrSyRr
-	d5 on N:Sr,M:RbSrSyRr
-	d6 on N:Sr,M:RbSrSyRr
-	d7 on N:Sr,M:RbSrSyRr
-	ig on N:Sr,M:RbSrSyRr
-270 :N:,M:SrRbSrSyRr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SrRbSrSyRr
-272 :N:,M:SrRbRrSySr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SrRbRrSySr
-	d1 on N:,M:SrRbRrSySr
-	d2 on N:,M:SrRbRrSySr
-	d3 on N:,M:SrRbRrSySr
-	d4 on N:,M:SrRbRrSySr
-	d5 on N:,M:SrRbRrSySr
-279 :N:,M:SrRrRbSySr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SrRrRbSySr
-281 :N:,M:RrSrRbSySr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:RrSrRbSySr
-283 :N:,M:SrSrRbSyRr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SrSrRbSyRr
-	d1 on N:,M:SrSrRbSyRr
-	d2 on N:,M:SrSrRbSyRr
-	d3 on N:,M:SrSrRbSyRr
-	d4 on N:,M:SrSrRbSyRr
-	d5 on N:,M:SrSrRbSyRr
-	d6 on N:,M:SrSrRbSyRr
-300 :N:,M:SrSyRbSrRr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SrSyRbSrRr
-302 :N:,M:SrSyRbRrSr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SrSyRbRrSr
-304 :N:,M:RrSyRbSrSr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:RrSyRbSrSr
-	d1 on N:,M:RrSyRbSrSr
-	d2 on N:,M:RrSyRbSrSr
-	d3 on N:,M:RrSyRbSrSr
-	d4 on N:,M:RrSyRbSrSr
-	d5 on N:,M:RrSyRbSrSr
-	d6 on N:,M:RrSyRbSrSr
-321 :N:,M:RrSrRbSrSy , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:RrSrRbSrSy
-323 :N:,M:SrSrRbRrSy , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SrSrRbRrSy
-325 :N:,M:SrRrRbSrSy , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SrRrRbSrSy
-	d1 on N:,M:SrRrRbSrSy
-	d2 on N:,M:SrRrRbSrSy
-	d3 on N:,M:SrRrRbSrSy
-	d4 on N:,M:SrRrRbSrSy
-	d5 on N:,M:SrRrRbSrSy
-341 :N:,M:SrRbRrSrSy , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SrRbRrSrSy
-	d1 on N:,M:SrRbRrSrSy
-	d2 on N:,M:SrRbRrSrSy
-	d3 on N:,M:SrRbRrSrSy
-	d4 on N:,M:SrRbRrSrSy
-	d5 on N:,M:SrRbRrSrSy
-	d6 on N:,M:SrRbRrSrSy
-	d7 on N:,M:SrRbRrSrSy
-	ig on N:,M:SrRbRrSrSy
-	id on N:,M:SrRbRrSrSy
-	d1 on N:,M:SrSrRbRrSy
-	d2 on N:,M:SrSrRbRrSy
-	d3 on N:,M:SrSrRbRrSy
-	d4 on N:,M:SrSrRbRrSy
-	d5 on N:,M:SrSrRbRrSy
-	d6 on N:,M:SrSrRbRrSy
-	d7 on N:,M:SrSrRbRrSy
-	ig on N:,M:SrSrRbRrSy
-	id on N:,M:SrSrRbRrSy
-	d7 on N:,M:RrSyRbSrSr
-	ig on N:,M:RrSyRbSrSr
-	id on N:,M:RrSyRbSrSr
-	d7 on N:,M:SrSrRbSyRr
-	ig on N:,M:SrSrRbSyRr
-	id on N:,M:SrSrRbSyRr
-	d1 on N:,M:RrSrRbSySr
-	d2 on N:,M:RrSrRbSySr
-	d3 on N:,M:RrSrRbSySr
-	d4 on N:,M:RrSrRbSySr
-	d5 on N:,M:RrSrRbSySr
-389 :N:,M:RbSrRrSySr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:RbSrRrSySr
-	d1 on N:,M:RbSrRrSySr
-	d2 on N:,M:RbSrRrSySr
-	d3 on N:,M:RbSrRrSySr
-	d4 on N:,M:RbSrRrSySr
-	d5 on N:,M:RbSrRrSySr
-	d6 on N:,M:RbSrRrSySr
-	d7 on N:,M:RbSrRrSySr
-	ig on N:,M:RbSrRrSySr
-	id on N:,M:RbSrRrSySr
-	d1 on N:,M:SrRbSrSyRr
-	d2 on N:,M:SrRbSrSyRr
-	d3 on N:,M:SrRbSrSyRr
-	d4 on N:,M:SrRbSrSyRr
-	d5 on N:,M:SrRbSrSyRr
-	d6 on N:,M:SrRbSrSyRr
-410 :N:,M:SrRbSySrRr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SrRbSySrRr
-	d1 on N:,M:SrRbSySrRr
-	d2 on N:,M:SrRbSySrRr
-	d3 on N:,M:SrRbSySrRr
-	d4 on N:,M:SrRbSySrRr
-	d5 on N:,M:SrRbSySrRr
-417 :N:,M:SrRrSySrRb , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SrRrSySrRb
-	d1 on N:,M:SrRrSySrRb
-	d2 on N:,M:SrRrSySrRb
-	d3 on N:,M:SrRrSySrRb
-	d4 on N:,M:SrRrSySrRb
-	d5 on N:,M:SrRrSySrRb
-	d6 on N:,M:SrRrSySrRb
-	d7 on N:,M:SrRrSySrRb
-	ig on N:,M:SrRrSySrRb
-	id on N:,M:SrRrSySrRb
-	d7 on N:,M:SrRbSrSyRr
-	ig on N:,M:SrRbSrSyRr
-	id on N:,M:SrRbSrSyRr
-	id on N:Sr,M:RbSrSyRr
-	d6 on N:Sr,M:RrRbSySr
-	d7 on N:Sr,M:RrRbSySr
-	ig on N:Sr,M:RrRbSySr
-	id on N:Sr,M:RrRbSySr
-	d6 on N:Sr,M:SrRrSyRb
-441 :N:Sr,M:SyRrSrRb , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sr,M:SyRrSrRb
-443 :N:Sr,M:SySrRrRb , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sr,M:SySrRrRb
-	d1 on N:Sr,M:SySrRrRb
-	d2 on N:Sr,M:SySrRrRb
-	d3 on N:Sr,M:SySrRrRb
-	d4 on N:Sr,M:SySrRrRb
-	d5 on N:Sr,M:SySrRrRb
-459 :N:Sr,M:SySrRbRr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sr,M:SySrRbRr
-461 :N:Sr,M:SyRrRbSr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sr,M:SyRrRbSr
-	d1 on N:Sr,M:SyRrRbSr
-	d2 on N:Sr,M:SyRrRbSr
-	d3 on N:Sr,M:SyRrRbSr
-	d4 on N:Sr,M:SyRrRbSr
-	d5 on N:Sr,M:SyRrRbSr
-477 :N:Sr,M:SyRbRrSr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sr,M:SyRbRrSr
-479 :N:Sr,M:SyRbSrRr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:Sr,M:SyRbSrRr
-	d1 on N:Sr,M:SyRbSrRr
-	d2 on N:Sr,M:SyRbSrRr
-	d3 on N:Sr,M:SyRbSrRr
-	d4 on N:Sr,M:SyRbSrRr
-	d5 on N:Sr,M:SyRbSrRr
-	d6 on N:Sr,M:SyRbSrRr
-	d7 on N:Sr,M:SyRbSrRr
-	ig on N:Sr,M:SyRbSrRr
-	id on N:Sr,M:SyRbSrRr
-	d6 on N:Sr,M:SyRrRbSr
-	d7 on N:Sr,M:SyRrRbSr
-	ig on N:Sr,M:SyRrRbSr
-502 :N:,M:SrSyRrRbSr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SrSyRrRbSr
-504 :N:,M:RrSySrRbSr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:RrSySrRbSr
-	d1 on N:,M:RrSySrRbSr
-	d2 on N:,M:RrSySrRbSr
-	d3 on N:,M:RrSySrRbSr
-	d4 on N:,M:RrSySrRbSr
-	d5 on N:,M:RrSySrRbSr
-	d6 on N:,M:RrSySrRbSr
-	d7 on N:,M:RrSySrRbSr
-	ig on N:,M:RrSySrRbSr
-	id on N:,M:RrSySrRbSr
-	d1 on N:,M:SrSyRrRbSr
-	d2 on N:,M:SrSyRrRbSr
-	d3 on N:,M:SrSyRrRbSr
-	d4 on N:,M:SrSyRrRbSr
-	d5 on N:,M:SrSyRrRbSr
-	d6 on N:,M:SrSyRrRbSr
-521 :N:,M:SySrRrRbSr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SySrRrRbSr
-	d1 on N:,M:SySrRrRbSr
-	d2 on N:,M:SySrRrRbSr
-	d3 on N:,M:SySrRrRbSr
-	d4 on N:,M:SySrRrRbSr
-	d5 on N:,M:SySrRrRbSr
-528 :N:,M:SySrRbRrSr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SySrRbRrSr
-530 :N:,M:SyRrRbSrSr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SyRrRbSrSr
-532 :N:,M:SySrRbSrRr , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
-	d0 on N:,M:SySrRbSrRr
-	d1 on N:,M:SySrRbSrRr
-	d2 on N:,M:SySrRbSrRr
-	d3 on N:,M:SySrRbSrRr
-	d4 on N:,M:SySrRbSrRr
-	d5 on N:,M:SySrRbSrRr
-	d6 on N:,M:SySrRbSrRr
-	d7 on N:,M:SySrRbSrRr
-	ig on N:,M:SySrRbSrRr
-	id on N:,M:SySrRbSrRr
-	d1 on N:,M:SyRrRbSrSr
-	d2 on N:,M:SyRrRbSrSr
-	d3 on N:,M:SyRrRbSrSr
-	d4 on N:,M:SyRrRbSrSr
-	d5 on N:,M:SyRrRbSrSr
-	d6 on N:,M:SyRrRbSrSr
-	d7 on N:,M:SyRrRbSrSr
-	ig on N:,M:SyRrRbSrSr
-	id on N:,M:SyRrRbSrSr
-	d6 on N:,M:SySrRrRbSr
-	d7 on N:,M:SySrRrRbSr
-	ig on N:,M:SySrRrRbSr
-	id on N:,M:SySrRrRbSr
-	d7 on N:,M:SrSyRrRbSr
-	ig on N:,M:SrSyRrRbSr
-	id on N:,M:SrSyRrRbSr
-	id on N:Sr,M:SyRrRbSr
-	d6 on N:Sr,M:SySrRrRb
-	d7 on N:Sr,M:SySrRrRb
-	ig on N:Sr,M:SySrRrRb
-	id on N:Sr,M:SySrRrRb
-	d7 on N:Sr,M:SrRrSyRb
-	ig on N:Sr,M:SrRrSyRb
-	id on N:Sr,M:SrRrSyRb
-	d7 on N:Sr,M:RrSySrRb
-	ig on N:Sr,M:RrSySrRb
-	id on N:Sr,M:RrSySrRb
-	d6 on N:Sr,M:SrSyRbRr
-	d7 on N:Sr,M:SrSyRbRr
-	ig on N:Sr,M:SrSyRbRr
-	id on N:Sr,M:SrSyRbRr
-	d7 on N:Sr,M:RrSrRbSy
-	ig on N:Sr,M:RrSrRbSy
-	id on N:Sr,M:RrSrRbSy
-	d6 on N:Sr,M:SrRbRrSy
-	d7 on N:Sr,M:SrRbRrSy
-	ig on N:Sr,M:SrRbRrSy
-	id on N:Sr,M:SrRbRrSy
-	d6 on N:Sr,M:RbRrSrSy
-	d7 on N:Sr,M:RbRrSrSy
-	ig on N:Sr,M:RbRrSrSy
-	id on N:Sr,M:RbRrSrSy
-0 :N:Rg,M:RbRr , score : 10 MAX:0 with : 
-	d0 on N:Rg,M:RbRr
-	d1 on N:Rg,M:RbRr
-	d2 on N:Rg,M:RbRr
-	d3 on N:Rg,M:RbRr
-	d4 on N:Rg,M:RbRr
-	d5 on N:Rg,M:RbRr
-7 :N:Rg,M:RrRb , score : 10 MAX:0 with : 
-	d0 on N:Rg,M:RrRb
-	d1 on N:Rg,M:RrRb
-	d2 on N:Rg,M:RrRb
-	d3 on N:Rg,M:RrRb
-	d4 on N:Rg,M:RrRb
-	d5 on N:Rg,M:RrRb
-	d6 on N:Rg,M:RrRb
-	d7 on N:Rg,M:RrRb
-	ig on N:Rg,M:RrRb
-21 :N:,M: , score : 10 MAX:10 with : best action : 0:d5 1:d5  2:id
-	d0 on N:,M:
-	d1 on N:,M:
-	d2 on N:,M:
-	d3 on N:,M:
-	d4 on N:,M:
-	d5 on N:,M:
-	d6 on N:,M:
-	d7 on N:,M:
-	ig on N:,M:
-	id on N:,M:
-	id on N:Rg,M:RrRb
-0 :N:Rb,M: , score : 20 MAX:0 with : 
-	d0 on N:Rb,M:
-	d1 on N:Rb,M:
-	d2 on N:Rb,M:
-	d3 on N:Rb,M:
-	d4 on N:Rb,M:
-	d5 on N:Rb,M:
-	d6 on N:Rb,M:
-	d7 on N:Rb,M:
-	ig on N:Rb,M:
-10 :N:,M:Rb , score : 20 MAX:0 with : 
-	d0 on N:,M:Rb
-	d1 on N:,M:Rb
-	d2 on N:,M:Rb
-	d3 on N:,M:Rb
-	d4 on N:,M:Rb
-	d5 on N:,M:Rb
-	d6 on N:,M:Rb
-	d7 on N:,M:Rb
-	ig on N:,M:Rb
-	id on N:,M:Rb
-	id on N:Rb,M:
-0 :N:Rb,M:Rb , score : 20 MAX:0 with : 
-	d0 on N:Rb,M:Rb
-	d1 on N:Rb,M:Rb
-	d2 on N:Rb,M:Rb
-	d3 on N:Rb,M:Rb
-	d4 on N:Rb,M:Rb
-	d5 on N:Rb,M:Rb
-	d6 on N:Rb,M:Rb
-	d7 on N:Rb,M:Rb
-	ig on N:Rb,M:Rb
-10 :N:,M:RbRb , score : 20 MAX:0 with : 
-	d0 on N:,M:RbRb
-	d1 on N:,M:RbRb
-	d2 on N:,M:RbRb
-	d3 on N:,M:RbRb
-	d4 on N:,M:RbRb
-	d5 on N:,M:RbRb
-	d6 on N:,M:RbRb
-	d7 on N:,M:RbRb
-	ig on N:,M:RbRb
-	id on N:,M:RbRb
-	id on N:Rb,M:Rb
-0 :N:Ty,M:RbRb , score : 20 MAX:0 with : 
-	d0 on N:Ty,M:RbRb
-	d1 on N:Ty,M:RbRb
-	d2 on N:Ty,M:RbRb
-	d3 on N:Ty,M:RbRb
-	d4 on N:Ty,M:RbRb
-	d5 on N:Ty,M:RbRb
-	d6 on N:Ty,M:RbRb
-	d7 on N:Ty,M:RbRb
-	ig on N:Ty,M:RbRb
-10 :N:,M:TyRbRb , score : 20 MAX:0 with : 
-	d0 on N:,M:TyRbRb
-	d1 on N:,M:TyRbRb
-	d2 on N:,M:TyRbRb
-	d3 on N:,M:TyRbRb
-	d4 on N:,M:TyRbRb
-	d5 on N:,M:TyRbRb
-	d6 on N:,M:TyRbRb
-	d7 on N:,M:TyRbRb
-	ig on N:,M:TyRbRb
-	id on N:,M:TyRbRb
-	id on N:Ty,M:RbRb
-22 :N:,M:RbRbTy , score : 20 MAX:20 with : best action : 0:ig  1:id
-	d0 on N:,M:RbRbTy
-	d1 on N:,M:RbRbTy
-	d2 on N:,M:RbRbTy
-	d3 on N:,M:RbRbTy
-	d4 on N:,M:RbRbTy
-	d5 on N:,M:RbRbTy
-	d6 on N:,M:RbRbTy
-	d7 on N:,M:RbRbTy
-	ig on N:,M:RbRbTy
-	id on N:,M:RbRbTy
-0 :N:Tr,M:RbRbTy , score : 20 MAX:0 with : 
-	d0 on N:Tr,M:RbRbTy
-	d1 on N:Tr,M:RbRbTy
-	d2 on N:Tr,M:RbRbTy
-	d3 on N:Tr,M:RbRbTy
-	d4 on N:Tr,M:RbRbTy
-	d5 on N:Tr,M:RbRbTy
-	d6 on N:Tr,M:RbRbTy
-	d7 on N:Tr,M:RbRbTy
-	ig on N:Tr,M:RbRbTy
-10 :N:,M:TrRbRbTy , score : 20 MAX:0 with : 
-	d0 on N:,M:TrRbRbTy
-	d1 on N:,M:TrRbRbTy
-	d2 on N:,M:TrRbRbTy
-	d3 on N:,M:TrRbRbTy
-	d4 on N:,M:TrRbRbTy
-	d5 on N:,M:TrRbRbTy
-	d6 on N:,M:TrRbRbTy
-	d7 on N:,M:TrRbRbTy
-19 :N:,M:TyRbRbTr , score : 20 MAX:0 with : 
-	d0 on N:,M:TyRbRbTr
-	d1 on N:,M:TyRbRbTr
-	d2 on N:,M:TyRbRbTr
-	d3 on N:,M:TyRbRbTr
-	d4 on N:,M:TyRbRbTr
-	d5 on N:,M:TyRbRbTr
-	d6 on N:,M:TyRbRbTr
-	d7 on N:,M:TyRbRbTr
-	ig on N:,M:TyRbRbTr
-	id on N:,M:TyRbRbTr
-	id on N:Tr,M:RbRbTy
-33 :N:,M:RbRbTyTr , score : 20 MAX:20 with : best action : 0:ig  1:id
-	d0 on N:,M:RbRbTyTr
-	d1 on N:,M:RbRbTyTr
-	d2 on N:,M:RbRbTyTr
-	d3 on N:,M:RbRbTyTr
-	d4 on N:,M:RbRbTyTr
-	d5 on N:,M:RbRbTyTr
-	d6 on N:,M:RbRbTyTr
-	d7 on N:,M:RbRbTyTr
-42 :N:,M:RbRbTrTy , score : 20 MAX:20 with : best action : 0:ig  1:id
-	d0 on N:,M:RbRbTrTy
-	d1 on N:,M:RbRbTrTy
-	d2 on N:,M:RbRbTrTy
-	d3 on N:,M:RbRbTrTy
-	d4 on N:,M:RbRbTrTy
-	d5 on N:,M:RbRbTrTy
-	d6 on N:,M:RbRbTrTy
-	d7 on N:,M:RbRbTrTy
-	ig on N:,M:RbRbTrTy
-	id on N:,M:RbRbTrTy
-0 :N:Tr,M:RbRbTyTr , score : 20 MAX:0 with : 
-	d0 on N:Tr,M:RbRbTyTr
-	d1 on N:Tr,M:RbRbTyTr
-	d2 on N:Tr,M:RbRbTyTr
-	d3 on N:Tr,M:RbRbTyTr
-	d4 on N:Tr,M:RbRbTyTr
-	d5 on N:Tr,M:RbRbTyTr
-	d6 on N:Tr,M:RbRbTyTr
-	d7 on N:Tr,M:RbRbTyTr
-9 :N:Tr,M:RbRbTrTy , score : 20 MAX:0 with : 
-	d0 on N:Tr,M:RbRbTrTy
-	d1 on N:Tr,M:RbRbTrTy
-	d2 on N:Tr,M:RbRbTrTy
-	d3 on N:Tr,M:RbRbTrTy
-	d4 on N:Tr,M:RbRbTrTy
-	d5 on N:Tr,M:RbRbTrTy
-	d6 on N:Tr,M:RbRbTrTy
-	d7 on N:Tr,M:RbRbTrTy
-	ig on N:Tr,M:RbRbTrTy
-21 :N:,M:TrRbRbTrTy , score : 20 MAX:20 with : best action : 0:d7 1:d7  2:id
-	d0 on N:,M:TrRbRbTrTy
-	d1 on N:,M:TrRbRbTrTy
-	d2 on N:,M:TrRbRbTrTy
-	d3 on N:,M:TrRbRbTrTy
-	d4 on N:,M:TrRbRbTrTy
-	d5 on N:,M:TrRbRbTrTy
-	d6 on N:,M:TrRbRbTrTy
-	d7 on N:,M:TrRbRbTrTy
-30 :N:,M:TrRbRbTyTr , score : 20 MAX:20 with : best action : 0:d7 1:d7  2:id
-	d0 on N:,M:TrRbRbTyTr
-	d1 on N:,M:TrRbRbTyTr
-	d2 on N:,M:TrRbRbTyTr
-	d3 on N:,M:TrRbRbTyTr
-	d4 on N:,M:TrRbRbTyTr
-	d5 on N:,M:TrRbRbTyTr
-	d6 on N:,M:TrRbRbTyTr
-	d7 on N:,M:TrRbRbTyTr
-39 :N:,M:TyRbRbTrTr , score : 20 MAX:20 with : best action : 0:d7 1:d7  2:id
-	d0 on N:,M:TyRbRbTrTr
-	d1 on N:,M:TyRbRbTrTr
-	d2 on N:,M:TyRbRbTrTr
-	d3 on N:,M:TyRbRbTrTr
-	d4 on N:,M:TyRbRbTrTr
-	d5 on N:,M:TyRbRbTrTr
-	d6 on N:,M:TyRbRbTrTr
-	d7 on N:,M:TyRbRbTrTr
-	ig on N:,M:TyRbRbTrTr
-	id on N:,M:TyRbRbTrTr
-	ig on N:,M:TrRbRbTyTr
-	id on N:,M:TrRbRbTyTr
-	id on N:Tr,M:RbRbTrTy
-55 :N:,M:RbRb , score : 20 MAX:20 with : best action : 0:d7 1:ig  2:id
-	d0 on N:,M:RbRb
-	d1 on N:,M:RbRb
-	d2 on N:,M:RbRb
-	d3 on N:,M:RbRb
-	d4 on N:,M:RbRb
-	d5 on N:,M:RbRb
-	d6 on N:,M:RbRb
-	d7 on N:,M:RbRb
-	ig on N:,M:RbRb
-	id on N:,M:RbRb
-0 :N:Sg,M:RbRb , score : 30 MAX:0 with : 
-	d0 on N:Sg,M:RbRb
-	d1 on N:Sg,M:RbRb
-	d2 on N:Sg,M:RbRb
-	d3 on N:Sg,M:RbRb
-	d4 on N:Sg,M:RbRb
-	d5 on N:Sg,M:RbRb
-	d6 on N:Sg,M:RbRb
-	d7 on N:Sg,M:RbRb
-	ig on N:Sg,M:RbRb
-10 :N:,M:SgRbRb , score : 30 MAX:0 with : 
-	d0 on N:,M:SgRbRb
-	d1 on N:,M:SgRbRb
-	d2 on N:,M:SgRbRb
-	d3 on N:,M:SgRbRb
-	d4 on N:,M:SgRbRb
-	d5 on N:,M:SgRbRb
-	d6 on N:,M:SgRbRb
-	d7 on N:,M:SgRbRb
-	ig on N:,M:SgRbRb
-	id on N:,M:SgRbRb
-	id on N:Sg,M:RbRb
-22 :N:,M:RbRbSg , score : 30 MAX:30 with : best action : 0:ig  1:id
-	d0 on N:,M:RbRbSg
-	d1 on N:,M:RbRbSg
-	d2 on N:,M:RbRbSg
-	d3 on N:,M:RbRbSg
-	d4 on N:,M:RbRbSg
-	d5 on N:,M:RbRbSg
-	d6 on N:,M:RbRbSg
-	d7 on N:,M:RbRbSg
-	ig on N:,M:RbRbSg
-	id on N:,M:RbRbSg
-0 :N:Cy,M:RbRbSg , score : 30 MAX:0 with : 
-	d0 on N:Cy,M:RbRbSg
-	d1 on N:Cy,M:RbRbSg
-	d2 on N:Cy,M:RbRbSg
-	d3 on N:Cy,M:RbRbSg
-	d4 on N:Cy,M:RbRbSg
-	d5 on N:Cy,M:RbRbSg
-	d6 on N:Cy,M:RbRbSg
-	d7 on N:Cy,M:RbRbSg
-	ig on N:Cy,M:RbRbSg
-10 :N:,M:CyRbRbSg , score : 30 MAX:0 with : 
-	d0 on N:,M:CyRbRbSg
-	d1 on N:,M:CyRbRbSg
-	d2 on N:,M:CyRbRbSg
-	d3 on N:,M:CyRbRbSg
-	d4 on N:,M:CyRbRbSg
-	d5 on N:,M:CyRbRbSg
-	d6 on N:,M:CyRbRbSg
-	d7 on N:,M:CyRbRbSg
-	ig on N:,M:CyRbRbSg
-	id on N:,M:CyRbRbSg
-	id on N:Cy,M:RbRbSg
-22 :N:,M:RbRbSgCy , score : 30 MAX:30 with : best action : 0:ig  1:id
-	d0 on N:,M:RbRbSgCy
-	d1 on N:,M:RbRbSgCy
-	d2 on N:,M:RbRbSgCy
-	d3 on N:,M:RbRbSgCy
-	d4 on N:,M:RbRbSgCy
-	d5 on N:,M:RbRbSgCy
-	d6 on N:,M:RbRbSgCy
-	d7 on N:,M:RbRbSgCy
-	ig on N:,M:RbRbSgCy
-	id on N:,M:RbRbSgCy
-0 :N:Rr,M:CyRbRbSg , score : 30 MAX:0 with : 
-	d0 on N:Rr,M:CyRbRbSg
-	d1 on N:Rr,M:CyRbRbSg
-	d2 on N:Rr,M:CyRbRbSg
-	d3 on N:Rr,M:CyRbRbSg
-	d4 on N:Rr,M:CyRbRbSg
-	d5 on N:Rr,M:CyRbRbSg
-	d6 on N:Rr,M:CyRbRbSg
-	d7 on N:Rr,M:CyRbRbSg
-	ig on N:Rr,M:CyRbRbSg
-10 :N:,M:RrCyRbRbSg , score : 30 MAX:0 with : 
-	d0 on N:,M:RrCyRbRbSg
-	d1 on N:,M:RrCyRbRbSg
-	d2 on N:,M:RrCyRbRbSg
-	d3 on N:,M:RrCyRbRbSg
-	d4 on N:,M:RrCyRbRbSg
-	d5 on N:,M:RrCyRbRbSg
-17 :N:,M:RbCyRbRrSg , score : 30 MAX:0 with : 
-	d0 on N:,M:RbCyRbRrSg
-	d1 on N:,M:RbCyRbRrSg
-	d2 on N:,M:RbCyRbRrSg
-	d3 on N:,M:RbCyRbRrSg
-	d4 on N:,M:RbCyRbRrSg
-	d5 on N:,M:RbCyRbRrSg
-24 :N:,M:RbCyRrRbSg , score : 30 MAX:0 with : 
-	d0 on N:,M:RbCyRrRbSg
-	d1 on N:,M:RbCyRrRbSg
-	d2 on N:,M:RbCyRrRbSg
-	d3 on N:,M:RbCyRrRbSg
-	d4 on N:,M:RbCyRrRbSg
-	d5 on N:,M:RbCyRrRbSg
-	d6 on N:,M:RbCyRrRbSg
-	d7 on N:,M:RbCyRrRbSg
-	ig on N:,M:RbCyRrRbSg
-	id on N:,M:RbCyRrRbSg
-	d6 on N:,M:RbCyRbRrSg
-	d7 on N:,M:RbCyRbRrSg
-	ig on N:,M:RbCyRbRrSg
-	id on N:,M:RbCyRbRrSg
-	id on N:Rr,M:CyRbRbSg
-44 :N:,M:CyRbRbSgRr , score : 30 MAX:30 with : best action : 0:ig  1:id
-	d0 on N:,M:CyRbRbSgRr
-	d1 on N:,M:CyRbRbSgRr
-	d2 on N:,M:CyRbRbSgRr
-	d3 on N:,M:CyRbRbSgRr
-	d4 on N:,M:CyRbRbSgRr
-	d5 on N:,M:CyRbRbSgRr
-51 :N:,M:CyRbRrSgRb , score : 30 MAX:30 with : best action : 0:ig  1:id
-	d0 on N:,M:CyRbRrSgRb
-	d1 on N:,M:CyRbRrSgRb
-	d2 on N:,M:CyRbRrSgRb
-	d3 on N:,M:CyRbRrSgRb
-	d4 on N:,M:CyRbRrSgRb
-	d5 on N:,M:CyRbRrSgRb
-58 :N:,M:CyRrRbSgRb , score : 30 MAX:30 with : best action : 0:ig  1:id
-	d0 on N:,M:CyRrRbSgRb
-	d1 on N:,M:CyRrRbSgRb
-	d2 on N:,M:CyRrRbSgRb
-	d3 on N:,M:CyRrRbSgRb
-	d4 on N:,M:CyRrRbSgRb
-	d5 on N:,M:CyRrRbSgRb
-	d6 on N:,M:CyRrRbSgRb
-	d7 on N:,M:CyRrRbSgRb
-	ig on N:,M:CyRrRbSgRb
-	id on N:,M:CyRrRbSgRb
-	d6 on N:,M:CyRbRrSgRb
-	d7 on N:,M:CyRbRrSgRb
-	ig on N:,M:CyRbRrSgRb
-	id on N:,M:CyRbRrSgRb
-0 :N:Sb,M:CyRbRbSgRr , score : 30 MAX:0 with : 
-	d0 on N:Sb,M:CyRbRbSgRr
-	d1 on N:Sb,M:CyRbRbSgRr
-	d2 on N:Sb,M:CyRbRbSgRr
-	d3 on N:Sb,M:CyRbRbSgRr
-	d4 on N:Sb,M:CyRbRbSgRr
-	d5 on N:Sb,M:CyRbRbSgRr
-7 :N:Sb,M:CyRbRrSgRb , score : 30 MAX:0 with : 
-	d0 on N:Sb,M:CyRbRrSgRb
-	d1 on N:Sb,M:CyRbRrSgRb
-	d2 on N:Sb,M:CyRbRrSgRb
-	d3 on N:Sb,M:CyRbRrSgRb
-	d4 on N:Sb,M:CyRbRrSgRb
-	d5 on N:Sb,M:CyRbRrSgRb
-14 :N:Sb,M:CyRrRbSgRb , score : 30 MAX:0 with : 
-	d0 on N:Sb,M:CyRrRbSgRb
-	d1 on N:Sb,M:CyRrRbSgRb
-	d2 on N:Sb,M:CyRrRbSgRb
-	d3 on N:Sb,M:CyRrRbSgRb
-	d4 on N:Sb,M:CyRrRbSgRb
-	d5 on N:Sb,M:CyRrRbSgRb
-	d6 on N:Sb,M:CyRrRbSgRb
-	d7 on N:Sb,M:CyRrRbSgRb
-	ig on N:Sb,M:CyRrRbSgRb
-28 :N:,M:SbCyRrRbSgRb , score : 30 MAX:30 with : best action : 0:d5 1:d5 2:d5  3:id
-	d0 on N:,M:SbCyRrRbSgRb
-	d1 on N:,M:SbCyRrRbSgRb
-	d2 on N:,M:SbCyRrRbSgRb
-	d3 on N:,M:SbCyRrRbSgRb
-33 :N:,M:RbCyRrRbSgSb , score : 30 MAX:30 with : best action : 0:d5 1:d5 2:d5  3:id
-	d0 on N:,M:RbCyRrRbSgSb
-	d1 on N:,M:RbCyRrRbSgSb
-	d2 on N:,M:RbCyRrRbSgSb
-	d3 on N:,M:RbCyRrRbSgSb
-38 :N:,M:RbCyRrSbSgRb , score : 30 MAX:30 with : best action : 0:d5 1:d5 2:d5  3:id
-	d0 on N:,M:RbCyRrSbSgRb
-	d1 on N:,M:RbCyRrSbSgRb
-	d2 on N:,M:RbCyRrSbSgRb
-	d3 on N:,M:RbCyRrSbSgRb
-	d4 on N:,M:RbCyRrSbSgRb
-	d5 on N:,M:RbCyRrSbSgRb
-51 :N:,M:RrCyRbSbSgRb , score : 30 MAX:30 with : best action : 0:d5 1:d5 2:d5  3:id
-	d0 on N:,M:RrCyRbSbSgRb
-	d1 on N:,M:RrCyRbSbSgRb
-	d2 on N:,M:RrCyRbSbSgRb
-	d3 on N:,M:RrCyRbSbSgRb
-56 :N:,M:RrCySbRbSgRb , score : 30 MAX:30 with : best action : 0:d5 1:d5 2:d5  3:id
-	d0 on N:,M:RrCySbRbSgRb
-	d1 on N:,M:RrCySbRbSgRb
-	d2 on N:,M:RrCySbRbSgRb
-	d3 on N:,M:RrCySbRbSgRb
-61 :N:,M:RrCyRbRbSgSb , score : 30 MAX:30 with : best action : 0:d5 1:d5 2:d5  3:id
-	d0 on N:,M:RrCyRbRbSgSb
-	d1 on N:,M:RrCyRbRbSgSb
-	d2 on N:,M:RrCyRbRbSgSb
-	d3 on N:,M:RrCyRbRbSgSb
-	d4 on N:,M:RrCyRbRbSgSb
-	d5 on N:,M:RrCyRbRbSgSb
-74 :N:,M:RbCyRbRrSgSb , score : 30 MAX:30 with : best action : 0:d5 1:d5 2:d5  3:id
-	d0 on N:,M:RbCyRbRrSgSb
-	d1 on N:,M:RbCyRbRrSgSb
-	d2 on N:,M:RbCyRbRrSgSb
-	d3 on N:,M:RbCyRbRrSgSb
-79 :N:,M:RbCySbRrSgRb , score : 30 MAX:30 with : best action : 0:d5 1:d5 2:d5  3:id
-	d0 on N:,M:RbCySbRrSgRb
-	d1 on N:,M:RbCySbRrSgRb
-	d2 on N:,M:RbCySbRrSgRb
-	d3 on N:,M:RbCySbRrSgRb
-84 :N:,M:SbCyRbRrSgRb , score : 30 MAX:30 with : best action : 0:d5 1:d5 2:d5  3:id
-	d0 on N:,M:SbCyRbRrSgRb
-	d1 on N:,M:SbCyRbRrSgRb
-	d2 on N:,M:SbCyRbRrSgRb
-	d3 on N:,M:SbCyRbRrSgRb
-	d4 on N:,M:SbCyRbRrSgRb
-	d5 on N:,M:SbCyRbRrSgRb
-	d6 on N:,M:SbCyRbRrSgRb
-98 :N:,M:SgCyRbRrSbRb , score : 30 MAX:30 with : best action : 0:d5 1:d5 2:d5  3:id
-	d0 on N:,M:SgCyRbRrSbRb
-	d1 on N:,M:SgCyRbRrSbRb
-	d2 on N:,M:SgCyRbRrSbRb
-	d3 on N:,M:SgCyRbRrSbRb
-103 :N:,M:SgCySb , score : 30 MAX:30 with : best action : 0:d5 1:d5 2:d5  3:id
-	d0 on N:,M:SgCySb
-	d1 on N:,M:SgCySb
-	d2 on N:,M:SgCySb
-	d3 on N:,M:SgCySb
-	d4 on N:,M:SgCySb
-	d5 on N:,M:SgCySb
-	d6 on N:,M:SgCySb
-111 :N:,M:SbCySg , score : 30 MAX:30 with : best action : 0:d5 1:d5 2:d5  3:id
-	d0 on N:,M:SbCySg
-	d1 on N:,M:SbCySg
-	d2 on N:,M:SbCySg
-	d3 on N:,M:SbCySg
-	d4 on N:,M:SbCySg
-	d5 on N:,M:SbCySg
-	d6 on N:,M:SbCySg
-	d7 on N:,M:SbCySg
-	ig on N:,M:SbCySg
-	id on N:,M:SbCySg
-	d4 on N:,M:SgCyRbRrSbRb
-	d5 on N:,M:SgCyRbRrSbRb
-	this is what i need to see to fix something with my shifting 
+0 :N:Sr,M:Rb(0)(0)(0)__ , score : 0 MAX:0 with : 
+	d0 on N:Sr,M:Rb(0)(0)(0)__
+	d1 on N:Sr,M:Rb(0)(0)(0)__
+	d2 on N:Sr,M:Rb(0)(0)(0)__
+	d3 on N:Sr,M:Rb(0)(0)(0)__
+	d4 on N:Sr,M:Rb(0)(0)(0)__
+	d5 on N:Sr,M:Rb(0)(0)(0)__
+	d6 on N:Sr,M:Rb(0)(0)(0)__
+	d7 on N:Sr,M:Rb(0)(0)(0)__
+	ig on N:Sr,M:Rb(0)(0)(0)__
+10 :N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__ , score : 0 MAX:0 with : 
+	d0 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__
+	d1 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__
+	d2 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__
+	d3 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__
+	d4 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__
+	d5 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__
+	d6 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__
+	d7 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__
+	ig on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__
+	id on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__
+	id on N:Sr,M:Rb(0)(0)(0)__
+22 :N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__ , score : 0 MAX:0 with : best action : 0:ig  1:id
+	d0 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__
+	d1 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__
+	d2 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__
+	d3 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__
+	d4 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__
+	d5 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__
+	d6 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__
+	d7 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__
+	ig on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__
+	id on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__
+0 :N:Rr,M:Rb(0)(0)(0)__Sr(1)(0)(0)__ , score : 0 MAX:0 with : 
+	d0 on N:Rr,M:Rb(0)(0)(0)__Sr(1)(0)(0)__
+	d1 on N:Rr,M:Rb(0)(0)(0)__Sr(1)(0)(0)__
+	d2 on N:Rr,M:Rb(0)(0)(0)__Sr(1)(0)(0)__
+	d3 on N:Rr,M:Rb(0)(0)(0)__Sr(1)(0)(0)__
+	d4 on N:Rr,M:Rb(0)(0)(0)__Sr(1)(0)(0)__
+	d5 on N:Rr,M:Rb(0)(0)(0)__Sr(1)(0)(0)__
+	d6 on N:Rr,M:Rb(0)(0)(0)__Sr(1)(0)(0)__
+	d7 on N:Rr,M:Rb(0)(0)(0)__Sr(1)(0)(0)__
+	ig on N:Rr,M:Rb(0)(0)(0)__Sr(1)(0)(0)__
+10 :N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sr(2)(1)(0)__ , score : 0 MAX:0 with : 
+	d0 on N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sr(2)(1)(0)__
+12 :N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__ , score : 0 MAX:0 with : 
+	d0 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__
+	d1 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__
+	d2 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__
+	d3 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__
+	d4 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__
+	d5 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__
+28 :N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__ , score : 0 MAX:0 with : best action : 0:ig 1:d0 2:d0  3:id
+	d0 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__
+30 :N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__ , score : 0 MAX:0 with : best action : 0:ig 1:d0 2:d0  3:id
+	d0 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__
+	d1 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__
+	d2 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__
+	d3 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__
+	d4 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__
+	d5 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__
+46 :N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__ , score : 0 MAX:0 with : best action : 0:ig 1:d0 2:d0  3:id
+	d0 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__
+48 :N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__ , score : 0 MAX:0 with : best action : 0:ig 1:d0 2:d0  3:id
+	d0 on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__
+	d1 on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__
+	d2 on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__
+	d3 on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__
+	d4 on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__
+	d5 on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__
+	d6 on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__
+	d7 on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__
+	ig on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__
+	id on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__
+	d6 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__
+	d7 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__
+	ig on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__
+	id on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__
+	d6 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__
+	d7 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__
+	ig on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__
+	id on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__
+	id on N:Rr,M:Rb(0)(0)(0)__Sr(1)(0)(0)__
+0 :N:Sy,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__ , score : 0 MAX:0 with : 
+	d0 on N:Sy,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__
+2 :N:Sy,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__ , score : 0 MAX:0 with : 
+	d0 on N:Sy,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__
+	d1 on N:Sy,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__
+	d2 on N:Sy,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__
+	d3 on N:Sy,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__
+	d4 on N:Sy,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__
+	d5 on N:Sy,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__
+18 :N:Sy,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sr(2)(1)(0)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sy,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sr(2)(1)(0)__
+20 :N:Sy,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sy,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__
+	d1 on N:Sy,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__
+	d2 on N:Sy,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__
+	d3 on N:Sy,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__
+	d4 on N:Sy,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__
+	d5 on N:Sy,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__
+36 :N:Sy,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sy,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__
+38 :N:Sy,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sy,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__
+	d1 on N:Sy,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__
+	d2 on N:Sy,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__
+	d3 on N:Sy,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__
+	d4 on N:Sy,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__
+	d5 on N:Sy,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__
+	d6 on N:Sy,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__
+	d7 on N:Sy,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__
+	ig on N:Sy,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__
+57 :N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__
+59 :N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__
+	d1 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__
+	d2 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__
+	d3 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__
+	d4 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__
+	d5 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__
+75 :N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__
+77 :N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__
+	d1 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__
+	d2 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__
+	d3 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__
+	d4 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__
+	d5 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__
+93 :N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__
+95 :N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__
+	d1 on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__
+	d2 on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__
+	d3 on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__
+	d4 on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__
+	d5 on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__
+	d6 on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__
+112 :N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__
+114 :N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__
+	d1 on N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__
+	d2 on N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__
+	d3 on N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__
+	d4 on N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__
+	d5 on N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__
+130 :N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__
+132 :N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__
+	d1 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__
+	d2 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__
+	d3 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__
+	d4 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__
+	d5 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__
+148 :N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__
+150 :N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__
+	d1 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__
+	d2 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__
+	d3 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__
+	d4 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__
+	d5 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__
+	d6 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__
+	d7 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__
+	ig on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__
+	id on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__
+	d6 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__
+171 :N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__
+173 :N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__
+	d1 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__
+	d2 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__
+	d3 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__
+	d4 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__
+	d5 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__
+189 :N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__
+191 :N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__
+	d1 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__
+	d2 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__
+	d3 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__
+	d4 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__
+	d5 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__
+207 :N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__
+209 :N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__
+	d1 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__
+	d2 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__
+	d3 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__
+	d4 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__
+	d5 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__
+	d6 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__
+	d7 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__
+	ig on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__
+	id on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__
+	d6 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__
+	d7 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__
+	ig on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__
+	id on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__
+	d6 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__
+234 :N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__
+236 :N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__
+	d1 on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__
+	d2 on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__
+	d3 on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__
+	d4 on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__
+	d5 on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__
+252 :N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__
+254 :N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__
+	d1 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__
+	d2 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__
+	d3 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__
+	d4 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__
+	d5 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__
+270 :N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__
+272 :N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__
+	d1 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__
+	d2 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__
+	d3 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__
+	d4 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__
+	d5 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__
+	d6 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__
+	d7 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__
+	ig on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__
+	id on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__
+	d6 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__
+	d7 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__
+	ig on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__
+	id on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__
+	d6 on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__
+	d7 on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__
+	ig on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__
+	id on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__
+	d7 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__
+	ig on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__
+	id on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__
+	d7 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__
+	ig on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__
+	id on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__
+	d6 on N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__
+	d7 on N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__
+	ig on N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__
+	id on N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__
+	d7 on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__
+	ig on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__
+	id on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__
+	d6 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__
+	d7 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__
+	ig on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__
+	id on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__
+	d6 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__
+	d7 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__
+	ig on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__
+	id on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__
+	id on N:Sy,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__
+	d6 on N:Sy,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__
+	d7 on N:Sy,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__
+	ig on N:Sy,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__
+	id on N:Sy,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__
+	d6 on N:Sy,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__
+	d7 on N:Sy,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__
+	ig on N:Sy,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__
+	id on N:Sy,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__
+0 :N:Sr,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__ , score : 0 MAX:0 with : 
+	d0 on N:Sr,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__
+2 :N:Sr,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__ , score : 0 MAX:0 with : 
+	d0 on N:Sr,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__
+	d1 on N:Sr,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__
+	d2 on N:Sr,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__
+	d3 on N:Sr,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__
+	d4 on N:Sr,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__
+	d5 on N:Sr,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__
+18 :N:Sr,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sr,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__
+20 :N:Sr,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sr,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__
+	d1 on N:Sr,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__
+	d2 on N:Sr,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__
+	d3 on N:Sr,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__
+	d4 on N:Sr,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__
+	d5 on N:Sr,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__
+36 :N:Sr,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sr,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__
+38 :N:Sr,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sr,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__
+	d1 on N:Sr,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__
+	d2 on N:Sr,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__
+	d3 on N:Sr,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__
+	d4 on N:Sr,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__
+	d5 on N:Sr,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__
+	d6 on N:Sr,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__
+55 :N:Sr,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sr,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__
+57 :N:Sr,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sr,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__
+	d1 on N:Sr,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__
+	d2 on N:Sr,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__
+	d3 on N:Sr,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__
+	d4 on N:Sr,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__
+	d5 on N:Sr,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__
+73 :N:Sr,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sr,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__
+75 :N:Sr,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sr,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__
+	d1 on N:Sr,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__
+	d2 on N:Sr,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__
+	d3 on N:Sr,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__
+	d4 on N:Sr,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__
+	d5 on N:Sr,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__
+91 :N:Sr,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sr,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__
+93 :N:Sr,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sr,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__
+	d1 on N:Sr,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__
+	d2 on N:Sr,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__
+	d3 on N:Sr,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__
+	d4 on N:Sr,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__
+	d5 on N:Sr,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__
+	d6 on N:Sr,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__
+	d7 on N:Sr,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__
+	ig on N:Sr,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__
+112 :N:,M:Sr(0)(0)(0)__Sr(1)(1)(1)__Rb(2)(0)(0)__Sy(3)(0)(2)__Rr(4)(2)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sr(0)(0)(0)__Sr(1)(1)(1)__Rb(2)(0)(0)__Sy(3)(0)(2)__Rr(4)(2)(1)__
+114 :N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+116 :N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	d1 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	d2 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	d3 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	d4 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	d5 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+132 :N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+134 :N:,M:Rb(0)(0)(0)__Rr(1)(-1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rb(0)(0)(0)__Rr(1)(-1)(1)__
+136 :N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__
+	d1 on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__
+	d2 on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__
+	d3 on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__
+	d4 on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__
+	d5 on N:,M:Rb(0)(0)(0)__Rr(1)(0)(1)__
+143 :N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__
+	d1 on N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__
+	d2 on N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__
+	d3 on N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__
+	d4 on N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__
+	d5 on N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__
+	d6 on N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__
+	d7 on N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__
+	ig on N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__
+	id on N:,M:Rr(0)(0)(0)__Rb(1)(0)(1)__
+	d1 on N:,M:Rb(0)(0)(0)__Rr(1)(-1)(1)__
+	d2 on N:,M:Rb(0)(0)(0)__Rr(1)(-1)(1)__
+	d3 on N:,M:Rb(0)(0)(0)__Rr(1)(-1)(1)__
+	d4 on N:,M:Rb(0)(0)(0)__Rr(1)(-1)(1)__
+	d5 on N:,M:Rb(0)(0)(0)__Rr(1)(-1)(1)__
+	d6 on N:,M:Rb(0)(0)(0)__Rr(1)(-1)(1)__
+	d7 on N:,M:Rb(0)(0)(0)__Rr(1)(-1)(1)__
+	ig on N:,M:Rb(0)(0)(0)__Rr(1)(-1)(1)__
+	id on N:,M:Rb(0)(0)(0)__Rr(1)(-1)(1)__
+	d1 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	d2 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	d3 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	d4 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	d5 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	d6 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+177 :N:,M:Rb(0)(0)(0)__Sy(0)(0)(0)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rb(0)(0)(0)__Sy(0)(0)(0)__
+179 :N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__
+	d1 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__
+	d2 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__
+	d3 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__
+	d4 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__
+	d5 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__
+	d6 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__
+	d7 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__
+	ig on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__
+	id on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__
+	d1 on N:,M:Rb(0)(0)(0)__Sy(0)(0)(0)__
+	d2 on N:,M:Rb(0)(0)(0)__Sy(0)(0)(0)__
+	d3 on N:,M:Rb(0)(0)(0)__Sy(0)(0)(0)__
+	d4 on N:,M:Rb(0)(0)(0)__Sy(0)(0)(0)__
+	d5 on N:,M:Rb(0)(0)(0)__Sy(0)(0)(0)__
+	d6 on N:,M:Rb(0)(0)(0)__Sy(0)(0)(0)__
+	d7 on N:,M:Rb(0)(0)(0)__Sy(0)(0)(0)__
+	ig on N:,M:Rb(0)(0)(0)__Sy(0)(0)(0)__
+	id on N:,M:Rb(0)(0)(0)__Sy(0)(0)(0)__
+	d7 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	ig on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	id on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	d1 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	d2 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	d3 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	d4 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	d5 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+207 :N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+209 :N:,M:Rr(0)(0)(0)__Rb(1)(-1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rr(0)(0)(0)__Rb(1)(-1)(1)__
+	d1 on N:,M:Rr(0)(0)(0)__Rb(1)(-1)(1)__
+	d2 on N:,M:Rr(0)(0)(0)__Rb(1)(-1)(1)__
+	d3 on N:,M:Rr(0)(0)(0)__Rb(1)(-1)(1)__
+	d4 on N:,M:Rr(0)(0)(0)__Rb(1)(-1)(1)__
+	d5 on N:,M:Rr(0)(0)(0)__Rb(1)(-1)(1)__
+	d6 on N:,M:Rr(0)(0)(0)__Rb(1)(-1)(1)__
+	d7 on N:,M:Rr(0)(0)(0)__Rb(1)(-1)(1)__
+	ig on N:,M:Rr(0)(0)(0)__Rb(1)(-1)(1)__
+	id on N:,M:Rr(0)(0)(0)__Rb(1)(-1)(1)__
+	d1 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	d2 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	d3 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	d4 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	d5 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	d6 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+230 :N:,M:Sy(0)(0)(0)__Rb(0)(0)(0)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sy(0)(0)(0)__Rb(0)(0)(0)__
+232 :N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__
+	d1 on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__
+	d2 on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__
+	d3 on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__
+	d4 on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__
+	d5 on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__
+	d6 on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__
+	d7 on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__
+	ig on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__
+	id on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__
+	d1 on N:,M:Sy(0)(0)(0)__Rb(0)(0)(0)__
+	d2 on N:,M:Sy(0)(0)(0)__Rb(0)(0)(0)__
+	d3 on N:,M:Sy(0)(0)(0)__Rb(0)(0)(0)__
+	d4 on N:,M:Sy(0)(0)(0)__Rb(0)(0)(0)__
+	d5 on N:,M:Sy(0)(0)(0)__Rb(0)(0)(0)__
+	d6 on N:,M:Sy(0)(0)(0)__Rb(0)(0)(0)__
+	d7 on N:,M:Sy(0)(0)(0)__Rb(0)(0)(0)__
+	ig on N:,M:Sy(0)(0)(0)__Rb(0)(0)(0)__
+	id on N:,M:Sy(0)(0)(0)__Rb(0)(0)(0)__
+	d7 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	ig on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	id on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__Sr(4)(2)(2)__
+	id on N:Sr,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__
+256 :N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__Sr(4)(2)(2)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__Sr(4)(2)(2)__
+	d1 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__Sr(4)(2)(2)__
+	d2 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__Sr(4)(2)(2)__
+	d3 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__Sr(4)(2)(2)__
+	d4 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__Sr(4)(2)(2)__
+	d5 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__Sr(4)(2)(2)__
+263 :N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+265 :N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+267 :N:,M:Rb(0)(0)(0)__Rr(1)(1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rb(0)(0)(0)__Rr(1)(1)(1)__
+	d1 on N:,M:Rb(0)(0)(0)__Rr(1)(1)(1)__
+	d2 on N:,M:Rb(0)(0)(0)__Rr(1)(1)(1)__
+	d3 on N:,M:Rb(0)(0)(0)__Rr(1)(1)(1)__
+	d4 on N:,M:Rb(0)(0)(0)__Rr(1)(1)(1)__
+	d5 on N:,M:Rb(0)(0)(0)__Rr(1)(1)(1)__
+	d6 on N:,M:Rb(0)(0)(0)__Rr(1)(1)(1)__
+	d7 on N:,M:Rb(0)(0)(0)__Rr(1)(1)(1)__
+	ig on N:,M:Rb(0)(0)(0)__Rr(1)(1)(1)__
+	id on N:,M:Rb(0)(0)(0)__Rr(1)(1)(1)__
+	d1 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d2 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d3 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d4 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d5 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+283 :N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__Sr(4)(2)(2)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__Sr(4)(2)(2)__
+	d1 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__Sr(4)(2)(2)__
+	d2 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__Sr(4)(2)(2)__
+	d3 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__Sr(4)(2)(2)__
+	d4 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__Sr(4)(2)(2)__
+	d5 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__Sr(4)(2)(2)__
+	d6 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__Sr(4)(2)(2)__
+	d7 on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__Sr(4)(2)(2)__
+	ig on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__Sr(4)(2)(2)__
+	id on N:,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Sy(2)(0)(1)__Rr(3)(1)(1)__Sr(4)(2)(2)__
+	d1 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d2 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d3 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d4 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d5 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d6 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+308 :N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d1 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d2 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d3 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d4 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d5 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d6 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+316 :N:,M:Rb(0)(0)(0)__Sy(0)(0)(2)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rb(0)(0)(0)__Sy(0)(0)(2)__
+	d1 on N:,M:Rb(0)(0)(0)__Sy(0)(0)(2)__
+	d2 on N:,M:Rb(0)(0)(0)__Sy(0)(0)(2)__
+	d3 on N:,M:Rb(0)(0)(0)__Sy(0)(0)(2)__
+	d4 on N:,M:Rb(0)(0)(0)__Sy(0)(0)(2)__
+	d5 on N:,M:Rb(0)(0)(0)__Sy(0)(0)(2)__
+	d6 on N:,M:Rb(0)(0)(0)__Sy(0)(0)(2)__
+	d7 on N:,M:Rb(0)(0)(0)__Sy(0)(0)(2)__
+	ig on N:,M:Rb(0)(0)(0)__Sy(0)(0)(2)__
+	id on N:,M:Rb(0)(0)(0)__Sy(0)(0)(2)__
+	d7 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	ig on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	id on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d7 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	ig on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	id on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d6 on N:Sr,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__
+334 :N:Sr,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sr,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__
+336 :N:Sr,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sr,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__
+	d1 on N:Sr,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__
+	d2 on N:Sr,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__
+	d3 on N:Sr,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__
+	d4 on N:Sr,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__
+	d5 on N:Sr,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__
+352 :N:Sr,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sr,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__
+354 :N:Sr,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sr,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__
+	d1 on N:Sr,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__
+	d2 on N:Sr,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__
+	d3 on N:Sr,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__
+	d4 on N:Sr,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__
+	d5 on N:Sr,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__
+370 :N:Sr,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sr,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__
+372 :N:Sr,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sr,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__
+	d1 on N:Sr,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__
+	d2 on N:Sr,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__
+	d3 on N:Sr,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__
+	d4 on N:Sr,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__
+	d5 on N:Sr,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__
+	d6 on N:Sr,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__
+	d7 on N:Sr,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__
+	ig on N:Sr,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__
+391 :N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__Sr(3)(2)(1)__Sy(4)(0)(2)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__Sr(3)(2)(1)__Sy(4)(0)(2)__
+393 :N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__Sr(3)(2)(1)__Sy(4)(0)(2)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Rb(2)(0)(1)__Sr(3)(2)(1)__Sy(4)(0)(2)__
+395 :N:,M:Sr(0)(0)(0)__Sr(1)(1)(1)__Rb(2)(0)(0)__Rr(3)(2)(1)__Sy(4)(0)(2)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sr(0)(0)(0)__Sr(1)(1)(1)__Rb(2)(0)(0)__Rr(3)(2)(1)__Sy(4)(0)(2)__
+	d1 on N:,M:Sr(0)(0)(0)__Sr(1)(1)(1)__Rb(2)(0)(0)__Rr(3)(2)(1)__Sy(4)(0)(2)__
+	d2 on N:,M:Sr(0)(0)(0)__Sr(1)(1)(1)__Rb(2)(0)(0)__Rr(3)(2)(1)__Sy(4)(0)(2)__
+	d3 on N:,M:Sr(0)(0)(0)__Sr(1)(1)(1)__Rb(2)(0)(0)__Rr(3)(2)(1)__Sy(4)(0)(2)__
+	d4 on N:,M:Sr(0)(0)(0)__Sr(1)(1)(1)__Rb(2)(0)(0)__Rr(3)(2)(1)__Sy(4)(0)(2)__
+	d5 on N:,M:Sr(0)(0)(0)__Sr(1)(1)(1)__Rb(2)(0)(0)__Rr(3)(2)(1)__Sy(4)(0)(2)__
+	d6 on N:,M:Sr(0)(0)(0)__Sr(1)(1)(1)__Rb(2)(0)(0)__Rr(3)(2)(1)__Sy(4)(0)(2)__
+412 :N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__Sr(4)(2)(2)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__Sr(4)(2)(2)__
+414 :N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__Sr(4)(2)(2)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__Sr(4)(2)(2)__
+416 :N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rb(2)(0)(0)__Sr(3)(1)(2)__Rr(4)(2)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rb(2)(0)(0)__Sr(3)(1)(2)__Rr(4)(2)(1)__
+	d1 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rb(2)(0)(0)__Sr(3)(1)(2)__Rr(4)(2)(1)__
+	d2 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rb(2)(0)(0)__Sr(3)(1)(2)__Rr(4)(2)(1)__
+	d3 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rb(2)(0)(0)__Sr(3)(1)(2)__Rr(4)(2)(1)__
+	d4 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rb(2)(0)(0)__Sr(3)(1)(2)__Rr(4)(2)(1)__
+	d5 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rb(2)(0)(0)__Sr(3)(1)(2)__Rr(4)(2)(1)__
+432 :N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Sr(3)(2)(2)__Rb(4)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Sr(3)(2)(2)__Rb(4)(0)(1)__
+	d1 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Sr(3)(2)(2)__Rb(4)(0)(1)__
+	d2 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Sr(3)(2)(2)__Rb(4)(0)(1)__
+	d3 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Sr(3)(2)(2)__Rb(4)(0)(1)__
+	d4 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Sr(3)(2)(2)__Rb(4)(0)(1)__
+	d5 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Sr(3)(2)(2)__Rb(4)(0)(1)__
+	d6 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Sr(3)(2)(2)__Rb(4)(0)(1)__
+444 :N:,M:Sy(0)(0)(0)__Rb(0)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sy(0)(0)(0)__Rb(0)(0)(1)__
+	d1 on N:,M:Sy(0)(0)(0)__Rb(0)(0)(1)__
+	d2 on N:,M:Sy(0)(0)(0)__Rb(0)(0)(1)__
+	d3 on N:,M:Sy(0)(0)(0)__Rb(0)(0)(1)__
+	d4 on N:,M:Sy(0)(0)(0)__Rb(0)(0)(1)__
+	d5 on N:,M:Sy(0)(0)(0)__Rb(0)(0)(1)__
+	d6 on N:,M:Sy(0)(0)(0)__Rb(0)(0)(1)__
+	d7 on N:,M:Sy(0)(0)(0)__Rb(0)(0)(1)__
+	ig on N:,M:Sy(0)(0)(0)__Rb(0)(0)(1)__
+	id on N:,M:Sy(0)(0)(0)__Rb(0)(0)(1)__
+	d7 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Sr(3)(2)(2)__Rb(4)(0)(1)__
+	ig on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Sr(3)(2)(2)__Rb(4)(0)(1)__
+	id on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Sr(3)(2)(2)__Rb(4)(0)(1)__
+	d1 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__Sr(4)(2)(2)__
+	d2 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__Sr(4)(2)(2)__
+	d3 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__Sr(4)(2)(2)__
+	d4 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__Sr(4)(2)(2)__
+	d5 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__Sr(4)(2)(2)__
+	d6 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__Sr(4)(2)(2)__
+	d7 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__Sr(4)(2)(2)__
+	ig on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__Sr(4)(2)(2)__
+	id on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__Sr(4)(2)(2)__
+	d7 on N:,M:Sr(0)(0)(0)__Sr(1)(1)(1)__Rb(2)(0)(0)__Rr(3)(2)(1)__Sy(4)(0)(2)__
+	ig on N:,M:Sr(0)(0)(0)__Sr(1)(1)(1)__Rb(2)(0)(0)__Rr(3)(2)(1)__Sy(4)(0)(2)__
+	id on N:,M:Sr(0)(0)(0)__Sr(1)(1)(1)__Rb(2)(0)(0)__Rr(3)(2)(1)__Sy(4)(0)(2)__
+	id on N:Sr,M:Rr(0)(0)(0)__Rb(1)(0)(1)__Sr(2)(1)(0)__Sy(3)(0)(1)__
+	d6 on N:Sr,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__
+	d7 on N:Sr,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__
+	ig on N:Sr,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__
+483 :N:,M:Rb(3)(0)(1)__Sy(4)(0)(2)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rb(3)(0)(1)__Sy(4)(0)(2)__
+	d1 on N:,M:Rb(3)(0)(1)__Sy(4)(0)(2)__
+	d2 on N:,M:Rb(3)(0)(1)__Sy(4)(0)(2)__
+	d3 on N:,M:Rb(3)(0)(1)__Sy(4)(0)(2)__
+	d4 on N:,M:Rb(3)(0)(1)__Sy(4)(0)(2)__
+	d5 on N:,M:Rb(3)(0)(1)__Sy(4)(0)(2)__
+	d6 on N:,M:Rb(3)(0)(1)__Sy(4)(0)(2)__
+	d7 on N:,M:Rb(3)(0)(1)__Sy(4)(0)(2)__
+	ig on N:,M:Rb(3)(0)(1)__Sy(4)(0)(2)__
+	id on N:,M:Rb(3)(0)(1)__Sy(4)(0)(2)__
+	id on N:Sr,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Rb(2)(0)(1)__Sy(3)(0)(1)__
+	d6 on N:Sr,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__
+496 :N:Sr,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sr,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__
+498 :N:Sr,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sr,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__
+	d1 on N:Sr,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__
+	d2 on N:Sr,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__
+	d3 on N:Sr,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__
+	d4 on N:Sr,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__
+	d5 on N:Sr,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__
+514 :N:Sr,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sr,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__
+516 :N:Sr,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sr,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__
+	d1 on N:Sr,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__
+	d2 on N:Sr,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__
+	d3 on N:Sr,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__
+	d4 on N:Sr,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__
+	d5 on N:Sr,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__
+532 :N:Sr,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sr,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__
+534 :N:Sr,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:Sr,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__
+	d1 on N:Sr,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__
+	d2 on N:Sr,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__
+	d3 on N:Sr,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__
+	d4 on N:Sr,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__
+	d5 on N:Sr,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__
+	d6 on N:Sr,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__
+	d7 on N:Sr,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__
+	ig on N:Sr,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__
+	id on N:Sr,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__
+	d6 on N:Sr,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__
+	d7 on N:Sr,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__
+	ig on N:Sr,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__
+557 :N:,M:Rr(3)(2)(0)__Rb(4)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rr(3)(2)(0)__Rb(4)(0)(1)__
+	d1 on N:,M:Rr(3)(2)(0)__Rb(4)(0)(1)__
+	d2 on N:,M:Rr(3)(2)(0)__Rb(4)(0)(1)__
+	d3 on N:,M:Rr(3)(2)(0)__Rb(4)(0)(1)__
+	d4 on N:,M:Rr(3)(2)(0)__Rb(4)(0)(1)__
+	d5 on N:,M:Rr(3)(2)(0)__Rb(4)(0)(1)__
+	d6 on N:,M:Rr(3)(2)(0)__Rb(4)(0)(1)__
+	d7 on N:,M:Rr(3)(2)(0)__Rb(4)(0)(1)__
+	ig on N:,M:Rr(3)(2)(0)__Rb(4)(0)(1)__
+	id on N:,M:Rr(3)(2)(0)__Rb(4)(0)(1)__
+	id on N:Sr,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__
+569 :N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__Sr(4)(2)(2)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+571 :N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d1 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d2 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d3 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d4 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d5 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d6 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d7 on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	ig on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	id on N:,M:Rr(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d1 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d2 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d3 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d4 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d5 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d6 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+588 :N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__Sr(4)(2)(2)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d1 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d2 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d3 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d4 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d5 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+595 :N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__Sr(4)(2)(2)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__Sr(4)(2)(2)__
+597 :N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__Sr(4)(2)(2)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__Sr(4)(2)(2)__
+599 :N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Sr(3)(1)(2)__Rr(4)(2)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Sr(3)(1)(2)__Rr(4)(2)(1)__
+	d1 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Sr(3)(1)(2)__Rr(4)(2)(1)__
+	d2 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Sr(3)(1)(2)__Rr(4)(2)(1)__
+	d3 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Sr(3)(1)(2)__Rr(4)(2)(1)__
+	d4 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Sr(3)(1)(2)__Rr(4)(2)(1)__
+	d5 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Sr(3)(1)(2)__Rr(4)(2)(1)__
+	d6 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Sr(3)(1)(2)__Rr(4)(2)(1)__
+	d7 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Sr(3)(1)(2)__Rr(4)(2)(1)__
+	ig on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Sr(3)(1)(2)__Rr(4)(2)(1)__
+	id on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Sr(3)(1)(2)__Rr(4)(2)(1)__
+	d1 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__Sr(4)(2)(2)__
+	d2 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__Sr(4)(2)(2)__
+	d3 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__Sr(4)(2)(2)__
+	d4 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__Sr(4)(2)(2)__
+	d5 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__Sr(4)(2)(2)__
+	d6 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__Sr(4)(2)(2)__
+	d7 on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__Sr(4)(2)(2)__
+	ig on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__Sr(4)(2)(2)__
+	id on N:,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Rb(2)(0)(1)__Sr(3)(1)(1)__Sr(4)(2)(2)__
+	d6 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d7 on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	ig on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	id on N:,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d7 on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	ig on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	id on N:,M:Sr(0)(0)(0)__Sy(1)(0)(1)__Rr(2)(1)(0)__Rb(3)(0)(1)__Sr(4)(2)(2)__
+	d6 on N:Sr,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__
+	d7 on N:Sr,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__
+	ig on N:Sr,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__
+638 :N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Sr(3)(1)(2)__Rr(4)(2)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Sr(3)(1)(2)__Rr(4)(2)(1)__
+	d1 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Sr(3)(1)(2)__Rr(4)(2)(1)__
+	d2 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Sr(3)(1)(2)__Rr(4)(2)(1)__
+	d3 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Sr(3)(1)(2)__Rr(4)(2)(1)__
+	d4 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Sr(3)(1)(2)__Rr(4)(2)(1)__
+	d5 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sy(2)(0)(1)__Sr(3)(1)(2)__Rr(4)(2)(1)__
+645 :N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Sr(3)(2)(2)__Rb(4)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Sr(3)(2)(2)__Rb(4)(0)(1)__
+	d1 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Sr(3)(2)(2)__Rb(4)(0)(1)__
+	d2 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Sr(3)(2)(2)__Rb(4)(0)(1)__
+	d3 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Sr(3)(2)(2)__Rb(4)(0)(1)__
+	d4 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Sr(3)(2)(2)__Rb(4)(0)(1)__
+	d5 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Sr(3)(2)(2)__Rb(4)(0)(1)__
+	d6 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Sr(3)(2)(2)__Rb(4)(0)(1)__
+	d7 on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Sr(3)(2)(2)__Rb(4)(0)(1)__
+	ig on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Sr(3)(2)(2)__Rb(4)(0)(1)__
+	id on N:,M:Sr(0)(0)(0)__Rr(1)(1)(0)__Sy(2)(0)(1)__Sr(3)(2)(2)__Rb(4)(0)(1)__
+	id on N:Sr,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Sr(2)(0)(1)__Rr(3)(1)(1)__
+	d7 on N:Sr,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__
+	ig on N:Sr,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__
+663 :N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sr(2)(1)(1)__Rr(3)(2)(1)__Sy(4)(0)(2)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sr(2)(1)(1)__Rr(3)(2)(1)__Sy(4)(0)(2)__
+665 :N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sr(3)(2)(1)__Sy(4)(0)(2)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sr(3)(2)(1)__Sy(4)(0)(2)__
+	d1 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sr(3)(2)(1)__Sy(4)(0)(2)__
+	d2 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sr(3)(2)(1)__Sy(4)(0)(2)__
+	d3 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sr(3)(2)(1)__Sy(4)(0)(2)__
+	d4 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sr(3)(2)(1)__Sy(4)(0)(2)__
+	d5 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sr(3)(2)(1)__Sy(4)(0)(2)__
+	d6 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sr(3)(2)(1)__Sy(4)(0)(2)__
+	d7 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sr(3)(2)(1)__Sy(4)(0)(2)__
+	ig on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sr(3)(2)(1)__Sy(4)(0)(2)__
+	id on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(1)(1)__Sr(3)(2)(1)__Sy(4)(0)(2)__
+	d1 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sr(2)(1)(1)__Rr(3)(2)(1)__Sy(4)(0)(2)__
+	d2 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sr(2)(1)(1)__Rr(3)(2)(1)__Sy(4)(0)(2)__
+	d3 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sr(2)(1)(1)__Rr(3)(2)(1)__Sy(4)(0)(2)__
+	d4 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sr(2)(1)(1)__Rr(3)(2)(1)__Sy(4)(0)(2)__
+	d5 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sr(2)(1)(1)__Rr(3)(2)(1)__Sy(4)(0)(2)__
+	d6 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sr(2)(1)(1)__Rr(3)(2)(1)__Sy(4)(0)(2)__
+	d7 on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sr(2)(1)(1)__Rr(3)(2)(1)__Sy(4)(0)(2)__
+	ig on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sr(2)(1)(1)__Rr(3)(2)(1)__Sy(4)(0)(2)__
+	id on N:,M:Sr(0)(0)(0)__Rb(1)(0)(0)__Sr(2)(1)(1)__Rr(3)(2)(1)__Sy(4)(0)(2)__
+	id on N:Sr,M:Rb(0)(0)(0)__Sr(1)(0)(0)__Rr(2)(1)(1)__Sy(3)(0)(1)__
+	d7 on N:Sr,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__
+	ig on N:Sr,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__
+	id on N:Sr,M:Rb(0)(0)(0)__Rr(1)(0)(1)__Sy(2)(0)(0)__Sr(3)(1)(1)__
+	d6 on N:Sr,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__
+	d7 on N:Sr,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__
+	ig on N:Sr,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__
+692 :N:,M:Sy(3)(0)(2)__Rb(4)(0)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Sy(3)(0)(2)__Rb(4)(0)(1)__
+	d1 on N:,M:Sy(3)(0)(2)__Rb(4)(0)(1)__
+	d2 on N:,M:Sy(3)(0)(2)__Rb(4)(0)(1)__
+	d3 on N:,M:Sy(3)(0)(2)__Rb(4)(0)(1)__
+	d4 on N:,M:Sy(3)(0)(2)__Rb(4)(0)(1)__
+	d5 on N:,M:Sy(3)(0)(2)__Rb(4)(0)(1)__
+	d6 on N:,M:Sy(3)(0)(2)__Rb(4)(0)(1)__
+	d7 on N:,M:Sy(3)(0)(2)__Rb(4)(0)(1)__
+	ig on N:,M:Sy(3)(0)(2)__Rb(4)(0)(1)__
+	id on N:,M:Sy(3)(0)(2)__Rb(4)(0)(1)__
+	id on N:Sr,M:Rr(0)(0)(0)__Sr(1)(1)(0)__Sy(2)(0)(1)__Rb(3)(0)(1)__
+	d7 on N:Sr,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__
+	ig on N:Sr,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__
+	id on N:Sr,M:Sy(0)(0)(0)__Rr(1)(0)(0)__Sr(2)(1)(1)__Rb(3)(0)(1)__
+	d6 on N:Sr,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__
+	d7 on N:Sr,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__
+	ig on N:Sr,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__
+710 :N:,M:Rb(3)(0)(0)__Rr(4)(2)(1)__ , score : 0 MAX:0 with : best action : 0:d0 1:d0  2:id
+	d0 on N:,M:Rb(3)(0)(0)__Rr(4)(2)(1)__
+	d1 on N:,M:Rb(3)(0)(0)__Rr(4)(2)(1)__
+	d2 on N:,M:Rb(3)(0)(0)__Rr(4)(2)(1)__
+	d3 on N:,M:Rb(3)(0)(0)__Rr(4)(2)(1)__
+	d4 on N:,M:Rb(3)(0)(0)__Rr(4)(2)(1)__
+	d5 on N:,M:Rb(3)(0)(0)__Rr(4)(2)(1)__
+	d6 on N:,M:Rb(3)(0)(0)__Rr(4)(2)(1)__
+	d7 on N:,M:Rb(3)(0)(0)__Rr(4)(2)(1)__
+	ig on N:,M:Rb(3)(0)(0)__Rr(4)(2)(1)__
+	id on N:,M:Rb(3)(0)(0)__Rr(4)(2)(1)__
+	id on N:Sr,M:Sy(0)(0)(0)__Sr(1)(0)(1)__Rb(2)(0)(0)__Rr(3)(1)(1)__
+	d6 on N:Sr,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__
+	d7 on N:Sr,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__
+	ig on N:Sr,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__
+	id on N:Sr,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Rr(2)(0)(1)__Sr(3)(1)(1)__
+0 :N:Rg,M:Sy(0)(0)(0)__Rb(1)(0)(0)__ , score : 10 MAX:0 with : 
+	d0 on N:Rg,M:Sy(0)(0)(0)__Rb(1)(0)(0)__
+	d1 on N:Rg,M:Sy(0)(0)(0)__Rb(1)(0)(0)__
+	d2 on N:Rg,M:Sy(0)(0)(0)__Rb(1)(0)(0)__
+	d3 on N:Rg,M:Sy(0)(0)(0)__Rb(1)(0)(0)__
+	d4 on N:Rg,M:Sy(0)(0)(0)__Rb(1)(0)(0)__
+	d5 on N:Rg,M:Sy(0)(0)(0)__Rb(1)(0)(0)__
+	d6 on N:Rg,M:Sy(0)(0)(0)__Rb(1)(0)(0)__
+	d7 on N:Rg,M:Sy(0)(0)(0)__Rb(1)(0)(0)__
+	ig on N:Rg,M:Sy(0)(0)(0)__Rb(1)(0)(0)__
+10 :N:,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__ , score : 10 MAX:0 with : 
+	d0 on N:,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__
+	d1 on N:,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__
+	d2 on N:,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__
+	d3 on N:,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__
+	d4 on N:,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__
+	d5 on N:,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__
+17 :N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__ , score : 10 MAX:0 with : 
+	d0 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__
+	d1 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__
+	d2 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__
+	d3 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__
+	d4 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__
+	d5 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__
+	d6 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__
+	d7 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__
+	ig on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__
+	id on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__
+	id on N:Rg,M:Sy(0)(0)(0)__Rb(1)(0)(0)__
+33 :N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Rg(2)(0)(1)__ , score : 10 MAX:10 with : best action : 0:ig  1:id
+	d0 on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Rg(2)(0)(1)__
+	d1 on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Rg(2)(0)(1)__
+	d2 on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Rg(2)(0)(1)__
+	d3 on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Rg(2)(0)(1)__
+	d4 on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Rg(2)(0)(1)__
+	d5 on N:,M:Sy(0)(0)(0)__Rb(1)(0)(0)__Rg(2)(0)(1)__
+40 :N:,M:Sy(0)(0)(0)__Rg(1)(0)(0)__Rb(2)(0)(1)__ , score : 10 MAX:10 with : best action : 0:ig  1:id
+	d0 on N:,M:Sy(0)(0)(0)__Rg(1)(0)(0)__Rb(2)(0)(1)__
+	d1 on N:,M:Sy(0)(0)(0)__Rg(1)(0)(0)__Rb(2)(0)(1)__
+	d2 on N:,M:Sy(0)(0)(0)__Rg(1)(0)(0)__Rb(2)(0)(1)__
+	d3 on N:,M:Sy(0)(0)(0)__Rg(1)(0)(0)__Rb(2)(0)(1)__
+	d4 on N:,M:Sy(0)(0)(0)__Rg(1)(0)(0)__Rb(2)(0)(1)__
+	d5 on N:,M:Sy(0)(0)(0)__Rg(1)(0)(0)__Rb(2)(0)(1)__
+	d6 on N:,M:Sy(0)(0)(0)__Rg(1)(0)(0)__Rb(2)(0)(1)__
+	d7 on N:,M:Sy(0)(0)(0)__Rg(1)(0)(0)__Rb(2)(0)(1)__
+	ig on N:,M:Sy(0)(0)(0)__Rg(1)(0)(0)__Rb(2)(0)(1)__
+	id on N:,M:Sy(0)(0)(0)__Rg(1)(0)(0)__Rb(2)(0)(1)__
+0 :N:Rb,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__ , score : 10 MAX:0 with : 
+	d0 on N:Rb,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__
+	d1 on N:Rb,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__
+	d2 on N:Rb,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__
+	d3 on N:Rb,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__
+	d4 on N:Rb,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__
+	d5 on N:Rb,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__
+7 :N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__ , score : 10 MAX:0 with : 
+	d0 on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__
+	d1 on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__
+	d2 on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__
+	d3 on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__
+	d4 on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__
+	d5 on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__
+	d6 on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__
+	d7 on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__
+	ig on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__
+21 :N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rg(3)(0)(2)__ , score : 10 MAX:10 with : best action : 0:d5 1:d5  2:id
+	d0 on N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rg(3)(0)(2)__
+	d1 on N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rg(3)(0)(2)__
+	d2 on N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rg(3)(0)(2)__
+	d3 on N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rg(3)(0)(2)__
+	d4 on N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rg(3)(0)(2)__
+	d5 on N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rg(3)(0)(2)__
+28 :N:,M:Rb(0)(0)(0)__Rg(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__ , score : 10 MAX:10 with : best action : 0:d5 1:d5  2:id
+	d0 on N:,M:Rb(0)(0)(0)__Rg(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__
+	d1 on N:,M:Rb(0)(0)(0)__Rg(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__
+	d2 on N:,M:Rb(0)(0)(0)__Rg(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__
+	d3 on N:,M:Rb(0)(0)(0)__Rg(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__
+	d4 on N:,M:Rb(0)(0)(0)__Rg(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__
+	d5 on N:,M:Rb(0)(0)(0)__Rg(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__
+35 :N:,M:Rg(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__ , score : 10 MAX:10 with : best action : 0:d5 1:d5  2:id
+	d0 on N:,M:Rg(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__
+	d1 on N:,M:Rg(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__
+	d2 on N:,M:Rg(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__
+	d3 on N:,M:Rg(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__
+	d4 on N:,M:Rg(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__
+	d5 on N:,M:Rg(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__
+	d6 on N:,M:Rg(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__
+	d7 on N:,M:Rg(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__
+	ig on N:,M:Rg(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__
+	id on N:,M:Rg(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__
+	d6 on N:,M:Rb(0)(0)(0)__Rg(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__
+	d7 on N:,M:Rb(0)(0)(0)__Rg(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__
+	ig on N:,M:Rb(0)(0)(0)__Rg(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__
+	id on N:,M:Rb(0)(0)(0)__Rg(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__
+	id on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__
+55 :N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__Rb(3)(1)(2)__ , score : 10 MAX:10 with : best action : 0:d5 1:ig  2:id
+	d0 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__Rb(3)(1)(2)__
+	d1 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__Rb(3)(1)(2)__
+	d2 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__Rb(3)(1)(2)__
+	d3 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__Rb(3)(1)(2)__
+	d4 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__Rb(3)(1)(2)__
+	d5 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__Rb(3)(1)(2)__
+62 :N:,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Rb(3)(1)(2)__ , score : 10 MAX:10 with : best action : 0:d5 1:ig  2:id
+	d0 on N:,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Rb(3)(1)(2)__
+	d1 on N:,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Rb(3)(1)(2)__
+	d2 on N:,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Rb(3)(1)(2)__
+	d3 on N:,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Rb(3)(1)(2)__
+	d4 on N:,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Rb(3)(1)(2)__
+	d5 on N:,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Rb(3)(1)(2)__
+69 :N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(1)(1)__Rg(3)(0)(2)__ , score : 10 MAX:10 with : best action : 0:d5 1:ig  2:id
+	d0 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(1)(1)__Rg(3)(0)(2)__
+	d1 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(1)(1)__Rg(3)(0)(2)__
+	d2 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(1)(1)__Rg(3)(0)(2)__
+	d3 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(1)(1)__Rg(3)(0)(2)__
+	d4 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(1)(1)__Rg(3)(0)(2)__
+	d5 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(1)(1)__Rg(3)(0)(2)__
+	d6 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(1)(1)__Rg(3)(0)(2)__
+	d7 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(1)(1)__Rg(3)(0)(2)__
+	ig on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(1)(1)__Rg(3)(0)(2)__
+	id on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(1)(1)__Rg(3)(0)(2)__
+	d6 on N:,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Rb(3)(1)(2)__
+	d7 on N:,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Rb(3)(1)(2)__
+	ig on N:,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Rb(3)(1)(2)__
+	id on N:,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Rb(3)(1)(2)__
+0 :N:Rb,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Rb(3)(1)(2)__ , score : 10 MAX:0 with : 
+	d0 on N:Rb,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Rb(3)(1)(2)__
+	d1 on N:Rb,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Rb(3)(1)(2)__
+	d2 on N:Rb,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Rb(3)(1)(2)__
+	d3 on N:Rb,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Rb(3)(1)(2)__
+	d4 on N:Rb,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Rb(3)(1)(2)__
+	d5 on N:Rb,M:Rg(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(0)(1)__Rb(3)(1)(2)__
+7 :N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(1)(1)__Rg(3)(0)(2)__ , score : 10 MAX:0 with : 
+	d0 on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(1)(1)__Rg(3)(0)(2)__
+	d1 on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(1)(1)__Rg(3)(0)(2)__
+	d2 on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(1)(1)__Rg(3)(0)(2)__
+	d3 on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(1)(1)__Rg(3)(0)(2)__
+	d4 on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(1)(1)__Rg(3)(0)(2)__
+	d5 on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(1)(1)__Rg(3)(0)(2)__
+14 :N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__Rb(3)(1)(2)__ , score : 10 MAX:0 with : 
+	d0 on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__Rb(3)(1)(2)__
+	d1 on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__Rb(3)(1)(2)__
+	d2 on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__Rb(3)(1)(2)__
+	d3 on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__Rb(3)(1)(2)__
+	d4 on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__Rb(3)(1)(2)__
+	d5 on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__Rb(3)(1)(2)__
+	d6 on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__Rb(3)(1)(2)__
+	d7 on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__Rb(3)(1)(2)__
+	ig on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__Rb(3)(1)(2)__
+28 :N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rg(3)(0)(2)__Rb(4)(2)(3)__ , score : 10 MAX:10 with : best action : 0:d5 1:d5 2:d5  3:id
+	d0 on N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rg(3)(0)(2)__Rb(4)(2)(3)__
+	d1 on N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rg(3)(0)(2)__Rb(4)(2)(3)__
+	d2 on N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rg(3)(0)(2)__Rb(4)(2)(3)__
+	d3 on N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rg(3)(0)(2)__Rb(4)(2)(3)__
+	d4 on N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rg(3)(0)(2)__Rb(4)(2)(3)__
+	d5 on N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rg(3)(0)(2)__Rb(4)(2)(3)__
+35 :N:,M:Rb(0)(0)(0)__Rg(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__Rb(4)(2)(3)__ , score : 10 MAX:10 with : best action : 0:d5 1:d5 2:d5  3:id
+	d0 on N:,M:Rb(0)(0)(0)__Rg(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__Rb(4)(2)(3)__
+	d1 on N:,M:Rb(0)(0)(0)__Rg(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__Rb(4)(2)(3)__
+	d2 on N:,M:Rb(0)(0)(0)__Rg(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__Rb(4)(2)(3)__
+	d3 on N:,M:Rb(0)(0)(0)__Rg(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__Rb(4)(2)(3)__
+	d4 on N:,M:Rb(0)(0)(0)__Rg(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__Rb(4)(2)(3)__
+	d5 on N:,M:Rb(0)(0)(0)__Rg(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__Rb(4)(2)(3)__
+42 :N:,M:Rg(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__Rb(4)(2)(3)__ , score : 10 MAX:10 with : best action : 0:d5 1:d5 2:d5  3:id
+	d0 on N:,M:Rg(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__Rb(4)(2)(3)__
+	d1 on N:,M:Rg(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__Rb(4)(2)(3)__
+	d2 on N:,M:Rg(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__Rb(4)(2)(3)__
+	d3 on N:,M:Rg(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__Rb(4)(2)(3)__
+	d4 on N:,M:Rg(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__Rb(4)(2)(3)__
+	d5 on N:,M:Rg(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__Rb(4)(2)(3)__
+49 :N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rb(3)(2)(2)__Rg(4)(0)(3)__ , score : 10 MAX:10 with : best action : 0:d5 1:d5 2:d5  3:id
+	d0 on N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rb(3)(2)(2)__Rg(4)(0)(3)__
+	d1 on N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rb(3)(2)(2)__Rg(4)(0)(3)__
+	d2 on N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rb(3)(2)(2)__Rg(4)(0)(3)__
+	d3 on N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rb(3)(2)(2)__Rg(4)(0)(3)__
+	d4 on N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rb(3)(2)(2)__Rg(4)(0)(3)__
+	d5 on N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rb(3)(2)(2)__Rg(4)(0)(3)__
+	d6 on N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rb(3)(2)(2)__Rg(4)(0)(3)__
+	d7 on N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rb(3)(2)(2)__Rg(4)(0)(3)__
+	ig on N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rb(3)(2)(2)__Rg(4)(0)(3)__
+	id on N:,M:Rb(0)(0)(0)__Rb(1)(1)(1)__Sy(2)(0)(0)__Rb(3)(2)(2)__Rg(4)(0)(3)__
+	d6 on N:,M:Rg(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__Rb(4)(2)(3)__
+	d7 on N:,M:Rg(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__Rb(4)(2)(3)__
+	ig on N:,M:Rg(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__Rb(4)(2)(3)__
+	id on N:,M:Rg(0)(0)(0)__Rb(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__Rb(4)(2)(3)__
+	d6 on N:,M:Rb(0)(0)(0)__Rg(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__Rb(4)(2)(3)__
+	d7 on N:,M:Rb(0)(0)(0)__Rg(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__Rb(4)(2)(3)__
+	ig on N:,M:Rb(0)(0)(0)__Rg(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__Rb(4)(2)(3)__
+	id on N:,M:Rb(0)(0)(0)__Rg(1)(0)(1)__Sy(2)(0)(0)__Rb(3)(1)(2)__Rb(4)(2)(3)__
+	id on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rg(2)(0)(1)__Rb(3)(1)(2)__
+73 :N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__ , score : 10 MAX:10 with : best action : 0:d5 1:d5 2:ig  3:id
+	d0 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__
+	d1 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__
+	d2 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__
+	d3 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__
+	d4 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__
+	d5 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__
+	d6 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__
+	d7 on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__
+	ig on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__
+	id on N:,M:Rb(0)(0)(0)__Sy(1)(0)(0)__
+	d6 on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(1)(1)__Rg(3)(0)(2)__
+	d7 on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(1)(1)__Rg(3)(0)(2)__
+	ig on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(1)(1)__Rg(3)(0)(2)__
+	id on N:Rb,M:Rb(0)(0)(0)__Sy(1)(0)(0)__Rb(2)(1)(1)__Rg(3)(0)(2)__

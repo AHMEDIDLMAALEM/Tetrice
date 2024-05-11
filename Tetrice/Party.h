@@ -123,7 +123,7 @@ public:
 	void pause_menu(bool , bool );
 	void save_game();
 
-	string StatetoString(action); 
+	string StatetoString(action, bool with_indexes = false);
 	void chose_decallage();
 	void debug_copy(shape_node** tab, int size, shape_node** res);
 	void decallage_gauche(int choice);
